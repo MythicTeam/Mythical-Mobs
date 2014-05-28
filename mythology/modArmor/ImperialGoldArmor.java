@@ -1,17 +1,16 @@
 package mythology.modArmor;
 
 import mythology.MythologyMod;
-import net.minecraft.creativetab.CreativeTabs;
+import mythology.init.MythicalArmor;
+import mythology.init.MythicalItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraftforge.common.ISpecialArmor;
-import net.minecraftforge.common.ISpecialArmor.ArmorProperties;
 public class ImperialGoldArmor extends ItemArmor implements ISpecialArmor{
 	MythologyMod m = new MythologyMod();
 	public ImperialGoldArmor(ArmorMaterial armormaterial, int armorid, int armorslot) {
@@ -36,7 +35,7 @@ public class ImperialGoldArmor extends ItemArmor implements ISpecialArmor{
 
 	@Override
 	public String getArmorTexture(ItemStack armor, Entity entity, int slot, String type) {
-		if(armor.getItem() == m.imperialGoldLeggings) {
+		if(armor.getItem() == MythicalArmor.imperialGoldLeggings) {
 			return "mythical:textures/models/armor/ImperialGold_armor_layer_2.png";
 		} else {
 			return "mythical:textures/models/armor/ImperialGold_armor_layer_1.png";
@@ -45,7 +44,7 @@ public class ImperialGoldArmor extends ItemArmor implements ISpecialArmor{
 
 	@Override
 	public boolean getIsRepairable(ItemStack armor, ItemStack stack) {
-	  return stack.getItem() == m.itemImperialGoldIngot;
+	  return stack.getItem() == MythicalItems.itemImperialGoldIngot;
 	}
 
 

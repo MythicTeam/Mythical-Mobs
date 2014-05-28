@@ -3,6 +3,7 @@ package mythology.world;
 import java.util.Random;
 
 import mythology.MythologyMod;
+import mythology.init.MythicalBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
@@ -15,6 +16,8 @@ import cpw.mods.fml.common.IWorldGenerator;
 
 
 public class MythicalWorldGen implements IWorldGenerator {
+	
+	MythicalBlocks mb = new MythicalBlocks();
 	
 	int spawn;
 
@@ -52,17 +55,17 @@ public class MythicalWorldGen implements IWorldGenerator {
 	private void generateSurface(Random random, int i, int j, World world) {
 		
 		
-		addOre(MythologyMod.blockMithrilOre, Blocks.stone, random, world, i, j, 1, 15, 1, 4, 5);
-        addOre(MythologyMod.blockCopperOre, Blocks.stone, random, world, i, j, 5, 60, 5, 7, 20);
-        addOre(MythologyMod.blockZincOre, Blocks.stone, random, world, i, j, 5, 60, 5, 7, 20);
-        addOre(MythologyMod.blockTinOre, Blocks.stone, random, world, i, j, 5, 60, 5, 7, 20);
-        addOceanOre(MythologyMod.blockCelestialBronzeOre, Blocks.gravel, random, world, i, j, 5, 64, 3, 5, 10);
-        addDesertOre(MythologyMod.blockImperialGoldOre, Blocks.stone, random, world, i, j, 5, 100, 5, 7, 10);
-        addOceanOre(MythologyMod.blockCelestialBronzeOre, Blocks.stone, random, world, i, j, 5, 64, 3, 5, 10);
-        addOre(MythologyMod.blockPlatinumOre, Blocks.stone, random, world, i, j, 5, 60, 5, 7, 20);
-        addOre(MythologyMod.blockRubyOre, Blocks.stone, random, world, i, j, 5, 60, 5, 7, 20);
-        addOre(MythologyMod.blockSapphireOre, Blocks.stone, random, world, i, j, 5, 60, 5, 7, 20);
-        addOre(MythologyMod.blockSilverOre, Blocks.stone, random, world, i, j, 5, 60, 5, 7, 20);
+		addOre(mb.blockMithrilOre, Blocks.stone, random, world, i, j, 1, 15, 1, 4, 5);
+        addOre(mb.blockCopperOre, Blocks.stone, random, world, i, j, 5, 60, 5, 7, 20);
+        addOre(mb.blockZincOre, Blocks.stone, random, world, i, j, 5, 60, 5, 7, 20);
+        addOre(mb.blockTinOre, Blocks.stone, random, world, i, j, 5, 60, 5, 7, 20);
+        addOceanOre(mb.blockCelestialBronzeOre, Blocks.gravel, random, world, i, j, 5, 64, 3, 5, 10);
+        addDesertOre(mb.blockImperialGoldOre, Blocks.stone, random, world, i, j, 5, 100, 5, 7, 10);
+        addOceanOre(mb.blockCelestialBronzeOre, Blocks.stone, random, world, i, j, 5, 64, 3, 5, 10);
+        addOre(mb.blockPlatinumOre, Blocks.stone, random, world, i, j, 5, 60, 5, 7, 20);
+        addOre(mb.blockRubyOre, Blocks.stone, random, world, i, j, 5, 60, 5, 7, 20);
+        addOre(mb.blockSapphireOre, Blocks.stone, random, world, i, j, 5, 60, 5, 7, 20);
+        addOre(mb.blockSilverOre, Blocks.stone, random, world, i, j, 5, 60, 5, 7, 20);
 
 		BiomeGenBase biome = world.getBiomeGenForCoords(i, j);
 		if(biome.biomeID == 1){

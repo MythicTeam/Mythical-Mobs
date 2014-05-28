@@ -1,6 +1,7 @@
 package mythology.modArmor;
 
 import mythology.MythologyMod;
+import mythology.init.MythicalItems;
 import mythology.model.armor.ModelCelestialBronzeArmor;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.Entity;
@@ -54,7 +55,7 @@ public class CelestialBronzeArmor extends ItemArmor implements ISpecialArmor {
 
 	@Override
 	public boolean getIsRepairable(ItemStack armor, ItemStack stack) {
-		return stack.getItem() == m.itemCelestialBronzeIngot;
+		return stack.getItem() == MythicalItems.itemCelestialBronzeIngot;
 	}
 
 	@Override
@@ -62,16 +63,7 @@ public class CelestialBronzeArmor extends ItemArmor implements ISpecialArmor {
 	public ModelBiped getArmorModel(EntityLivingBase entityLiving,ItemStack itemStack, int armorSlot) {
 		ModelBiped armorModel = new ModelBiped();
 		
-		/*
-		int type = ((ItemArmor)itemStack.getItem()).armorType;
-
-        if(type == 1 || type == 3){
-                armorModel = mythology.proxy.ClientProxy.getArmorModel(0);
-        }else{
-                armorModel = mythology.proxy.ClientProxy.getArmorModel(1);
-        }
-		*/
-		if (armorModel != null) {
+		{
 			armorModel.bipedHead.showModel = armorSlot == 0;
 			armorModel.bipedHeadwear.showModel = armorSlot == 0;
 			
@@ -93,6 +85,5 @@ public class CelestialBronzeArmor extends ItemArmor implements ISpecialArmor {
 			}
 			return armorModel;
 		}
-		return null;
 	}
 }

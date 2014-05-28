@@ -3,6 +3,7 @@ package mythology.modBlocks;
 import java.util.Random;
 
 import mythology.MythologyMod;
+import mythology.init.MythicalItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -25,7 +26,7 @@ public class BlockSapphireOre extends Block {
 	@Override
 	public Item getItemDropped(int par1, Random par2, int par3)
 	{
-		return m.itemSapphire;
+		return MythicalItems.itemSapphire;
 		
 	}
 	

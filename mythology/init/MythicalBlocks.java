@@ -26,53 +26,77 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class MythicalBlocks {
+	
+	public static Block blockZincOre;
+	public static Block blockMithrilOre;
+	public static Block blockSilverOre;
+	public static Block blockCopperOre;
+	public static Block blockTinOre;
+	public static Block blockPlatinumOre;
+	public static Block blockRubyOre;
+	public static Block blockSapphireOre;
+	public static Block blockImperialGoldOre;
+	public static Block blockCelestialBronzeOre;
+	public static Block blockMysticGrass;
+	public static Block blockMysticDirt;
+	public static Block blockSilverBlock;
+	public static Block blockBronzeBlock;
+	public static Block blockPlatinumBlock;
+	public static Block blockImperialGoldBlock;
+	public static Block blockCelestialBronzeBlock;
+	public static Block blockRubyBlock;
+	public static Block blockSapphireBlock;
+	public static Block blockCopperBlock;
+	public static Block blockTinBlock;
+	
 	private static MythologyMod m = new MythologyMod();
+	
 	public static void add(){
 
-		m.blockMithrilOre = new BlockMithrilOre("oreMithril", m.tabMythical, Material.rock);
-		m.blockZincOre = new BlockZincOre("oreZinc", m.tabMythical, Material.rock);
-		m.blockSilverOre = new BlockSilverOre("oreSilver", m.tabMythical, Material.rock);
-		m.blockCopperOre = new BlockCopperOre("oreCopper", m.tabMythical, Material.rock);
-		m.blockTinOre = new BlockTinOre("oreTin", m.tabMythical, Material.rock);
-		m.blockPlatinumOre = new BlockPlatinumOre("orePlatinum", m.tabMythical, Material.rock);
-		m.blockRubyOre = new BlockRubyOre("oreRuby", m.tabMythical, Material.rock);
-		m.blockSapphireOre = new BlockSapphireOre("oreSapphire" , m.tabMythical, Material.rock);
-		m.blockImperialGoldOre = new BlockImperialGoldOre("oreImperialGold", m.tabMythical, Material.rock);
-		m.blockCelestialBronzeOre = new BlockCelestialBronzeOre("oreCelestialBronze", m.tabMythical, Material.rock);
-		m.blockMysticGrass = new BlockMysticGrass("blockMysticGrass", m.tabMythical, Material.grass);
-		m.blockMysticDirt = new BlockMysticDirt("blockMysticDirt", m.tabMythical, Material.ground);
-		m.blockSilverBlock = new BlockSilverBlock("silverBlock", m.tabMythical, Material.iron);
-		m.blockBronzeBlock = new BlockBronzeBlock("bronzeBlock", m.tabMythical, Material.iron);
-		m.blockCopperBlock = new BlockSilverBlock("copperBlock", m.tabMythical, Material.iron);
-		m.blockTinBlock = new BlockBronzeBlock("tinBlock", m.tabMythical, Material.iron);
-		m.blockPlatinumBlock = new BlockPlatinumBlock("platinumBlock", m.tabMythical, Material.iron);
-		m.blockImperialGoldBlock = new BlockImperialGoldBlock("imperialGoldBlock", m.tabMythical, Material.iron);
-		m.blockCelestialBronzeBlock = new BlockCelestialBronzeBlock("celestialBronzeBlock", m.tabMythical, Material.iron);
-		m.blockRubyBlock = new BlockRubyBlock("rubyBlock", m.tabMythical, Material.iron);
-		m.blockSapphireBlock = new BlockSapphireBlock("sapphireBlock", m.tabMythical, Material.iron);
+		blockMithrilOre = new BlockMithrilOre("oreMithril", m.tabMythical, Material.rock);
+		blockZincOre = new BlockZincOre("oreZinc", m.tabMythical, Material.rock);
+		blockSilverOre = new BlockSilverOre("oreSilver", m.tabMythical, Material.rock);
+		blockCopperOre = new BlockCopperOre("oreCopper", m.tabMythical, Material.rock);
+		blockTinOre = new BlockTinOre("oreTin", m.tabMythical, Material.rock);
+		blockPlatinumOre = new BlockPlatinumOre("orePlatinum", m.tabMythical, Material.rock);
+		blockRubyOre = new BlockRubyOre("oreRuby", m.tabMythical, Material.rock);
+		blockSapphireOre = new BlockSapphireOre("oreSapphire" , m.tabMythical, Material.rock);
+		blockImperialGoldOre = new BlockImperialGoldOre("oreImperialGold", m.tabMythical, Material.rock);
+		blockCelestialBronzeOre = new BlockCelestialBronzeOre("oreCelestialBronze", m.tabMythical, Material.rock);
+		blockMysticGrass = new BlockMysticGrass("blockMysticGrass", m.tabMythical, Material.grass);
+		blockMysticDirt = new BlockMysticDirt("blockMysticDirt", m.tabMythical, Material.ground);
+		blockSilverBlock = new BlockSilverBlock("silverBlock", m.tabMythical, Material.iron);
+		blockBronzeBlock = new BlockBronzeBlock("bronzeBlock", m.tabMythical, Material.iron);
+		blockCopperBlock = new BlockSilverBlock("copperBlock", m.tabMythical, Material.iron);
+		blockTinBlock = new BlockBronzeBlock("tinBlock", m.tabMythical, Material.iron);
+		blockPlatinumBlock = new BlockPlatinumBlock("platinumBlock", m.tabMythical, Material.iron);
+		blockImperialGoldBlock = new BlockImperialGoldBlock("imperialGoldBlock", m.tabMythical, Material.iron);
+		blockCelestialBronzeBlock = new BlockCelestialBronzeBlock("celestialBronzeBlock", m.tabMythical, Material.iron);
+		blockRubyBlock = new BlockRubyBlock("rubyBlock", m.tabMythical, Material.iron);
+		blockSapphireBlock = new BlockSapphireBlock("sapphireBlock", m.tabMythical, Material.iron);
 	}
 	public static void register(){
-		GameRegistry.registerBlock(m.blockZincOre, "oreZinc");
-		GameRegistry.registerBlock(m.blockMithrilOre, "oreMithril");
-		GameRegistry.registerBlock(m.blockSilverOre, "oreSilver");
-		GameRegistry.registerBlock(m.blockCopperOre, "oreCopper");
-		GameRegistry.registerBlock(m.blockTinOre, "oreTin");
-		GameRegistry.registerBlock(m.blockPlatinumOre, "orePlatinum");
-		GameRegistry.registerBlock(m.blockRubyOre, "oreRuby");
-		GameRegistry.registerBlock(m.blockSapphireOre, "oreSapphire");
-		GameRegistry.registerBlock(m.blockImperialGoldOre, "oreImperialGold");
-		GameRegistry.registerBlock(m.blockCelestialBronzeOre, "oreCelestialBronze");
-		GameRegistry.registerBlock(m.blockMysticGrass, "blockMysticGrass");
-		GameRegistry.registerBlock(m.blockMysticDirt, "blockMysticDirt");
-		GameRegistry.registerBlock(m.blockBronzeBlock, "blockBronzeBlock");
-		GameRegistry.registerBlock(m.blockCelestialBronzeBlock, "blockCelestialBronzeBlock");
-		GameRegistry.registerBlock(m.blockImperialGoldBlock, "blockImperialGoldBlock");
-		GameRegistry.registerBlock(m.blockPlatinumBlock, "blockPlatinumBlock");
-		GameRegistry.registerBlock(m.blockSilverBlock, "blockSilverBlock");
-		GameRegistry.registerBlock(m.blockRubyBlock, "blockRubyBlock");
-		GameRegistry.registerBlock(m.blockSapphireBlock, "blockSapphireBlock");
-		GameRegistry.registerBlock(m.blockCopperBlock, "blockCopperBlock");
-		GameRegistry.registerBlock(m.blockTinBlock, "blockTinBlock");
+		GameRegistry.registerBlock(blockZincOre, "oreZinc");
+		GameRegistry.registerBlock(blockMithrilOre, "oreMithril");
+		GameRegistry.registerBlock(blockSilverOre, "oreSilver");
+		GameRegistry.registerBlock(blockCopperOre, "oreCopper");
+		GameRegistry.registerBlock(blockTinOre, "oreTin");
+		GameRegistry.registerBlock(blockPlatinumOre, "orePlatinum");
+		GameRegistry.registerBlock(blockRubyOre, "oreRuby");
+		GameRegistry.registerBlock(blockSapphireOre, "oreSapphire");
+		GameRegistry.registerBlock(blockImperialGoldOre, "oreImperialGold");
+		GameRegistry.registerBlock(blockCelestialBronzeOre, "oreCelestialBronze");
+		GameRegistry.registerBlock(blockMysticGrass, "blockMysticGrass");
+		GameRegistry.registerBlock(blockMysticDirt, "blockMysticDirt");
+		GameRegistry.registerBlock(blockBronzeBlock, "blockBronzeBlock");
+		GameRegistry.registerBlock(blockCelestialBronzeBlock, "blockCelestialBronzeBlock");
+		GameRegistry.registerBlock(blockImperialGoldBlock, "blockImperialGoldBlock");
+		GameRegistry.registerBlock(blockPlatinumBlock, "blockPlatinumBlock");
+		GameRegistry.registerBlock(blockSilverBlock, "blockSilverBlock");
+		GameRegistry.registerBlock(blockRubyBlock, "blockRubyBlock");
+		GameRegistry.registerBlock(blockSapphireBlock, "blockSapphireBlock");
+		GameRegistry.registerBlock(blockCopperBlock, "blockCopperBlock");
+		GameRegistry.registerBlock(blockTinBlock, "blockTinBlock");
 
 	}
 }
