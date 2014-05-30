@@ -1,12 +1,6 @@
 //Guis
 container.alloyFurnace=Alloy Furnace
 
-//Spawn Eggs
-entity.Centaur.name=Centaurs
-entity.Gnome.name=Gnome
-entity.Minotaur.name=Minotaur
-entity.Fairy.name=Fairy
-
 //Mobs
 entity.mobCentaur.name=Centaurs
 entity.mobGnome.name=Gnome
