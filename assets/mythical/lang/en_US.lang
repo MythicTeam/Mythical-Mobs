@@ -7,27 +7,34 @@ entity.mobGnome.name=Gnome
 entity.mobMinotaur.name=Minotaur
 entity.mobFairy.name=Fairy
 
-//Blocks
+//Ores
 tile.oreMithril.name=Mithril Ore
+tile.oreZinc.name=Zinc Ore
 tile.oreSilver.name=Silver Ore
+tile.oreCopper.name=Copper Ore
 tile.oreBronze.name=Bronze Ore
+tile.oreTin.name=Tin Ore
 tile.orePlatinum.name=Platinum Ore
 tile.oreRuby.name=Ruby Ore
 tile.oreSapphire.name=Sapphire Ore
 tile.oreImperialGold.name=Imperial Gold Ore
 tile.oreCelestialBronze.name=Celestial Bronze Ore
-tile.blockMysticGrass.name=Mystic Grass
-tile.blockMysticDirt.name=Mystic Dirt
-tile.bronzeBlock.name=Bronze Block
-tile.celestialBronzeBlock.name=Celestial Bronze Block
-tile.imperialGoldBlock.name=Imperial Gold Block
-tile.platinumBlock.name=Platinum Block
+
+//Blocks
+tile.MysticGrassBlock.name=Mystic Grass
+tile.MysticDirtBlock.name=Mystic Dirt
 tile.silverBlock.name=Silver Block
+tile.bronzeBlock.name=Bronze Block
+tile.copperBlock.name=Copper Block
+tile.tinBlock.name=Tin Block
+tile.platinumBlock.name=Platinum Block
+tile.imperialGoldBlock.name=Imperial Gold Block
+tile.celestialBronzeBlock.name=Celestial Bronze Block
 tile.rubyBlock.name=Ruby Block
 tile.sapphireBlock.name=Sapphire Block
 tile.alloyFurnace.name=Alloy Furnace
 
-//armor
+//Armor
 item.bronzeHelmet.name=Bronze Helmet
 item.bronzeChestplate.name=Bronze Chestplate
 item.bronzeLeggings.name=Bronze Leggings
@@ -66,12 +73,15 @@ item.cookBehemothMeat.name=Cooked Behemoth Meat
 
 //Ingots
 item.silverIngot.name=Silver Ingot
+item.copperIngot.name=Copper Ingot
+item.tinIngot.name=Tin Ingot
 item.imperialGoldIngot.name=Imperial Gold Ingot
 item.celestialBronzeIngot.name=Celestial Bronze Ingot
 item.bronzeIngot.name=Bronze Ingot
 item.platinumIngot.name=Platinum Ingot
 item.ruby.name=Ruby
 item.sapphire.name=Sapphire
+
 //mithril shizzle
 item.mithrilIngot.name=Mithril Ingot
 item.mithrilNugget.name=Mithril Nugget
