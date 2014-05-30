@@ -20,12 +20,12 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class MythologyRegister {
 
-	public static void addMob(Class entityClass, String name, EnumCreatureType typeMob, BiomeGenBase biome, int arg1, int arg2, int arg3){
+	public static void addMob(Class entityClass, String name, EnumCreatureType typeMob, BiomeGenBase biome, int primColor, int secColor, int arg1, int arg2, int arg3){
 		int entityID = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerGlobalEntityID(entityClass, name, entityID);
 		EntityRegistry.registerModEntity(entityClass, name, entityID, MythologyMod.instance, 64, 1, true);
 		EntityRegistry.addSpawn(entityClass, arg1, arg2, arg3, typeMob, biome);
-        //EntityList.entityEggs.put(Integer.valueOf(entityID), new EntityList.EntityEggInfo(entityID, primColor, secColor));
+        EntityList.entityEggs.put(Integer.valueOf(entityID), new EntityList.EntityEggInfo(entityID, primColor, secColor));
 	}
 	
 	public static void registerItem(Item item) {

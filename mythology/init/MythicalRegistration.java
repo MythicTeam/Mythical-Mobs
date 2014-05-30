@@ -39,21 +39,14 @@ public class MythicalRegistration {
 		registerWorldGenerator();
 		registerTileEntity();
 		registerHandlers();
-		registerSpawnEgg();
-	}
-	
-	private static void registerSpawnEgg() {
-		EntityList.addMapping(EntityGnome.class, "Gnome", 3, 0xFC0A16, 0xFCFCFC);
-		EntityList.addMapping(EntityCentaur.class, "Centaur", 4, 0x1A33D6, 0x1AD63F);
-		EntityList.addMapping(EntityFairy.class, "Fairy", 5, 0x07FA10, 0xE9F5E9);
-		EntityList.addMapping(EntityMinotaur.class, "Minotaur", 6, 0x835C3B, 0xD1D0CE);
+		registerMob();
 	}
 	
 	private static void registerMob() {
-		MythologyRegister.addMob(EntityGnome.class, "mobGnome", EnumCreatureType.creature, BiomeGenBase.roofedForest, 200, 200, 200);
-		MythologyRegister.addMob(EntityCentaur.class, "mobCentaur", EnumCreatureType.monster, BiomeGenBase.megaTaiga, 200, 200, 200);
-		MythologyRegister.addMob(EntityFairy.class, "mobFairy", EnumCreatureType.creature, BiomeGenBase.forest, 200, 200, 200);
-		MythologyRegister.addMob(EntityMinotaur.class, "mobrnotaur", EnumCreatureType.monster, BiomeGenBase.extremeHillsPlus, 200, 200, 200);
+		MythologyRegister.addMob(EntityGnome.class, "Gnome", EnumCreatureType.creature, BiomeGenBase.roofedForest, 0xFC0A16, 0xFCFCFC, 200, 200, 200);
+		MythologyRegister.addMob(EntityCentaur.class, "Centaur", EnumCreatureType.monster, BiomeGenBase.megaTaiga, 0x1A33D6, 0x1AD63F, 200, 200, 200);
+		MythologyRegister.addMob(EntityFairy.class, "Fairy", EnumCreatureType.creature, BiomeGenBase.forest, 0x07FA10, 0xE9F5E9, 200, 200, 200);
+		MythologyRegister.addMob(EntityMinotaur.class, "Minotaur", EnumCreatureType.monster, BiomeGenBase.extremeHillsPlus, 0x835C3B, 0xD1D0CE, 200, 200, 200);
 	}
 	
 	private static void registerBlock() {
