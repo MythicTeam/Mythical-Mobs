@@ -27,12 +27,13 @@ public class MythologyRegister {
 	}
 	
 	public static void registerItem(Item item) {
-		GameRegistry.registerItem(item, item.getUnlocalizedName());
+		String name = item.getUnlocalizedName().replace("item.", "");
+		GameRegistry.registerItem(item, name);
 	}
 	
 	public static void registerBlock(Block block)
     {
-    	GameRegistry.registerBlock(block, block.getUnlocalizedName());
+    	GameRegistry.registerBlock(block, block.getUnlocalizedName().toString());
     }
 	
 	public static void registerOreBlock(Block block)
@@ -43,7 +44,8 @@ public class MythologyRegister {
 	
 	public static void registerOreItem(Item item)
     {
-    	GameRegistry.registerItem(item, item.getUnlocalizedName());
+		String name = item.getUnlocalizedName().replace("item.", "");
+    	GameRegistry.registerItem(item, name);
         OreDictionary.registerOre(item.getUnlocalizedName(), item);
     }
 }

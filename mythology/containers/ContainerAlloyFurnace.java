@@ -106,26 +106,26 @@ public class ContainerAlloyFurnace extends Container {
 					if(!this.mergeItemStack(itemstack1, 0, 1, false)){
 						return null;
 					}
-				}else if(TileEntityAlloyFurnace.isItemFuel(itemstack1)){
+				} else if(TileEntityAlloyFurnace.isItemFuel(itemstack1)){
 					if(!this.mergeItemStack(itemstack1, 2, 3, false)){
 						return null;
 					}
-				}else if(clickedSlotNumber >= 4 && clickedSlotNumber < 31){
+				} else if(clickedSlotNumber >= 4 && clickedSlotNumber < 31){
 					if(!this.mergeItemStack(itemstack1, 31, 40, false)){
 						return null;
 					}
-				}else if(clickedSlotNumber >= 31 && clickedSlotNumber < 40){
+				} else if(clickedSlotNumber >= 31 && clickedSlotNumber < 40){
 					if(!this.mergeItemStack(itemstack1, 4, 31, false)){
 						return null;
 					}
 				}
-			}else if(!this.mergeItemStack(itemstack1, 4, 40, false)){
+			} else if(!this.mergeItemStack(itemstack1, 4, 40, false)){
 				return null;
 			}
 			
 			if(itemstack1.stackSize == 0){
-				slot.putStack((ItemStack)null);
-			}else{
+				slot.putStack((ItemStack) null);
+			} else{
 				slot.onSlotChanged();
 			}
 			

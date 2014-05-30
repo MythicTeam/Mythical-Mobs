@@ -29,12 +29,12 @@ public class GuiAlloyFurnace extends GuiContainer{
 	public void drawGuiContainerForegroundLayer(int par1, int par2){
 		String name = this.alloyFurnace.hasCustomInventoryName() ? this.alloyFurnace.getInventoryName() : I18n.format("Alloy Furnace", new Object[0]);
 	
-	this.fontRendererObj.drawString(name, this.xSize -64 - this.fontRendererObj.getStringWidth(name), 6, 4210752);
-	this.fontRendererObj.drawString(I18n.format("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
+		this.fontRendererObj.drawString(name, this.xSize -64 - this.fontRendererObj.getStringWidth(name), 6, 4210752);
+		this.fontRendererObj.drawString(I18n.format("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
 	}
 	
 	protected void drawGuiContainerBackgroundLayer(float f, int i, int j) {
-GL11.glColor4f(1F, 1F, 1F, 1F);
+		GL11.glColor4f(1F, 1F, 1F, 1F);
 		
 		Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);

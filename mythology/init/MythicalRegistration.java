@@ -59,7 +59,9 @@ public class MythicalRegistration {
 		MythologyRegister.registerBlock(mb.blockSapphireBlock);
 		MythologyRegister.registerBlock(mb.blockCopperBlock);
 		MythologyRegister.registerBlock(mb.blockTinBlock);
-		MythologyRegister.registerBlock(mb.alloyFurnaceIdle);
+		
+		GameRegistry.registerBlock(mb.alloyFurnaceIdle,  "alloyFurnaceIdle");
+		GameRegistry.registerBlock(mb.alloyFurnaceActive, "alloyFurnaceActive");
 	}
 	
 	private static void registerItem() {
