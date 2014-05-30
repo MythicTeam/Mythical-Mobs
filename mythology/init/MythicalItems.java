@@ -1,11 +1,11 @@
 package mythology.init;
 
 import mythology.MythologyMod;
-import mythology.modItems.CookBehemothMeat;
-import mythology.modItems.ItemFur;
-import mythology.modItems.ItemGnomeBeard;
-import mythology.modItems.ItemScales;
-import mythology.modItems.RawBehemothMeat;
+import mythology.items.CookBehemothMeat;
+import mythology.items.ItemFur;
+import mythology.items.ItemGnomeBeard;
+import mythology.items.ItemScales;
+import mythology.items.RawBehemothMeat;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;

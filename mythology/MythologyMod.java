@@ -1,7 +1,9 @@
 package mythology;
 
+import mythology.handlers.GuiHandler;
 import mythology.init.*;
 import mythology.proxy.CommonProxy;
+import mythology.tileentities.TileEntityAlloyFurnace;
 import mythology.world.MythicalWorldGen;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -10,21 +12,24 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.*;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = MythologyMod.modid, name = MythologyMod.name, version = MythologyMod.version)
 public class MythologyMod {
-	@Instance("mythical")
-	public static MythologyMod m;
-	@SidedProxy(clientSide = "mythology.proxy.ClientProxy", serverSide = "mythology.proxy.CommonProxy")
-	public static CommonProxy proxy;
 	//Mod Info
 	public static final String modid = "mythical";
 	public static final String version = "1.0.0";
 	public static final String name = "Mythical Creatures";
 	
-	//Our Mod Blocks
-
+	public static final int guiAlloyFurnace = 0;
+	
+	@Instance(MythologyMod.modid)
+	public static MythologyMod instance;
+	
+	@SidedProxy(clientSide = "mythology.proxy.ClientProxy", serverSide = "mythology.proxy.CommonProxy")
+	public static CommonProxy proxy;
 	
 	// Creative Tabs
 	public static CreativeTabs tabMythical = new CreativeTabs("tabMythical") {
@@ -35,6 +40,10 @@ public class MythologyMod {
 	};
 	@EventHandler
 	public void PreLoad(FMLPreInitializationEvent event) {
+		
+	    GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "Alloy Furnace");
+		
+		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 		
 		MythicalBlocks.add();
 		MythicalBlocks.register();

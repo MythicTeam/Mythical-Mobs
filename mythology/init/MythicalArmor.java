@@ -1,13 +1,13 @@
 package mythology.init;
 
 import mythology.MythologyMod;
-import mythology.modArmor.BronzeArmor;
-import mythology.modArmor.CelestialBronzeArmor;
-import mythology.modArmor.ImperialGoldArmor;
-import mythology.modArmor.MithrilArmor;
-import mythology.modArmor.RubyArmor;
-import mythology.modArmor.SapphireArmor;
-import mythology.modArmor.SilverArmor;
+import mythology.armor.BronzeArmor;
+import mythology.armor.CelestialBronzeArmor;
+import mythology.armor.ImperialGoldArmor;
+import mythology.armor.MithrilArmor;
+import mythology.armor.RubyArmor;
+import mythology.armor.SapphireArmor;
+import mythology.armor.SilverArmor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;

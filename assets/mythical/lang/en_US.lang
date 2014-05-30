@@ -1,3 +1,6 @@
+//Guis
+container.alloyFurnace=Alloy Furnace
+
 //Mobs
 entity.mobCentaur.name=Centaurs
 entity.mobGnome.name=Gnome
@@ -22,6 +25,7 @@ tile.platinumBlock.name=Platinum Block
 tile.silverBlock.name=Silver Block
 tile.rubyBlock.name=Ruby Block
 tile.sapphireBlock.name=Sapphire Block
+tile.alloyFurnace.name=Alloy Furnace
 
 //armor
 item.bronzeHelmet.name=Bronze Helmet

@@ -1,25 +1,26 @@
 package mythology.init;
 
 import mythology.MythologyMod;
-import mythology.modBlocks.BlockBronzeBlock;
-import mythology.modBlocks.BlockCelestialBronzeBlock;
-import mythology.modBlocks.BlockCelestialBronzeOre;
-import mythology.modBlocks.BlockCopperOre;
-import mythology.modBlocks.BlockImperialGoldBlock;
-import mythology.modBlocks.BlockImperialGoldOre;
-import mythology.modBlocks.BlockMithrilOre;
-import mythology.modBlocks.BlockMysticDirt;
-import mythology.modBlocks.BlockMysticGrass;
-import mythology.modBlocks.BlockPlatinumBlock;
-import mythology.modBlocks.BlockPlatinumOre;
-import mythology.modBlocks.BlockRubyBlock;
-import mythology.modBlocks.BlockRubyOre;
-import mythology.modBlocks.BlockSapphireBlock;
-import mythology.modBlocks.BlockSapphireOre;
-import mythology.modBlocks.BlockSilverBlock;
-import mythology.modBlocks.BlockSilverOre;
-import mythology.modBlocks.BlockTinOre;
-import mythology.modBlocks.BlockZincOre;
+import mythology.blocks.BlockAlloyFurnace;
+import mythology.blocks.BlockBronzeBlock;
+import mythology.blocks.BlockCelestialBronzeBlock;
+import mythology.blocks.BlockCelestialBronzeOre;
+import mythology.blocks.BlockCopperOre;
+import mythology.blocks.BlockImperialGoldBlock;
+import mythology.blocks.BlockImperialGoldOre;
+import mythology.blocks.BlockMithrilOre;
+import mythology.blocks.BlockMysticDirt;
+import mythology.blocks.BlockMysticGrass;
+import mythology.blocks.BlockPlatinumBlock;
+import mythology.blocks.BlockPlatinumOre;
+import mythology.blocks.BlockRubyBlock;
+import mythology.blocks.BlockRubyOre;
+import mythology.blocks.BlockSapphireBlock;
+import mythology.blocks.BlockSapphireOre;
+import mythology.blocks.BlockSilverBlock;
+import mythology.blocks.BlockSilverOre;
+import mythology.blocks.BlockTinOre;
+import mythology.blocks.BlockZincOre;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -48,6 +49,9 @@ public class MythicalBlocks {
 	public static Block blockSapphireBlock;
 	public static Block blockCopperBlock;
 	public static Block blockTinBlock;
+	public static Block alloyFurnaceIdle;
+	public static Block alloyFurnaceActive;
+
 	
 	private static MythologyMod m = new MythologyMod();
 	
@@ -74,6 +78,9 @@ public class MythicalBlocks {
 		blockCelestialBronzeBlock = new BlockCelestialBronzeBlock("celestialBronzeBlock", m.tabMythical, Material.iron);
 		blockRubyBlock = new BlockRubyBlock("rubyBlock", m.tabMythical, Material.iron);
 		blockSapphireBlock = new BlockSapphireBlock("sapphireBlock", m.tabMythical, Material.iron);
+		alloyFurnaceActive = new BlockAlloyFurnace(true, "alloyFurnaceActive", m.tabMythical, Material.iron).setLightLevel(0.9F).setHardness(3.5F);
+		alloyFurnaceIdle = new BlockAlloyFurnace(false, "alloyFurnaceIdle", m.tabMythical, Material.iron).setHardness(3.5F);
+
 	}
 	public static void register(){
 		GameRegistry.registerBlock(blockZincOre, "oreZinc");
@@ -97,6 +104,8 @@ public class MythicalBlocks {
 		GameRegistry.registerBlock(blockSapphireBlock, "blockSapphireBlock");
 		GameRegistry.registerBlock(blockCopperBlock, "blockCopperBlock");
 		GameRegistry.registerBlock(blockTinBlock, "blockTinBlock");
+		GameRegistry.registerBlock(alloyFurnaceActive, "alloyFurnaceActive");
+		GameRegistry.registerBlock(alloyFurnaceIdle, "alloyFurnaceIdle");
 
 	}
 }

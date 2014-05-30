@@ -1,13 +1,13 @@
 package mythology.init;
 
 import mythology.MythologyMod;
-import mythology.modItems.ItemAxe;
-import mythology.modItems.ItemHoe;
-import mythology.modItems.ItemHoeIG;
-import mythology.modItems.ItemPickaxe;
-import mythology.modItems.ItemShovel;
-import mythology.modItems.ItemSwordCB;
-import mythology.modItems.ItemSwordIG;
+import mythology.items.ItemAxe;
+import mythology.items.ItemHoe;
+import mythology.items.ItemHoeIG;
+import mythology.items.ItemPickaxe;
+import mythology.items.ItemShovel;
+import mythology.items.ItemSwordCB;
+import mythology.items.ItemSwordIG;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.Item.ToolMaterial;

@@ -14,7 +14,7 @@ public class MythicalMobs {
 	public static void addMob(Class entityClass, String name, EnumCreatureType typeMob, int primColor, int secColor, BiomeGenBase biome, int arg1, int arg2, int arg3){
 		int entityID = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerGlobalEntityID(entityClass, name, entityID);
-		EntityRegistry.registerModEntity(entityClass, name, entityID, MythologyMod.m, 64, 1, true);
+		EntityRegistry.registerModEntity(entityClass, name, entityID, MythologyMod.instance, 64, 1, true);
 		EntityRegistry.addSpawn(entityClass, arg1, arg2, arg3, typeMob, biome);
         	EntityList.entityEggs.put(Integer.valueOf(entityID), new EntityList.EntityEggInfo(entityID, primColor, secColor));
 	}
