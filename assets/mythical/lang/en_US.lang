@@ -1,6 +1,12 @@
 //Guis
 container.alloyFurnace=Alloy Furnace
 
+//Spawn Eggs
+entity.Centaur.name=Centaurs
+entity.Gnome.name=Gnome
+entity.Minotaur.name=Minotaur
+entity.Fairy.name=Fairy
+
 //Mobs
 entity.mobCentaur.name=Centaurs
 entity.mobGnome.name=Gnome
@@ -32,7 +38,7 @@ tile.imperialGoldBlock.name=Imperial Gold Block
 tile.celestialBronzeBlock.name=Celestial Bronze Block
 tile.rubyBlock.name=Ruby Block
 tile.sapphireBlock.name=Sapphire Block
-tile.alloyFurnace.name=Alloy Furnace
+tile.alloyFurnace.name=§6Alloy Furnace
 
 //Armor
 item.bronzeHelmet.name=Bronze Helmet

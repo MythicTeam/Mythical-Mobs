@@ -18,6 +18,7 @@ public class SlotAlloyFurnace extends Slot {
     public boolean isItemValid(ItemStack itemstack) {
         return false;
     }
+    
     /**
      * Called when the player picks up an item from an inventory slot
      */

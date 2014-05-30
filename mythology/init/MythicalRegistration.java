@@ -8,6 +8,7 @@ import mythology.mobs.passive.EntityFairy;
 import mythology.mobs.passive.EntityGnome;
 import mythology.tileentities.TileEntityAlloyFurnace;
 import mythology.world.MythicalWorldGen;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -38,13 +39,21 @@ public class MythicalRegistration {
 		registerWorldGenerator();
 		registerTileEntity();
 		registerHandlers();
+		registerSpawnEgg();
+	}
+	
+	private static void registerSpawnEgg() {
+		EntityList.addMapping(EntityGnome.class, "Gnome", 3, 0xFC0A16, 0xFCFCFC);
+		EntityList.addMapping(EntityCentaur.class, "Centaur", 4, 0x1A33D6, 0x1AD63F);
+		EntityList.addMapping(EntityFairy.class, "Fairy", 5, 0x07FA10, 0xE9F5E9);
+		EntityList.addMapping(EntityMinotaur.class, "Minotaur", 6, 0x835C3B, 0xD1D0CE);
 	}
 	
 	private static void registerMob() {
-		MythologyRegister.addMob(EntityGnome.class, "mobGnome", EnumCreatureType.creature, 0xFC0A16, 0xFCFCFC, BiomeGenBase.roofedForest, 200, 200, 200);
-		MythologyRegister.addMob(EntityCentaur.class, "mobCentaur", EnumCreatureType.monster, 0x1A33D6, 0x1AD63F, BiomeGenBase.megaTaiga, 200, 200, 200);
-		MythologyRegister.addMob(EntityFairy.class, "mobFairy", EnumCreatureType.creature, 0x07FA10, 0xE9F5E9, BiomeGenBase.forest, 200, 200, 200);
-		MythologyRegister.addMob(EntityMinotaur.class, "mobrnotaur", EnumCreatureType.monster, 0x835C3B, 0xD1D0CE, BiomeGenBase.extremeHillsPlus, 200, 200, 200);
+		MythologyRegister.addMob(EntityGnome.class, "mobGnome", EnumCreatureType.creature, BiomeGenBase.roofedForest, 200, 200, 200);
+		MythologyRegister.addMob(EntityCentaur.class, "mobCentaur", EnumCreatureType.monster, BiomeGenBase.megaTaiga, 200, 200, 200);
+		MythologyRegister.addMob(EntityFairy.class, "mobFairy", EnumCreatureType.creature, BiomeGenBase.forest, 200, 200, 200);
+		MythologyRegister.addMob(EntityMinotaur.class, "mobrnotaur", EnumCreatureType.monster, BiomeGenBase.extremeHillsPlus, 200, 200, 200);
 	}
 	
 	private static void registerBlock() {

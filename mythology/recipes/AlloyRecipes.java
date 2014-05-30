@@ -21,6 +21,7 @@ public class AlloyRecipes {
         if (i == MythicalIngot.itemCopperIngot && j == MythicalIngot.itemTinIngot || i == MythicalIngot.itemTinIngot && j == MythicalIngot.itemCopperIngot) {
             return new ItemStack(MythicalIngot.itemBronzeIngot, 2);
         }
+        
         return null;
     }
 }

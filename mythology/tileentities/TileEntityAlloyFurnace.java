@@ -60,14 +60,12 @@ public class TileEntityAlloyFurnace extends TileEntity implements ISidedInventor
         this.localizedName = displayName;
     }
 
-    @
-    Override
+    @Override
     public ItemStack getStackInSlot(int i) {
         return this.slots[i];
     }
 
-    @
-    Override
+    @Override
     public ItemStack decrStackSize(int i, int j) {
         if (this.slots[i] != null) {
             ItemStack itemstack;
@@ -90,8 +88,7 @@ public class TileEntityAlloyFurnace extends TileEntity implements ISidedInventor
         return null;
     }
 
-    @
-    Override
+    @Override
     public ItemStack getStackInSlotOnClosing(int i) {
         if (this.slots[i] != null) {
             ItemStack itemstack = this.slots[i];
@@ -103,8 +100,7 @@ public class TileEntityAlloyFurnace extends TileEntity implements ISidedInventor
 
     }
 
-    @
-    Override
+    @Override
     public void setInventorySlotContents(int i, ItemStack itemstack) {
         this.slots[i] = itemstack;
 
@@ -114,8 +110,7 @@ public class TileEntityAlloyFurnace extends TileEntity implements ISidedInventor
 
     }
 
-    @
-    Override
+    @Override
     public int getInventoryStackLimit() {
         return 64;
     }
@@ -169,18 +164,15 @@ public class TileEntityAlloyFurnace extends TileEntity implements ISidedInventor
         }
     }
 
-    @
-    Override
+    @Override
     public boolean isUseableByPlayer(EntityPlayer entityplayer) {
         return this.worldObj.getTileEntity(this.xCoord, this.yCoord, this.zCoord) != this ? false : entityplayer.getDistanceSq((double) this.xCoord + 0.5D, (double) this.yCoord + 0.5D, (double) this.zCoord + 0.5D) <= 64.0D;
     }
 
-    @
-    Override
+    @Override
     public void openInventory() {}
 
-    @
-    Override
+    @Override
     public void closeInventory() {}
 
     public void updateEntity() {
@@ -249,19 +241,19 @@ public class TileEntityAlloyFurnace extends TileEntity implements ISidedInventor
         if (this.canSmelt()) {
             ItemStack itemstack = AlloyRecipes.getSmeltingResult(slots[0].getItem(), slots[1].getItem());
 
-            if (this.slots[3] == null) {
-                this.slots[3] = itemstack.copy();
+            if(this.slots[3] == null) {
+            	this.slots[3] = itemstack.copy();
             } else if (this.slots[3].isItemEqual(itemstack)) {
-                this.slots[3].stackSize += itemstack.stackSize;
+                this.slots[3].stackSize += (itemstack.stackSize*2);
             }
 
-            this.slots[0].stackSize--;
+            --this.slots[0].stackSize;
 
             if (this.slots[0].stackSize <= 0) {
                 this.slots[0] = null;
             }
 
-            this.slots[1].stackSize--;
+            --this.slots[1].stackSize;
 
             if (this.slots[1].stackSize <= 0) {
                 this.slots[1] = null;
@@ -312,26 +304,22 @@ public class TileEntityAlloyFurnace extends TileEntity implements ISidedInventor
         return getItemBurnTime(itemstack) > 0;
     }
 
-    @
-    Override
+    @Override
     public boolean isItemValidForSlot(int i, ItemStack itemstack) {
         return i == 3 ? false : (i == 2 ? isItemFuel(itemstack) : true);
     }
 
-    @
-    Override
+    @Override
     public int[] getAccessibleSlotsFromSide(int var1) {
         return var1 == 0 ? slots_top : (var1 == 1 ? slots_top2 : var1 == 2 ? slots_bot : slots_side);
     }
 
-    @
-    Override
+    @Override
     public boolean canInsertItem(int i, ItemStack itemstack, int j) {
         return this.isItemValidForSlot(i, itemstack);
     }
 
-    @
-    Override
+    @Override
     public boolean canExtractItem(int i, ItemStack itemstack, int j) {
         return j != 0 || i != 1 || itemstack.getItem() == Items.bucket;
     }

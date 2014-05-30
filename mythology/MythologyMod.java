@@ -28,6 +28,7 @@ public class MythologyMod {
 	@SidedProxy(clientSide = "mythology.proxy.ClientProxy", serverSide = "mythology.proxy.CommonProxy")
 	public static CommonProxy proxy;
 	// Creative Tabs
+	
 	public static CreativeTabs tabMythical = new CreativeTabs("tabMythical") {
 		@Override
 		public Item getTabIconItem() {
