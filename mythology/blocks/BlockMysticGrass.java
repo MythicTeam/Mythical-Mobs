@@ -39,8 +39,8 @@ public class BlockMysticGrass extends Block {
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister){
 		
-		this.blockIcon = iconRegister.registerIcon(m.modid + ":" + "blockMysticGrass_side");
-		this.iconTop = iconRegister.registerIcon(m.modid + ":" + "blockMysticGrass_top"); 
+		this.blockIcon = iconRegister.registerIcon(m.modid + ":" + "MysticGrassBlock_side");
+		this.iconTop = iconRegister.registerIcon(m.modid + ":" + "MysticGrassBlock_top"); 
 		
 	}
 

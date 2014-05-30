@@ -1,7 +1,8 @@
 package mythology.armor;
 
 import mythology.MythologyMod;
-import mythology.init.MythicalItems;
+import mythology.init.MythicalArmor;
+import mythology.init.MythicalIngot;
 import mythology.model.armor.ModelCelestialBronzeArmor;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.Entity;
@@ -17,7 +18,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class CelestialBronzeArmor extends ItemArmor implements ISpecialArmor {
 	MythologyMod m = new MythologyMod();
-
+	MythicalArmor ma = new MythicalArmor();
+	MythicalIngot mii = new MythicalIngot();
+	
 	public CelestialBronzeArmor(ArmorMaterial material, int id, int armorslot) {
 		super(material, id, armorslot);
 		this.setCreativeTab(m.tabMythical);
@@ -55,7 +58,7 @@ public class CelestialBronzeArmor extends ItemArmor implements ISpecialArmor {
 
 	@Override
 	public boolean getIsRepairable(ItemStack armor, ItemStack stack) {
-		return stack.getItem() == MythicalItems.itemCelestialBronzeIngot;
+		return stack.getItem() == mii.itemCelestialBronzeIngot;
 	}
 
 	@Override
