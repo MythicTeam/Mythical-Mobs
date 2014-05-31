@@ -16,7 +16,6 @@ public class ItemWing extends MythItem{
     {
         if (player.fallDistance>0)
         {
-            player.addExhaustion(0.1f);
             player.motionY += 0.8;
             player.fallDistance = 0;
         }
