@@ -1,6 +1,7 @@
 package mythology.init;
 
 import mythology.MythologyMod;
+import mythology.dimension.underworld.WorldProviderUnderworld;
 import mythology.handlers.GuiHandler;
 import mythology.mobs.hostile.EntityCentaur;
 import mythology.mobs.hostile.EntityMinotaur;
@@ -14,13 +15,17 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class MythicalRegistration {
+	
+	public static final int underworld = 8;
 	
 	private static MythologyMod m = new MythologyMod();
 	private static MythicalArmor ma = new MythicalArmor();
@@ -40,6 +45,22 @@ public class MythicalRegistration {
 		registerTileEntity();
 		registerHandlers();
 		registerMob();
+		registerDimension();
+		registerBiome();
+	}
+	
+	private static void registerDimension() {
+		//Dimension
+		GameRegistry.registerBlock(mb.blockPortial, "underworldPortal");
+		LanguageRegistry.addName(mb.blockPortial, "Underworld Portal");
+		
+		//Dimension
+		DimensionManager.registerProviderType(underworld, WorldProviderUnderworld.class, false);
+		DimensionManager.registerDimension(underworld, underworld);
+	}
+	
+	public static void registerBiome() {
+		
 	}
 	
 	private static void registerMob() {

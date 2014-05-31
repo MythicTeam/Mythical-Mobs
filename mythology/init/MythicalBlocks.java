@@ -15,6 +15,7 @@ import mythology.blocks.BlockMysticDirt;
 import mythology.blocks.BlockMysticGrass;
 import mythology.blocks.BlockPlatinumBlock;
 import mythology.blocks.BlockPlatinumOre;
+import mythology.blocks.BlockPortalBlock;
 import mythology.blocks.BlockRubyBlock;
 import mythology.blocks.BlockRubyOre;
 import mythology.blocks.BlockSapphireBlock;
@@ -30,6 +31,8 @@ import net.minecraft.block.material.Material;
 public class MythicalBlocks {
 
 	private static MythologyMod m = new MythologyMod();
+	
+	public static Block blockPortial = new BlockPortalBlock("oreMithril", Material.portal);
 	
 	public static Block blockMithrilOre = new BlockMithrilOre("oreMithril", m.tabMythical, Material.rock);
 	public static Block blockZincOre = new BlockZincOre("oreZinc", m.tabMythical, Material.rock);
