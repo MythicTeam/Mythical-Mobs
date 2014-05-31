@@ -12,13 +12,14 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class MythItem extends Item{
 	
-	String name;
-		
+	String info;	
+	
 	public MythItem(String name, String lore){
 		setCreativeTab(MythologyMod.tabMythical);
 		setTextureName(name);
 		setUnlocalizedName(name);
 		GameRegistry.registerItem(this, name);
+		info = lore;
 	}
 	
     /**
@@ -27,6 +28,6 @@ public class MythItem extends Item{
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean par4) {
-    	list.add("item." + name + ".info");
+    	list.add(info);
     }
 }

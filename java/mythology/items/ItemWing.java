@@ -2,6 +2,7 @@ package mythology.items;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 public class ItemWing extends MythItem{
@@ -10,9 +11,15 @@ public class ItemWing extends MythItem{
 		super(name, lore);		
 	}
 	
-    public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int x, int y, int z, int par7, float par8, float par9, float par10)
+    @Override
+    public ItemStack onItemRightClick (ItemStack stack, World world, EntityPlayer player)
     {
-    	player.motionY++;
-        return false;
+        if (player.fallDistance>0)
+        {
+            player.addExhaustion(0.1f);
+            player.motionY += 0.8;
+            player.fallDistance = 0;
+        }
+        return stack;
     }
 }
