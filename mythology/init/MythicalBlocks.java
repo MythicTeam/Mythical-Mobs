@@ -8,6 +8,7 @@ import mythology.blocks.BlockCelestialBronzeBlock;
 import mythology.blocks.BlockCelestialBronzeOre;
 import mythology.blocks.BlockCopperBlock;
 import mythology.blocks.BlockCopperOre;
+import mythology.blocks.BlockDeadStone;
 import mythology.blocks.BlockImperialGoldBlock;
 import mythology.blocks.BlockImperialGoldOre;
 import mythology.blocks.BlockMithrilOre;
@@ -32,7 +33,7 @@ public class MythicalBlocks {
 
 	private static MythologyMod m = new MythologyMod();
 	
-	public static Block blockPortial = new BlockPortalBlock("oreMithril", Material.portal);
+	public static Block blockPortial = new BlockPortalBlock("portalBlock", Material.portal);
 	
 	public static Block blockMithrilOre = new BlockMithrilOre("oreMithril", m.tabMythical, Material.rock);
 	public static Block blockZincOre = new BlockZincOre("oreZinc", m.tabMythical, Material.rock);
@@ -48,6 +49,7 @@ public class MythicalBlocks {
 
 	public static Block blockMysticGrass = new BlockMysticGrass("MysticGrassBlock", m.tabMythical, Material.ground);
 	public static Block blockMysticDirt = new BlockMysticDirt("MysticDirtBlock", m.tabMythical, Material.ground);
+	public static Block blockDeadStone = new BlockDeadStone("deadStone", m.tabMythical, Material.rock);
 	public static Block blockSilverBlock = new BlockSilverBlock("silverBlock", m.tabMythical, Material.iron);
 	public static Block blockBronzeBlock = new BlockBronzeBlock("bronzeBlock", m.tabMythical, Material.iron);
 	public static Block blockCopperBlock = new BlockCopperBlock("copperBlock", m.tabMythical, Material.iron);

@@ -73,6 +73,7 @@ public class MythicalRegistration {
 	private static void registerBlock() {
 		MythologyRegister.registerBlock(mb.blockMysticGrass);
 		MythologyRegister.registerBlock(mb.blockMysticDirt);
+		MythologyRegister.registerBlock(mb.blockDeadStone);
 		MythologyRegister.registerBlock(mb.blockBronzeBlock);
 		MythologyRegister.registerBlock(mb.blockCelestialBronzeBlock);
 		MythologyRegister.registerBlock(mb.blockImperialGoldBlock);
