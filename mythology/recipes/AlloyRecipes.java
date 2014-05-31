@@ -7,18 +7,14 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class AlloyRecipes {
-    public AlloyRecipes() {}
-    
+
     public static ItemStack getSmeltingResult(Item i, Item j) {
         return getOutput(i, j);
     }
     
-    private static ItemStack getOutput(Item i, Item j) {
-        if (i == Items.coal && j == Items.iron_ingot || i == Items.iron_ingot && j == Items.coal) {
-            return new ItemStack(Items.gold_ingot, 1);
-        }
-        
-        if (i == MythicalIngot.itemCopperIngot && j == MythicalIngot.itemTinIngot || i == MythicalIngot.itemTinIngot && j == MythicalIngot.itemCopperIngot) {
+    public static ItemStack getOutput(Item input, Item input1) {
+    	
+       if (input == MythicalIngot.itemCopperIngot && input1 == MythicalIngot.itemTinIngot || input == MythicalIngot.itemTinIngot && input1 == MythicalIngot.itemCopperIngot) {
             return new ItemStack(MythicalIngot.itemBronzeIngot, 2);
         }
         

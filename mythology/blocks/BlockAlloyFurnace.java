@@ -126,26 +126,6 @@ public class BlockAlloyFurnace extends BlockContainer {
         return true;
     }
 
-    public static void updateFurnaceBlockState(boolean var1, World world, int x, int y, int z) {
-        int l = world.getBlockMetadata(x, y, z);
-        TileEntity tileentity = world.getTileEntity(x, y, z);
-        keepInventory = true;
-
-        if (var1) {
-            world.setBlock(x, y, z, MythicalBlocks.alloyFurnaceActive);
-        } else {
-            world.setBlock(x, y, z, MythicalBlocks.alloyFurnaceIdle);
-        }
-
-        keepInventory = false;
-        world.setBlockMetadataWithNotify(x, y, z, l, 2);
-
-        if (tileentity != null) {
-            tileentity.validate();
-            world.setTileEntity(x, y, z, tileentity);
-        }
-    }
-
     public TileEntity createNewTileEntity(World world, int useless) {
 
         return new TileEntityAlloyFurnace();
@@ -197,7 +177,7 @@ public class BlockAlloyFurnace extends BlockContainer {
         }
 
         if (itemstack.hasDisplayName()) {
-            ((TileEntityAlloyFurnace) world.getTileEntity(x, y, z)).setGuiDisplayName(itemstack.getDisplayName());
+            ((TileEntityAlloyFurnace) world.getTileEntity(x, y, z)).setCustomName((itemstack.getDisplayName()));
         }
     }
 
