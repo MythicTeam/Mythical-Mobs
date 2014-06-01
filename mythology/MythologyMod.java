@@ -6,7 +6,9 @@ import mythology.init.MythicalTools;
 import mythology.proxy.CommonProxy;
 import mythology.swervy.common.Resources;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -44,6 +46,13 @@ public class MythologyMod {
 		
 		public Item getTabIconItem() {
 			return Resources.underworldFlintAndBronze;
+		}
+	};
+	
+	public static CreativeTabs tabMythicalEgg = new CreativeTabs("tabMythicalEgg") {
+		
+		public Item getTabIconItem() {
+			return new ItemStack(Items.spawn_egg, 1, 2).getItem();
 		}
 	};
 	
