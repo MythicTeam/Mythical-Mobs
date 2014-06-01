@@ -39,10 +39,11 @@ public class BlockAlloyFurnace extends BlockContainer {
 
     @SideOnly(Side.CLIENT)
     protected IIcon iconFront;
-    
-    @SideOnly(Side.CLIENT)
+
+    @
+    SideOnly(Side.CLIENT)
     protected IIcon iconTop;
-    
+
     @SideOnly(Side.CLIENT)
     protected IIcon blockIcon;
 
@@ -96,7 +97,7 @@ public class BlockAlloyFurnace extends BlockContainer {
             if (jl.isNormalCube() && !kl.isNormalCube()) {
                 bO = 4;
             }
-            
+
             world.setBlockMetadataWithNotify(x, y, z, bO, 2);
         }
 
@@ -252,517 +253,438 @@ public class BlockAlloyFurnace extends BlockContainer {
         super.breakBlock(world, x, y, z, oldBlock, oldMetadata);
 
     }
-    
-	public boolean isMultiBlockStructure(World world, int x, int y, int z) {
-		if (checkNorth(world, x, y, z))/* North */
-			return true;
-		if (checkEast(world, x, y, z))/* East */
-			return true;
-		if (checkSouth(world, x, y, z))/* South */
-			return true;
-		if (checkWest(world, x, y, z))/* West */
-			return true;
-		return false;
-	}
 
-	private static boolean checkNorth(World world, int x, int y, int z) {
-		if (world.getBlock(x + -1, y + 0, z + 0) == Blocks.brick_block) {
-			if (world.getBlock(x + -1, y + 0, z + -1) == Blocks.brick_block) {
-				if (world.getBlock(x + -1, y + 0, z + -2) == Blocks.brick_block) {
-					if (world.getBlock(x + -1, y + 1, z + 0) == Blocks.brick_block) {
-						if (world.getBlock(x + -1, y + 1, z + -1) == Blocks.brick_block) {
-							if (world.getBlock(x + -1, y + 1, z + -2) == Blocks.brick_block) {
-								if (world.getBlock(x + -1, y + 2, z + 0) == Blocks.stone_slab) {
-									if (world.getBlock(x + -1, y + 2, z + -1) == Blocks.brick_block) {
-										if (world.getBlock(x + -1, y + 2, z
-												+ -2) == Blocks.stone_slab) {
-											if (world.getBlock(x + 0, y + 0,
-													z + -1) == Blocks.brick_block) {
-												if (world.getBlock(x + 0,
-														y + 0, z + -2) == Blocks.brick_block) {
-													if (world.getBlock(x + 0,
-															y + 1, z + 0) == Blocks.brick_block) {
-														if (world.getBlock(
-																x + 0, y + 1, z
-																		+ -1) == Blocks.air) {
-															if (world
-																	.getBlock(
-																			x + 0,
-																			y + 1,
-																			z
-																					+ -2) == Blocks.brick_block) {
-																if (world
-																		.getBlock(
-																				x + 0,
-																				y + 2,
-																				z + 0) == Blocks.brick_block) {
-																	if (world
-																			.getBlock(
-																					x + 0,
-																					y + 2,
-																					z
-																							+ -1) == Blocks.brick_block) {
-																		if (world
-																				.getBlock(
-																						x + 0,
-																						y + 2,
-																						z
-																								+ -2) == Blocks.brick_block) {
-																			if (world
-																					.getBlock(
-																							x + 1,
-																							y + 0,
-																							z + 0) == Blocks.brick_block) {
-																				if (world
-																						.getBlock(
-																								x + 1,
-																								y + 0,
-																								z
-																										+ -1) == Blocks.brick_block) {
-																					if (world
-																							.getBlock(
-																									x + 1,
-																									y + 0,
-																									z
-																											+ -2) == Blocks.brick_block) {
-																						if (world
-																								.getBlock(
-																										x + 1,
-																										y + 1,
-																										z + 0) == Blocks.brick_block) {
-																							if (world
-																									.getBlock(
-																											x + 1,
-																											y + 1,
-																											z
-																													+ -1) == Blocks.brick_block) {
-																								if (world
-																										.getBlock(
-																												x + 1,
-																												y + 1,
-																												z
-																														+ -2) == Blocks.brick_block) {
-																									if (world
-																											.getBlock(
-																													x + 1,
-																													y + 2,
-																													z + 0) == Blocks.stone_slab) {
-																										if (world
-																												.getBlock(
-																														x + 1,
-																														y + 2,
-																														z
-																																+ -1) == Blocks.brick_block) {
-																											if (world
-																													.getBlock(
-																															x + 1,
-																															y + 2,
-																															z
-																																	+ -2) == Blocks.stone_slab) {
-																													if(world.getBlock(x, y + 3, z) == Blocks.brick_block)
-																													{
-																												return true;
-																												}
-																											}
-																										}
-																									}
-																								}
-																							}
-																						}
-																					}
-																				}
-																			}
-																		}
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		return false;
-	}
+    public boolean isMultiBlockStructure(World world, int x, int y, int z) {
+        if (checkNorth(world, x, y, z)) /* North */
+            return true;
+        if (checkEast(world, x, y, z)) /* East */
+            return true;
+        if (checkSouth(world, x, y, z)) /* South */
+            return true;
+        if (checkWest(world, x, y, z)) /* West */
+            return true;
+        return false;
+    }
 
-	private static boolean checkEast(World world, int x, int y, int z) {
-		if (world.getBlock(x + 0, y + 0, z + -1) == Blocks.brick_block) {
-			if (world.getBlock(x + 1, y + 0, z + -1) == Blocks.brick_block) {
-				if (world.getBlock(x + 2, y + 0, z + -1) == Blocks.brick_block) {
-					if (world.getBlock(x + 0, y + 1, z + -1) == Blocks.brick_block) {
-						if (world.getBlock(x + 1, y + 1, z + -1) == Blocks.brick_block) {
-							if (world.getBlock(x + 2, y + 1, z + -1) == Blocks.brick_block) {
-								if (world.getBlock(x + 0, y + 2, z + -1) == Blocks.stone_slab) {
-									if (world.getBlock(x + 1, y + 2, z + -1) == Blocks.brick_block) {
-										if (world.getBlock(x + 2, y + 2, z
-												+ -1) == Blocks.stone_slab) {
-											if (world.getBlock(x + 1, y + 0,
-													z + 0) == Blocks.brick_block) {
-												if (world.getBlock(x + 2,
-														y + 0, z + 0) == Blocks.brick_block) {
-													if (world.getBlock(x + 0,
-															y + 1, z + 0) == Blocks.brick_block) {
-														if (world.getBlock(
-																x + 1, y + 1,
-																z + 0) == Blocks.air) {
-															if (world
-																	.getBlock(
-																			x + 2,
-																			y + 1,
-																			z + 0) == Blocks.brick_block) {
-																if (world
-																		.getBlock(
-																				x + 0,
-																				y + 2,
-																				z + 0) == Blocks.brick_block) {
-																	if (world
-																			.getBlock(
-																					x + 1,
-																					y + 2,
-																					z + 0) == Blocks.brick_block) {
-																		if (world
-																				.getBlock(
-																						x + 2,
-																						y + 2,
-																						z + 0) == Blocks.brick_block) {
-																			if (world
-																					.getBlock(
-																							x + 0,
-																							y + 0,
-																							z + 1) == Blocks.brick_block) {
-																				if (world
-																						.getBlock(
-																								x + 1,
-																								y + 0,
-																								z + 1) == Blocks.brick_block) {
-																					if (world
-																							.getBlock(
-																									x + 2,
-																									y + 0,
-																									z + 1) == Blocks.brick_block) {
-																						if (world
-																								.getBlock(
-																										x + 0,
-																										y + 1,
-																										z + 1) == Blocks.brick_block) {
-																							if (world
-																									.getBlock(
-																											x + 1,
-																											y + 1,
-																											z + 1) == Blocks.brick_block) {
-																								if (world
-																										.getBlock(
-																												x + 2,
-																												y + 1,
-																												z + 1) == Blocks.brick_block) {
-																									if (world
-																											.getBlock(
-																													x + 0,
-																													y + 2,
-																													z + 1) == Blocks.stone_slab) {
-																										if (world
-																												.getBlock(
-																														x + 1,
-																														y + 2,
-																														z + 1) == Blocks.brick_block) {
-																											if (world
-																													.getBlock(
-																															x + 2,
-																															y + 2,
-																															z + 1) == Blocks.stone_slab) {
-																												return true;
-																											}
-																										}
-																									}
-																								}
-																							}
-																						}
-																					}
-																				}
-																			}
-																		}
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		return false;
-	}
+    private static boolean checkNorth(World world, int x, int y, int z) {
+        if (world.getBlock(x + -1, y + 0, z + 0) == Blocks.brick_block) {
+            if (world.getBlock(x + -1, y + 0, z + -1) == Blocks.brick_block) {
+                if (world.getBlock(x + -1, y + 0, z + -2) == Blocks.brick_block) {
+                    if (world.getBlock(x + -1, y + 1, z + 0) == Blocks.brick_block) {
+                        if (world.getBlock(x + -1, y + 1, z + -1) == Blocks.brick_block) {
+                            if (world.getBlock(x + -1, y + 1, z + -2) == Blocks.brick_block) {
+                                if (world.getBlock(x + -1, y + 2, z + 0) == Blocks.stone_slab) {
+                                    if (world.getBlock(x + -1, y + 2, z + -1) == Blocks.brick_block) {
+                                        if (world.getBlock(x + -1, y + 2, z + -2) == Blocks.stone_slab) {
+                                            if (world.getBlock(x + 0, y + 0,
+                                                z + -1) == Blocks.brick_block) {
+                                                if (world.getBlock(x + 0,
+                                                    y + 0, z + -2) == Blocks.brick_block) {
+                                                    if (world.getBlock(x + 0,
+                                                        y + 1, z + 0) == Blocks.brick_block) {
+                                                        if (world.getBlock(
+                                                            x + 0, y + 1, z + -1) == Blocks.air) {
+                                                            if (world.getBlock(x + 0, y + 1, z + -2) == Blocks.brick_block) {
+                                                                if (world.getBlock(x + 0, y + 2, z + 0) == Blocks.brick_block) {
+                                                                    if (world.getBlock(x + 0, y + 2, z + -1) == Blocks.brick_block) {
+                                                                        if (world
+                                                                            .getBlock(x + 0, y + 2, z + -2) == Blocks.brick_block) {
+                                                                            if (world.getBlock(x + 1, y + 0, z + 0) == Blocks.brick_block) {
+                                                                                if (world
+                                                                                    .getBlock(
+                                                                                        x + 1,
+                                                                                        y + 0,
+                                                                                        z + -1) == Blocks.brick_block) {
+                                                                                    if (world
+                                                                                        .getBlock(
+                                                                                            x + 1,
+                                                                                            y + 0,
+                                                                                            z + -2) == Blocks.brick_block) {
+                                                                                        if (world
+                                                                                            .getBlock(
+                                                                                                x + 1,
+                                                                                                y + 1,
+                                                                                                z + 0) == Blocks.brick_block) {
+                                                                                            if (world.getBlock(x + 1, y + 1, z + -1) == Blocks.brick_block) {
+                                                                                                if (world.getBlock(x + 1, y + 1, z + -2) == Blocks.brick_block) {
+                                                                                                    if (world.getBlock(x + 1, y + 2, z + 0) == Blocks.stone_slab) {
+                                                                                                        if (world.getBlock(x + 1, y + 2, z + -1) == Blocks.brick_block) {
+                                                                                                            if (world
+                                                                                                                .getBlock(x + 1,  y + 2, z + -2) == Blocks.stone_slab) {
+                                                                                                                if (world.getBlock(x, y + 3, z) == Blocks.brick_block) {
+                                                                                                                    return true;
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
 
-	private static boolean checkSouth(World world, int x, int y, int z) {
-		if (world.getBlock(x + 1, y + 0, z + 0) == Blocks.brick_block) {
-			if (world.getBlock(x + 1, y + 0, z + 1) == Blocks.brick_block) {
-				if (world.getBlock(x + 1, y + 0, z + 2) == Blocks.brick_block) {
-					if (world.getBlock(x + 1, y + 1, z + 0) == Blocks.brick_block) {
-						if (world.getBlock(x + 1, y + 1, z + 1) == Blocks.brick_block) {
-							if (world.getBlock(x + 1, y + 1, z + 2) == Blocks.brick_block) {
-								if (world.getBlock(x + 1, y + 2, z + 0) == Blocks.stone_slab) {
-									if (world.getBlock(x + 1, y + 2, z + 1) == Blocks.brick_block) {
-										if (world.getBlock(x + 1, y + 2,
-												z + 2) == Blocks.stone_slab) {
-											if (world.getBlock(x + 0, y + 0,
-													z + 1) == Blocks.brick_block) {
-												if (world.getBlock(x + 0,
-														y + 0, z + 2) == Blocks.brick_block) {
-													if (world.getBlock(x + 0,
-															y + 1, z + 0) == Blocks.brick_block) {
-														if (world.getBlock(
-																x + 0, y + 1,
-																z + 1) == Blocks.air) {
-															if (world
-																	.getBlock(
-																			x + 0,
-																			y + 1,
-																			z + 2) == Blocks.brick_block) {
-																if (world
-																		.getBlock(
-																				x + 0,
-																				y + 2,
-																				z + 0) == Blocks.brick_block) {
-																	if (world
-																			.getBlock(
-																					x + 0,
-																					y + 2,
-																					z + 1) == Blocks.brick_block) {
-																		if (world
-																				.getBlock(
-																						x + 0,
-																						y + 2,
-																						z + 2) == Blocks.brick_block) {
-																			if (world
-																					.getBlock(
-																							x
-																									+ -1,
-																							y + 0,
-																							z + 0) == Blocks.brick_block) {
-																				if (world
-																						.getBlock(
-																								x
-																										+ -1,
-																								y + 0,
-																								z + 1) == Blocks.brick_block) {
-																					if (world
-																							.getBlock(
-																									x
-																											+ -1,
-																									y + 0,
-																									z + 2) == Blocks.brick_block) {
-																						if (world
-																								.getBlock(
-																										x
-																												+ -1,
-																										y + 1,
-																										z + 0) == Blocks.brick_block) {
-																							if (world
-																									.getBlock(
-																											x
-																													+ -1,
-																											y + 1,
-																											z + 1) == Blocks.brick_block) {
-																								if (world
-																										.getBlock(
-																												x
-																														+ -1,
-																												y + 1,
-																												z + 2) == Blocks.brick_block) {
-																									if (world
-																											.getBlock(
-																													x
-																															+ -1,
-																													y + 2,
-																													z + 0) == Blocks.stone_slab) {
-																										if (world
-																												.getBlock(
-																														x
-																																+ -1,
-																														y + 2,
-																														z + 1) == Blocks.brick_block) {
-																											if (world
-																													.getBlock(
-																															x
-																																	+ -1,
-																															y + 2,
-																															z + 2) == Blocks.stone_slab) {
-																												return true;
-																											}
-																										}
-																									}
-																								}
-																							}
-																						}
-																					}
-																				}
-																			}
-																		}
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		return false;
-	}
+    private static boolean checkEast(World world, int x, int y, int z) {
+        if (world.getBlock(x + 0, y + 0, z + -1) == Blocks.brick_block) {
+            if (world.getBlock(x + 1, y + 0, z + -1) == Blocks.brick_block) {
+                if (world.getBlock(x + 2, y + 0, z + -1) == Blocks.brick_block) {
+                    if (world.getBlock(x + 0, y + 1, z + -1) == Blocks.brick_block) {
+                        if (world.getBlock(x + 1, y + 1, z + -1) == Blocks.brick_block) {
+                            if (world.getBlock(x + 2, y + 1, z + -1) == Blocks.brick_block) {
+                                if (world.getBlock(x + 0, y + 2, z + -1) == Blocks.stone_slab) {
+                                    if (world.getBlock(x + 1, y + 2, z + -1) == Blocks.brick_block) {
+                                        if (world.getBlock(x + 2, y + 2, z + -1) == Blocks.stone_slab) {
+                                            if (world.getBlock(x + 1, y + 0,
+                                                z + 0) == Blocks.brick_block) {
+                                                if (world.getBlock(x + 2,
+                                                    y + 0, z + 0) == Blocks.brick_block) {
+                                                    if (world.getBlock(x + 0,
+                                                        y + 1, z + 0) == Blocks.brick_block) {
+                                                        if (world.getBlock(
+                                                            x + 1, y + 1,
+                                                            z + 0) == Blocks.air) {
+                                                            if (world
+                                                                .getBlock(
+                                                                    x + 2,
+                                                                    y + 1,
+                                                                    z + 0) == Blocks.brick_block) {
+                                                                if (world
+                                                                    .getBlock(
+                                                                        x + 0,
+                                                                        y + 2,
+                                                                        z + 0) == Blocks.brick_block) {
+                                                                    if (world
+                                                                        .getBlock(
+                                                                            x + 1,
+                                                                            y + 2,
+                                                                            z + 0) == Blocks.brick_block) {
+                                                                        if (world
+                                                                            .getBlock(
+                                                                                x + 2,
+                                                                                y + 2,
+                                                                                z + 0) == Blocks.brick_block) {
+                                                                            if (world
+                                                                                .getBlock(
+                                                                                    x + 0,
+                                                                                    y + 0,
+                                                                                    z + 1) == Blocks.brick_block) {
+                                                                                if (world
+                                                                                    .getBlock(
+                                                                                        x + 1,
+                                                                                        y + 0,
+                                                                                        z + 1) == Blocks.brick_block) {
+                                                                                    if (world
+                                                                                        .getBlock(
+                                                                                            x + 2,
+                                                                                            y + 0,
+                                                                                            z + 1) == Blocks.brick_block) {
+                                                                                        if (world
+                                                                                            .getBlock(
+                                                                                                x + 0,
+                                                                                                y + 1,
+                                                                                                z + 1) == Blocks.brick_block) {
+                                                                                            if (world
+                                                                                                .getBlock(
+                                                                                                    x + 1,
+                                                                                                    y + 1,
+                                                                                                    z + 1) == Blocks.brick_block) {
+                                                                                                if (world
+                                                                                                    .getBlock(
+                                                                                                        x + 2,
+                                                                                                        y + 1,
+                                                                                                        z + 1) == Blocks.brick_block) {
+                                                                                                    if (world
+                                                                                                        .getBlock(
+                                                                                                            x + 0,
+                                                                                                            y + 2,
+                                                                                                            z + 1) == Blocks.stone_slab) {
+                                                                                                        if (world
+                                                                                                            .getBlock(
+                                                                                                                x + 1,
+                                                                                                                y + 2,
+                                                                                                                z + 1) == Blocks.brick_block) {
+                                                                                                            if (world
+                                                                                                                .getBlock(
+                                                                                                                    x + 2,
+                                                                                                                    y + 2,
+                                                                                                                    z + 1) == Blocks.stone_slab) {
+                                                                                                                return true;
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
 
-	private static boolean checkWest(World world, int x, int y, int z) {
-		if (world.getBlock(x + 0, y + 0, z + 1) == Blocks.brick_block) {
-			if (world.getBlock(x + -1, y + 0, z + 1) == Blocks.brick_block) {
-				if (world.getBlock(x + -2, y + 0, z + 1) == Blocks.brick_block) {
-					if (world.getBlock(x + 0, y + 1, z + 1) == Blocks.brick_block) {
-						if (world.getBlock(x + -1, y + 1, z + 1) == Blocks.brick_block) {
-							if (world.getBlock(x + -2, y + 1, z + 1) == Blocks.brick_block) {
-								if (world.getBlock(x + 0, y + 2, z + 1) == Blocks.stone_slab) {
-									if (world.getBlock(x + -1, y + 2, z + 1) == Blocks.brick_block) {
-										if (world.getBlock(x + -2, y + 2,
-												z + 1) == Blocks.stone_slab) {
-											if (world.getBlock(x + -1, y + 0,
-													z + 0) == Blocks.brick_block) {
-												if (world.getBlock(x + -2,
-														y + 0, z + 0) == Blocks.brick_block) {
-													if (world.getBlock(x + 0,
-															y + 1, z + 0) == Blocks.brick_block) {
-														if (world.getBlock(x
-																+ -1, y + 1,
-																z + 0) == Blocks.air) {
-															if (world
-																	.getBlock(
-																			x
-																					+ -2,
-																			y + 1,
-																			z + 0) == Blocks.brick_block) {
-																if (world
-																		.getBlock(
-																				x + 0,
-																				y + 2,
-																				z + 0) == Blocks.brick_block) {
-																	if (world
-																			.getBlock(
-																					x
-																							+ -1,
-																					y + 2,
-																					z + 0) == Blocks.brick_block) {
-																		if (world
-																				.getBlock(
-																						x
-																								+ -2,
-																						y + 2,
-																						z + 0) == Blocks.brick_block) {
-																			if (world
-																					.getBlock(
-																							x + 0,
-																							y + 0,
-																							z
-																									+ -1) == Blocks.brick_block) {
-																				if (world
-																						.getBlock(
-																								x
-																										+ -1,
-																								y + 0,
-																								z
-																										+ -1) == Blocks.brick_block) {
-																					if (world
-																							.getBlock(
-																									x
-																											+ -2,
-																									y + 0,
-																									z
-																											+ -1) == Blocks.brick_block) {
-																						if (world
-																								.getBlock(
-																										x + 0,
-																										y + 1,
-																										z
-																												+ -1) == Blocks.brick_block) {
-																							if (world
-																									.getBlock(
-																											x
-																													+ -1,
-																											y + 1,
-																											z
-																													+ -1) == Blocks.brick_block) {
-																								if (world
-																										.getBlock(
-																												x
-																														+ -2,
-																												y + 1,
-																												z
-																														+ -1) == Blocks.brick_block) {
-																									if (world
-																											.getBlock(
-																													x + 0,
-																													y + 2,
-																													z
-																															+ -1) == Blocks.stone_slab) {
-																										if (world
-																												.getBlock(
-																														x
-																																+ -1,
-																														y + 2,
-																														z
-																																+ -1) == Blocks.brick_block) {
-																											if (world
-																													.getBlock(
-																															x
-																																	+ -2,
-																															y + 2,
-																															z
-																																	+ -1) == Blocks.stone_slab) {
-																												return true;
-																											}
-																										}
-																									}
-																								}
-																							}
-																						}
-																					}
-																				}
-																			}
-																		}
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		return false;
-	}
+    private static boolean checkSouth(World world, int x, int y, int z) {
+        if (world.getBlock(x + 1, y + 0, z + 0) == Blocks.brick_block) {
+            if (world.getBlock(x + 1, y + 0, z + 1) == Blocks.brick_block) {
+                if (world.getBlock(x + 1, y + 0, z + 2) == Blocks.brick_block) {
+                    if (world.getBlock(x + 1, y + 1, z + 0) == Blocks.brick_block) {
+                        if (world.getBlock(x + 1, y + 1, z + 1) == Blocks.brick_block) {
+                            if (world.getBlock(x + 1, y + 1, z + 2) == Blocks.brick_block) {
+                                if (world.getBlock(x + 1, y + 2, z + 0) == Blocks.stone_slab) {
+                                    if (world.getBlock(x + 1, y + 2, z + 1) == Blocks.brick_block) {
+                                        if (world.getBlock(x + 1, y + 2,
+                                            z + 2) == Blocks.stone_slab) {
+                                            if (world.getBlock(x + 0, y + 0,
+                                                z + 1) == Blocks.brick_block) {
+                                                if (world.getBlock(x + 0,
+                                                    y + 0, z + 2) == Blocks.brick_block) {
+                                                    if (world.getBlock(x + 0,
+                                                        y + 1, z + 0) == Blocks.brick_block) {
+                                                        if (world.getBlock(
+                                                            x + 0, y + 1,
+                                                            z + 1) == Blocks.air) {
+                                                            if (world
+                                                                .getBlock(
+                                                                    x + 0,
+                                                                    y + 1,
+                                                                    z + 2) == Blocks.brick_block) {
+                                                                if (world
+                                                                    .getBlock(
+                                                                        x + 0,
+                                                                        y + 2,
+                                                                        z + 0) == Blocks.brick_block) {
+                                                                    if (world
+                                                                        .getBlock(
+                                                                            x + 0,
+                                                                            y + 2,
+                                                                            z + 1) == Blocks.brick_block) {
+                                                                        if (world
+                                                                            .getBlock(
+                                                                                x + 0,
+                                                                                y + 2,
+                                                                                z + 2) == Blocks.brick_block) {
+                                                                            if (world
+                                                                                .getBlock(
+                                                                                    x + -1,
+                                                                                    y + 0,
+                                                                                    z + 0) == Blocks.brick_block) {
+                                                                                if (world
+                                                                                    .getBlock(
+                                                                                        x + -1,
+                                                                                        y + 0,
+                                                                                        z + 1) == Blocks.brick_block) {
+                                                                                    if (world
+                                                                                        .getBlock(
+                                                                                            x + -1,
+                                                                                            y + 0,
+                                                                                            z + 2) == Blocks.brick_block) {
+                                                                                        if (world
+                                                                                            .getBlock(
+                                                                                                x + -1,
+                                                                                                y + 1,
+                                                                                                z + 0) == Blocks.brick_block) {
+                                                                                            if (world
+                                                                                                .getBlock(
+                                                                                                    x + -1,
+                                                                                                    y + 1,
+                                                                                                    z + 1) == Blocks.brick_block) {
+                                                                                                if (world
+                                                                                                    .getBlock(
+                                                                                                        x + -1,
+                                                                                                        y + 1,
+                                                                                                        z + 2) == Blocks.brick_block) {
+                                                                                                    if (world
+                                                                                                        .getBlock(
+                                                                                                            x + -1,
+                                                                                                            y + 2,
+                                                                                                            z + 0) == Blocks.stone_slab) {
+                                                                                                        if (world
+                                                                                                            .getBlock(
+                                                                                                                x + -1,
+                                                                                                                y + 2,
+                                                                                                                z + 1) == Blocks.brick_block) {
+                                                                                                            if (world
+                                                                                                                .getBlock(
+                                                                                                                    x + -1,
+                                                                                                                    y + 2,
+                                                                                                                    z + 2) == Blocks.stone_slab) {
+                                                                                                                return true;
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    private static boolean checkWest(World world, int x, int y, int z) {
+        if (world.getBlock(x + 0, y + 0, z + 1) == Blocks.brick_block) {
+            if (world.getBlock(x + -1, y + 0, z + 1) == Blocks.brick_block) {
+                if (world.getBlock(x + -2, y + 0, z + 1) == Blocks.brick_block) {
+                    if (world.getBlock(x + 0, y + 1, z + 1) == Blocks.brick_block) {
+                        if (world.getBlock(x + -1, y + 1, z + 1) == Blocks.brick_block) {
+                            if (world.getBlock(x + -2, y + 1, z + 1) == Blocks.brick_block) {
+                                if (world.getBlock(x + 0, y + 2, z + 1) == Blocks.stone_slab) {
+                                    if (world.getBlock(x + -1, y + 2, z + 1) == Blocks.brick_block) {
+                                        if (world.getBlock(x + -2, y + 2,
+                                            z + 1) == Blocks.stone_slab) {
+                                            if (world.getBlock(x + -1, y + 0,
+                                                z + 0) == Blocks.brick_block) {
+                                                if (world.getBlock(x + -2,
+                                                    y + 0, z + 0) == Blocks.brick_block) {
+                                                    if (world.getBlock(x + 0,
+                                                        y + 1, z + 0) == Blocks.brick_block) {
+                                                        if (world.getBlock(x + -1, y + 1,
+                                                            z + 0) == Blocks.air) {
+                                                            if (world
+                                                                .getBlock(
+                                                                    x + -2,
+                                                                    y + 1,
+                                                                    z + 0) == Blocks.brick_block) {
+                                                                if (world
+                                                                    .getBlock(
+                                                                        x + 0,
+                                                                        y + 2,
+                                                                        z + 0) == Blocks.brick_block) {
+                                                                    if (world
+                                                                        .getBlock(
+                                                                            x + -1,
+                                                                            y + 2,
+                                                                            z + 0) == Blocks.brick_block) {
+                                                                        if (world
+                                                                            .getBlock(
+                                                                                x + -2,
+                                                                                y + 2,
+                                                                                z + 0) == Blocks.brick_block) {
+                                                                            if (world
+                                                                                .getBlock(
+                                                                                    x + 0,
+                                                                                    y + 0,
+                                                                                    z + -1) == Blocks.brick_block) {
+                                                                                if (world
+                                                                                    .getBlock(
+                                                                                        x + -1,
+                                                                                        y + 0,
+                                                                                        z + -1) == Blocks.brick_block) {
+                                                                                    if (world
+                                                                                        .getBlock(
+                                                                                            x + -2,
+                                                                                            y + 0,
+                                                                                            z + -1) == Blocks.brick_block) {
+                                                                                        if (world
+                                                                                            .getBlock(
+                                                                                                x + 0,
+                                                                                                y + 1,
+                                                                                                z + -1) == Blocks.brick_block) {
+                                                                                            if (world
+                                                                                                .getBlock(
+                                                                                                    x + -1,
+                                                                                                    y + 1,
+                                                                                                    z + -1) == Blocks.brick_block) {
+                                                                                                if (world
+                                                                                                    .getBlock(
+                                                                                                        x + -2,
+                                                                                                        y + 1,
+                                                                                                        z + -1) == Blocks.brick_block) {
+                                                                                                    if (world
+                                                                                                        .getBlock(
+                                                                                                            x + 0,
+                                                                                                            y + 2,
+                                                                                                            z + -1) == Blocks.stone_slab) {
+                                                                                                        if (world
+                                                                                                            .getBlock(
+                                                                                                                x + -1,
+                                                                                                                y + 2,
+                                                                                                                z + -1) == Blocks.brick_block) {
+                                                                                                            if (world
+                                                                                                                .getBlock(
+                                                                                                                    x + -2,
+                                                                                                                    y + 2,
+                                                                                                                    z + -1) == Blocks.stone_slab) {
+                                                                                                                return true;
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
 
     public boolean hasComparatorInputOverride() {
         return true;

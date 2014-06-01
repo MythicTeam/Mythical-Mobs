@@ -11,6 +11,11 @@ entity.mobFairy.name=Fairy
 tile.underworldFire.name=Underworld Fire
 tile.underworldPortal.name=Underworld Portal
 
+tile.deadDirt.name=Dead Dirt
+tile.deadGrass.name=Dead Grass
+tile.deadStone.name=Dead Stone
+tile.deadRack.name=Dead Rack
+
 item.itemFlintAndBronze.name=Flint And Bronze
 
 //Ores

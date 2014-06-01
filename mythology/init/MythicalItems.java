@@ -16,7 +16,7 @@ import net.minecraft.item.Item.ToolMaterial;
 public class MythicalItems {
 	
 	private static MythologyMod m = new MythologyMod();
-		
+	
 	public static Item itemMithrilNugget = new Item().setUnlocalizedName("mithrilNugget").setCreativeTab(m.tabMythical).setTextureName("mythical" + ":" + "itemMithrilNugget");
 	public static Item itemMithrilChain = new Item().setUnlocalizedName("mithrilChain").setCreativeTab(m.tabMythical).setTextureName("mythical" + ":" + "itemMithrilChain");
 	public static Item itemMithrilMail = new Item().setUnlocalizedName("mithrilMail").setCreativeTab(m.tabMythical).setTextureName("mythical" + ":" + "itemMithrilMail");

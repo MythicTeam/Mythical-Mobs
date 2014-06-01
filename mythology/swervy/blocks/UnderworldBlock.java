@@ -1,6 +1,7 @@
-package mythology.blocks;
+package mythology.swervy.blocks;
 
 import mythology.MythologyMod;
+import mythology.blocks.MythBlock;
 import mythology.init.MythicalBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -13,6 +14,6 @@ public class UnderworldBlock extends MythBlock {
 	public UnderworldBlock(String name, Material material) {
 		super(material, name);
 		this.setBlockTextureName(m.modid + ":underworld/" + name);
-		this.setCreativeTab(m.tabMythical);
+		this.setCreativeTab(m.tabMythicalUnderworld);
 	}
 }

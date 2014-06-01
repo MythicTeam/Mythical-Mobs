@@ -22,8 +22,6 @@ import mythology.blocks.BlockSilverOre;
 import mythology.blocks.BlockTinBlock;
 import mythology.blocks.BlockTinOre;
 import mythology.blocks.BlockZincOre;
-import mythology.blocks.UnderworldBlock;
-import mythology.blocks.UnderworldGrass;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -44,8 +42,6 @@ public class MythicalBlocks {
 	public static Block blockImperialGoldOre = new BlockImperialGoldOre("oreImperialGold", m.tabMythical, Material.rock);
 	public static Block blockCelestialBronzeOre = new BlockCelestialBronzeOre("oreCelestialBronze", m.tabMythical, Material.rock);
 
-	public static Block underworldGrass = new UnderworldGrass("underworldGrass", Material.grass);
-	public static Block underworldDirt = new UnderworldBlock("underworldDirt", Material.ground).setHardness(0.6F).setStepSound(Blocks.gravel.stepSound);
 	public static Block blockSilverBlock = new BlockSilverBlock("silverBlock", m.tabMythical, Material.iron);
 	public static Block blockBronzeBlock = new BlockBronzeBlock("bronzeBlock", m.tabMythical, Material.iron);
 	public static Block blockCopperBlock = new BlockCopperBlock("copperBlock", m.tabMythical, Material.iron);

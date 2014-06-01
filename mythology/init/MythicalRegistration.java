@@ -93,37 +93,36 @@ public class MythicalRegistration {
 	
 	private static void registerOreDictionary() {
 		
-    	//Blocks
-    	OreDictionary.registerOre("oreZinc", mb.blockZincOre);
-    	OreDictionary.registerOre("oreMythril", mb.blockMithrilOre);
-    	OreDictionary.registerOre("oreMithril", mb.blockMithrilOre);
-    	OreDictionary.registerOre("oreCopper", mb.blockCopperOre);
-    	OreDictionary.registerOre("oreTin", mb.blockTinOre);
-    	OreDictionary.registerOre("oreSilver", mb.blockSilverOre);
-    	OreDictionary.registerOre("orePlatinum", mb.blockPlatinumOre);
-    	OreDictionary.registerOre("oreRuby", mb.blockRubyOre);
-    	OreDictionary.registerOre("oreSapphire", mb.blockSapphireOre);
-    	OreDictionary.registerOre("oreCelestialBronze", mb.blockCelestialBronzeOre);
-    	OreDictionary.registerOre("oreImperialGold", mb.blockImperialGoldOre);
+		//Blocks
+	     OreDictionary.registerOre("oreZinc", mb.blockZincOre);
+	     OreDictionary.registerOre("oreMythril", mb.blockMithrilOre);
+	     OreDictionary.registerOre("oreMithril", mb.blockMithrilOre);
+	     OreDictionary.registerOre("oreCopper", mb.blockCopperOre);
+	     OreDictionary.registerOre("oreTin", mb.blockTinOre);
+	     OreDictionary.registerOre("oreSilver", mb.blockSilverOre);
+	     OreDictionary.registerOre("orePlatinum", mb.blockPlatinumOre);
+	     OreDictionary.registerOre("oreRuby", mb.blockRubyOre);
+	     OreDictionary.registerOre("oreSapphire", mb.blockSapphireOre);
+	     OreDictionary.registerOre("oreCelestialBronze", mb.blockCelestialBronzeOre);
+	     OreDictionary.registerOre("oreImperialGold", mb.blockImperialGoldOre);
 
-    	//Items
-    	OreDictionary.registerOre("ingotCopper", mii.itemCopperIngot);
-    	OreDictionary.registerOre("ingotTin", mii.itemTinIngot);
-    	OreDictionary.registerOre("ingotBronze", mii.itemBronzeIngot);
-    	OreDictionary.registerOre("ingotCelestialBronze", mii.itemCelestialBronzeIngot);
-    	OreDictionary.registerOre("ingotImperialGold", mii.itemImperialGoldIngot);
-    	OreDictionary.registerOre("ingotPlatinum", mii.itemPlatinumIngot);
-    	OreDictionary.registerOre("ingotMithril", mii.itemMithrilIngot);
-    	OreDictionary.registerOre("ingotMythril", mii.itemMithrilIngot);
-    	OreDictionary.registerOre("itemRuby", mii.itemRuby);
-    	OreDictionary.registerOre("gemSapphire", mii.itemSapphire);
-    	OreDictionary.registerOre("nuggetMythril", mi.itemMithrilNugget);
-    	OreDictionary.registerOre("nuggetMithril", mi.itemMithrilNugget);
-    	OreDictionary.registerOre("materialMithrilChain", mi.itemMithrilChain);
-    	OreDictionary.registerOre("materialMythrilChain", mi.itemMithrilChain);
-    	OreDictionary.registerOre("materialMythrilMail", mi.itemMithrilMail);
-    	OreDictionary.registerOre("materialMithrilMail", mi.itemMithrilMail);
-
+	     //Items
+	     OreDictionary.registerOre("ingotCopper", mii.itemCopperIngot);
+	     OreDictionary.registerOre("ingotTin", mii.itemTinIngot);
+	     OreDictionary.registerOre("ingotBronze", mii.itemBronzeIngot);
+	     OreDictionary.registerOre("ingotCelestialBronze", mii.itemCelestialBronzeIngot);
+	     OreDictionary.registerOre("ingotImperialGold", mii.itemImperialGoldIngot);
+	     OreDictionary.registerOre("ingotPlatinum", mii.itemPlatinumIngot);
+	     OreDictionary.registerOre("ingotMithril", mii.itemMithrilIngot);
+	     OreDictionary.registerOre("ingotMythril", mii.itemMithrilIngot);
+	     OreDictionary.registerOre("itemRuby", mii.itemRuby);
+	     OreDictionary.registerOre("gemSapphire", mii.itemSapphire);
+	     OreDictionary.registerOre("nuggetMythril", mi.itemMithrilNugget);
+	     OreDictionary.registerOre("nuggetMithril", mi.itemMithrilNugget);
+	     OreDictionary.registerOre("materialMithrilChain", mi.itemMithrilChain);
+	     OreDictionary.registerOre("materialMythrilChain", mi.itemMithrilChain);
+	     OreDictionary.registerOre("materialMythrilMail", mi.itemMithrilMail);
+	     OreDictionary.registerOre("materialMithrilMail", mi.itemMithrilMail);
 	}
 	
 	private static void registerWorldGenerator() {
@@ -139,7 +138,7 @@ public class MythicalRegistration {
 		MinecraftForge.EVENT_BUS.register(new MythEventHandler());
 	}
 	
-	private static void registerCraftingRecipes() {
+	private static void registerSmeltingRecipes() {
 		GameRegistry.addSmelting(mb.blockCopperOre, new ItemStack(mii.itemCopperIngot, 1), 0.7F);
 		GameRegistry.addSmelting(mb.blockTinOre, new ItemStack(mii.itemTinIngot, 1), 0.7F);
 		GameRegistry.addSmelting(mb.blockCelestialBronzeOre, new ItemStack(mii.itemCelestialBronzeIngot, 1), 1.0F);
@@ -152,7 +151,7 @@ public class MythicalRegistration {
 		GameRegistry.addSmelting(mb.blockSapphireOre, new ItemStack(mii.itemSapphire, 2), 0.7F);
 	}
 	
-	private static void registerSmeltingRecipes() {
+	private static void registerCraftingRecipes() {
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mt.shovelBronze, 1), new Object[] { "I", "I", "S", 'I', "ingotBronze", 'S', Items.stick}));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mt.pickaxeBronze, 1), new Object[] { "III", " S ", " S ", 'I', "ingotBronze", 'S', Items.stick }));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mt.axeBronze, 1), new Object[] { "II", "IS", " S", 'I', "ingotBronze", 'S', Items.stick }));

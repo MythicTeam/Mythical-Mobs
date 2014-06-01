@@ -37,13 +37,9 @@ public class MythicalWorldGen implements IWorldGenerator {
 		default:
 			;
 		}
-
 	}
 
 	private void generateNether(Random random, int i, int j, World world) {
-
-		
-        
 
 	}
 

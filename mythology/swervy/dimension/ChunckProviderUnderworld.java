@@ -169,10 +169,10 @@ public class ChunckProviderUnderworld implements IChunkProvider {
         this.mobSpawnerNoise = (NoiseGeneratorOctaves) noiseGens[6];
     }
 
-    public void func_147424_a(int p_147424_1_, int p_147424_2_, Block[] p_147424_3_) {
+    public void func_147424_a(int var1, int var2, Block[] block) {
         byte b0 = 63;
-        this.biomesForGeneration = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomesForGeneration, p_147424_1_ * 4 - 2, p_147424_2_ * 4 - 2, 10, 10);
-        this.func_147423_a(p_147424_1_ * 4, 0, p_147424_2_ * 4);
+        this.biomesForGeneration = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomesForGeneration, var1 * 4 - 2, var2 * 4 - 2, 10, 10);
+        this.func_147423_a(var1 * 4, 0, var2 * 4);
 
         for (int k = 0; k < 4; ++k) {
             int l = k * 5;
@@ -212,11 +212,11 @@ public class ChunckProviderUnderworld implements IChunkProvider {
 
                             for (int k3 = 0; k3 < 4; ++k3) {
                                 if ((d15 += d16) > 0.0D) {
-                                    p_147424_3_[j3 += short1] = Blocks.stone;
+                                	block[j3 += short1] = Blocks.stone;
                                 } else if (k2 * 8 + l2 < b0) {
-                                    p_147424_3_[j3 += short1] = Blocks.water;
+                                	block[j3 += short1] = Blocks.water;
                                 } else {
-                                    p_147424_3_[j3 += short1] = null;
+                                	block[j3 += short1] = null;
                                 }
                             }
 
@@ -454,7 +454,7 @@ public class ChunckProviderUnderworld implements IChunkProvider {
             (new WorldGenDungeons()).generate(this.worldObj, this.rand, l1, i2, j2);
         }
 
-        biomegenbase.decorate(this.worldObj, this.rand, k, l);
+        //biomegenbase.decorate(this.worldObj, this.rand, k, l);
         if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, flag, ANIMALS)) {
             SpawnerAnimals.performWorldGenSpawning(this.worldObj, biomegenbase, k + 8, l + 8, 16, 16, this.rand);
         }

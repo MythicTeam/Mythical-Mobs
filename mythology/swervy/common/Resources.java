@@ -3,8 +3,11 @@ package mythology.swervy.common;
 import mythology.MythologyMod;
 import mythology.swervy.biomes.BiomeUnderworld;
 import mythology.swervy.blocks.BlockBlueFire;
+import mythology.swervy.blocks.BlockDeadGrass;
+import mythology.swervy.blocks.BlockDeadRack;
 import mythology.swervy.blocks.BlockDeadStone;
 import mythology.swervy.blocks.BlockPortalBlock;
+import mythology.swervy.blocks.UnderworldBlock;
 import mythology.swervy.items.ItemFlintAndBronze;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -23,5 +26,9 @@ public class Resources {
 	public static Block blockPortal = new BlockPortalBlock("underworldPortal", Material.portal);
 	public static Block blockBlueFire = new BlockBlueFire("underworldFire", Material.fire) ;
 	
-	public static Block blockDeadStone = new BlockDeadStone("deadStone", m.tabMythical, Material.rock);
+	public static Block blockDeadGrass = new BlockDeadGrass("deadGrass", Material.grass);
+	public static Block blockDeadDirt = new UnderworldBlock("deadDirt", Material.ground).setHardness(0.6F).setStepSound(Blocks.gravel.stepSound);
+
+	public static Block blockDeadStone = new BlockDeadStone("deadStone", Material.rock);
+	public static Block blockDeadRack = new BlockDeadRack("deadRack", Material.rock);
 }
