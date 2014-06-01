@@ -1,7 +1,7 @@
 package mythology.init;
 
 import net.minecraft.world.biome.BiomeGenBase;
-import mythology.biomes.BiomeUnderworld;
+import mythology.swervy.biomes.BiomeUnderworld;
 
 public class MythicalBiomes {
 

@@ -1,11 +1,12 @@
-package mythology.items.underworld;
+package mythology.swervy.items;
 
 import java.util.Random;
 
 import mythology.MythologyMod;
-import mythology.blocks.underworld.BlockPortalBlock;
 import mythology.init.MythicalBlocks;
 import mythology.init.MythicalItems;
+import mythology.swervy.blocks.BlockPortalBlock;
+import mythology.swervy.common.Resources;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -69,7 +70,7 @@ public class ItemFlintAndBronze extends Item {
             if (par3World.isAirBlock(par4, par5, par6))
             {
                 par3World.playSoundEffect((double)par4 + 0.5D, (double)par5 + 0.5D, (double)par6 + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-                par3World.setBlock(par4, par5, par6, MythicalBlocks.blockBlueFire);
+                par3World.setBlock(par4, par5, par6, Resources.blockBlueFire);
             }
 
             par1ItemStack.damageItem(1, par2EntityPlayer);

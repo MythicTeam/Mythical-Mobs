@@ -24,20 +24,16 @@ import mythology.blocks.BlockSilverOre;
 import mythology.blocks.BlockTinBlock;
 import mythology.blocks.BlockTinOre;
 import mythology.blocks.BlockZincOre;
-import mythology.blocks.underworld.BlockBlueFire;
-import mythology.blocks.underworld.BlockDeadStone;
-import mythology.blocks.underworld.BlockPortalBlock;
+import mythology.swervy.blocks.BlockBlueFire;
+import mythology.swervy.blocks.BlockDeadStone;
+import mythology.swervy.blocks.BlockPortalBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
 
 public class MythicalBlocks {
 
 	private static MythologyMod m = new MythologyMod();
-	
-	public static Block blockPortial = new BlockPortalBlock("underworldPortal", Material.portal);
-	public static Block blockBlueFire = new BlockBlueFire("underworldFire", Material.fire) ;
-	
-	public static Block blockDeadStone = new BlockDeadStone("deadStone", m.tabMythical, Material.rock);
 	
 	public static Block blockMithrilOre = new BlockMithrilOre("oreMithril", m.tabMythical, Material.rock);
 	public static Block blockZincOre = new BlockZincOre("oreZinc", m.tabMythical, Material.rock);

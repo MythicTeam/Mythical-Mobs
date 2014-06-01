@@ -1,13 +1,15 @@
-package mythology.blocks.underworld;
+package mythology.swervy.blocks;
 
 import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mythology.MythologyMod;
-import mythology.dimension.underworld.TelporterUnderworld;
 import mythology.init.MythicalBlocks;
 import mythology.init.MythicalRegistration;
+import mythology.swervy.common.Registration;
+import mythology.swervy.common.Resources;
+import mythology.swervy.dimension.TelporterUnderworld;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPortal;
 import net.minecraft.block.material.Material;
@@ -42,22 +44,8 @@ public class BlockPortalBlock extends BlockPortal {
         this.setCreativeTab(MythologyMod.tabMythicalUnderworld);
         this.setHardness(-1.0F);
         this.setLightLevel(0.75F);
-        //this.setBlockTextureName(getTextureFile());
-    }
-    
-
-	public String getTextureFile() {
-		return MythologyMod.modid + ":" + "underworldPortal";
-	}
-	            
-    
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister icon) {
-    	//icon.registerIcon(MythologyMod.modid + ":" + "underworldPortal");
-    	this.field_149850_M = new IIcon[] {
-                icon.registerIcon(this.getTextureName()), icon.registerIcon(this.getTextureName())
-            };
-    }
+        //this.setBlockTextureName(MythologyMod.modid + ":" + "underworldPortal");
+    }  
 
     public void updateTick(World p_149674_1_, int p_149674_2_, int p_149674_3_, int p_149674_4_, Random p_149674_5_) {
         super.updateTick(p_149674_1_, p_149674_2_, p_149674_3_, p_149674_4_, p_149674_5_);
@@ -184,9 +172,9 @@ public class BlockPortalBlock extends BlockPortal {
         	
         	if(player.timeUntilPortal > 0) {
         		player.timeUntilPortal = 10;
-        	} else if(player.dimension != MythicalRegistration.underworld) {
+        	} else if(player.dimension != Registration.underworld) {
         		player.timeUntilPortal = 10;
-        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, MythicalRegistration.underworld, new TelporterUnderworld(server.worldServerForDimension(MythicalRegistration.underworld)));       		
+        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, Registration.underworld, new TelporterUnderworld(server.worldServerForDimension(Registration.underworld)));       		
         	} else {
         		player.timeUntilPortal = 10;
         		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new TelporterUnderworld(server.worldServerForDimension(0)));
@@ -324,7 +312,7 @@ public class BlockPortalBlock extends BlockPortal {
                         break label56;
                     }
 
-                    if (block == MythicalBlocks.blockPortial) {
+                    if (block == Resources.blockPortial) {
                        this.field_150864_e++;
                     }
 
@@ -366,7 +354,7 @@ public class BlockPortalBlock extends BlockPortal {
         }
 
         protected boolean func_150857_a(Block p_150857_1_) {
-            return p_150857_1_.getMaterial() == Material.air || p_150857_1_ == Blocks.fire || p_150857_1_ == MythicalBlocks.blockPortial;
+            return p_150857_1_.getMaterial() == Material.air || p_150857_1_ == Resources.blockBlueFire || p_150857_1_ == Resources.blockPortial;
         }
 
         public boolean func_150860_b() {
@@ -380,7 +368,7 @@ public class BlockPortalBlock extends BlockPortal {
 
                 for (int l = 0; l < this.field_150862_g; ++l) {
                     int i1 = this.field_150861_f.posY + l;
-                    this.field_150867_a.setBlock(j, i1, k, MythicalBlocks.blockPortial, this.field_150865_b, 2);
+                    this.field_150867_a.setBlock(j, i1, k, Resources.blockPortial, this.field_150865_b, 2);
                 }
             }
         }

@@ -1,11 +1,14 @@
 package mythology;
 
+import mythology.handlers.MythEventHandler;
+import mythology.swervy.common.Resources;
 import mythology.init.*;
 import mythology.proxy.CommonProxy;
 import mythology.world.MythicalWorldGen;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.*;
 import cpw.mods.fml.common.SidedProxy;
@@ -39,21 +42,19 @@ public class MythologyMod {
 	public static CreativeTabs tabMythicalUnderworld = new CreativeTabs("tabMythicalUnderworld") {
 		
 		public Item getTabIconItem() {
-			return MythicalItems.underworldFlintAndBronze;
+			return Resources.underworldFlintAndBronze;
 		}
 	};
 	
 	@EventHandler
 	public void PreLoad(FMLPreInitializationEvent event) {
 		
-		MythicalRegistration.load();
-		
-		proxy.RenderEntity();
 	}
 
 	@EventHandler
 	public void Load(FMLInitializationEvent event) {
-
+		MythicalRegistration.load();
+		proxy.RenderEntity();
 	}
 
 	@EventHandler

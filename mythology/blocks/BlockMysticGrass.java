@@ -55,8 +55,4 @@ public class BlockMysticGrass extends Block {
 	    {
 	        return mb.blockMysticDirt.getItemDropped(0, k, l);
 	    }
-
-	
-
-
 }

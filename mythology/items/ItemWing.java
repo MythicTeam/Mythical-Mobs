@@ -8,9 +8,9 @@ import net.minecraft.world.World;
 public class ItemWing extends MythItem{
 
 	public ItemWing(String name, String lore) {
-		super(name, lore);		
+		super(name, lore);	
 	}
-	
+
     @Override
     public ItemStack onItemRightClick (ItemStack stack, World world, EntityPlayer player)
     {

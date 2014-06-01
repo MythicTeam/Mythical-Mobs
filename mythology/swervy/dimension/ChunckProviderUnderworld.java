@@ -1,4 +1,4 @@
-package mythology.dimension.underworld;
+package mythology.swervy.dimension;
 
 import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.SHROOM;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.CAVE;

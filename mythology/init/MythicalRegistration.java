@@ -1,12 +1,14 @@
 package mythology.init;
 
+import mythology.swervy.common.Registration;
 import mythology.MythologyMod;
-import mythology.dimension.underworld.WorldProviderUnderworld;
 import mythology.handlers.GuiHandler;
+import mythology.handlers.MythEventHandler;
 import mythology.mobs.hostile.EntityCentaur;
 import mythology.mobs.hostile.EntityMinotaur;
 import mythology.mobs.passive.EntityFairy;
 import mythology.mobs.passive.EntityGnome;
+import mythology.swervy.dimension.WorldProviderUnderworld;
 import mythology.tileentities.TileEntityAlloyFurnace;
 import mythology.world.MythicalWorldGen;
 import net.minecraft.entity.EntityList;
@@ -17,6 +19,7 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.oredict.OreDictionary;
@@ -28,45 +31,29 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class MythicalRegistration {
 	
-	public static final int underworld = 8;
-	
 	private static MythologyMod m = new MythologyMod();
 	private static MythicalArmor ma = new MythicalArmor();
 	private static MythicalBlocks mb = new MythicalBlocks();
 	private static MythicalItems mi = new MythicalItems();
 	private static MythicalTools mt = new MythicalTools();
 	private static MythicalIngot mii = new MythicalIngot();
-	private static MythicalBiomes biome = new MythicalBiomes();
 
 	public static void load() {
-		registerBlock();
-		registerItem();
-		registerOre();
-		registerOreDictionary();
-		registerCraftingRecipes();
-		registerSmeltingRecipes();
-		registerWorldGenerator();
-		registerTileEntity();
-		registerHandlers();
-		registerMob();
-		registerDimension();
-		registerBiome();
+		Registration.load();
+		
+		registerBlock(); //Registers All blocks
+		registerItem(); //Registers All Items
+		registerOre(); //Registers All Ores
+		registerOreDictionary(); //Registers All Ores To Ore Dictionary
+		registerCraftingRecipes(); //Registers Crafting Recipes
+		registerSmeltingRecipes(); //Registers Smelting Recipes
+		registerWorldGenerator();  //Registers World Generators
+		registerTileEntity(); //Registers Tite Entities
+		registerHandlers(); //Registers Hanlders
+		registerMob(); //Registers Mobs
 	}
 	
-	private static void registerDimension() {
-		//Dimension
-		GameRegistry.registerBlock(mb.blockPortial, "underworldPortal");
-		LanguageRegistry.addName(mb.blockPortial, "Underworld Portal");
-		
-		//Dimension
-		DimensionManager.registerProviderType(underworld, WorldProviderUnderworld.class, false);
-		DimensionManager.registerDimension(underworld, underworld);
-	}
 	
-	public static void registerBiome() {
-		BiomeDictionary.registerBiomeType(biome.BiomeUnderworld, Type.FOREST);
-		
-	}
 	
 	private static void registerMob() {
 		MythologyRegister.addMob(EntityGnome.class, "Gnome", EnumCreatureType.creature, BiomeGenBase.roofedForest, 0xFC0A16, 0xFCFCFC, 200, 200, 200);
@@ -76,11 +63,6 @@ public class MythicalRegistration {
 	}
 	
 	private static void registerBlock() {
-		//Underworld
-		MythologyRegister.registerBlock(mb.blockDeadStone);
-		MythologyRegister.registerBlock(mb.blockBlueFire);
-		
-		//Overworld
 		MythologyRegister.registerBlock(mb.blockMysticGrass);
 		MythologyRegister.registerBlock(mb.blockMysticDirt);
 		MythologyRegister.registerBlock(mb.blockBronzeBlock);
@@ -98,11 +80,6 @@ public class MythicalRegistration {
 	}
 	
 	private static void registerItem() {
-		//Underworld
-		//Items
-		MythologyRegister.registerItem(mi.underworldFlintAndBronze);
-		
-		//Overworld
 		//Armor
 		MythologyRegister.registerItem(ma.bronzeHelmet);
     	MythologyRegister.registerItem(ma.bronzeChestplate);
@@ -252,6 +229,7 @@ public class MythicalRegistration {
 	
 	private static void registerHandlers() {
 		NetworkRegistry.INSTANCE.registerGuiHandler(MythologyMod.instance, new GuiHandler());
+		MinecraftForge.EVENT_BUS.register(new MythEventHandler());
 	}
 	
 	private static void registerCraftingRecipes() {
