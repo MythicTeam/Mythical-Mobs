@@ -1,5 +1,6 @@
 package mythology.items;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import mythology.MythologyMod;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
@@ -18,8 +19,10 @@ import net.minecraft.util.MovingObjectPosition;
 public class ItemSwordIG extends ItemSword{
 	private static final double maxStackSize = 0;
 	MythologyMod m = new MythologyMod();
-	public ItemSwordIG(ToolMaterial arg0) {
+	public ItemSwordIG(ToolMaterial arg0, String name) {
 		super(arg0);
+		GameRegistry.registerItem(this, name);
+
 		this.setCreativeTab(m.tabMythical);
 		
 	}

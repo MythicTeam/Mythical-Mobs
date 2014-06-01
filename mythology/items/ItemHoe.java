@@ -4,6 +4,7 @@ package mythology.items;
 import java.util.List;
 
 import cpw.mods.fml.common.eventhandler.Event.Result;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -23,8 +24,9 @@ public class ItemHoe extends Item
     protected Item.ToolMaterial theToolMaterial;
     private static final String __OBFID = "CL_00000039";
 
-    public ItemHoe(Item.ToolMaterial p_i45343_1_)
+    public ItemHoe(Item.ToolMaterial p_i45343_1_, String name)
     {
+		GameRegistry.registerItem(this, name);
         this.theToolMaterial = p_i45343_1_;
         this.maxStackSize = 1;
         this.setMaxDamage(p_i45343_1_.getMaxUses());

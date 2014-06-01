@@ -2,6 +2,7 @@ package mythology.items;
 
 import com.google.common.collect.Sets;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -22,8 +23,9 @@ public class ItemAxe extends ItemTool {
     private static final Set hashSet = Sets.newHashSet(new Block[] {Blocks.planks, Blocks.bookshelf, Blocks.log, Blocks.log2, Blocks.chest, Blocks.pumpkin, Blocks.lit_pumpkin});
     private static final String string = "CL_00001770";
 
-    public ItemAxe(Item.ToolMaterial tm) {
+    public ItemAxe(Item.ToolMaterial tm, String name) {
         super(3.0F, tm, hashSet);
+		GameRegistry.registerItem(this, name);
     }
 
     public float func_150893_a(ItemStack itemstack, Block b) {

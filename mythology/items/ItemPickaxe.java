@@ -2,6 +2,7 @@ package mythology.items;
 
 import com.google.common.collect.Sets;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -24,8 +25,9 @@ public class ItemPickaxe extends ItemTool {
     public static final Set hashSet = Sets.newHashSet(new Block[] {Blocks.cobblestone, Blocks.double_stone_slab, Blocks.stone_slab, Blocks.stone, Blocks.sandstone, Blocks.mossy_cobblestone, Blocks.iron_ore, Blocks.iron_block, Blocks.coal_ore, Blocks.gold_block, Blocks.gold_ore, Blocks.diamond_ore, Blocks.diamond_block, Blocks.ice, Blocks.netherrack, Blocks.lapis_ore, Blocks.lapis_block, Blocks.redstone_ore, Blocks.lit_redstone_ore, Blocks.rail, Blocks.detector_rail, Blocks.golden_rail, Blocks.activator_rail});
     private static final String string = "CL_00000053";
 
-    public ItemPickaxe(Item.ToolMaterial tm) {
+    public ItemPickaxe(Item.ToolMaterial tm, String name) {
         super(2.0F, tm, hashSet);
+		GameRegistry.registerItem(this, name);
     }
 
     public boolean func_150897_b(Block b) {
