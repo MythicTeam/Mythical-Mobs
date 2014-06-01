@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 
 public class MythicalEgg extends ItemMonsterPlacer{
 	public MythicalEgg(){
-		this.setCreativeTab(MythologyMod.tabEgg);
+		this.setCreativeTab(MythologyMod.tabMythicalEgg);
 	}
     public static Entity spawnCreature(World par0World, int par1, double par2, double par4, double par6)
     {
