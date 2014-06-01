@@ -21,8 +21,8 @@ public class BiomeUnderworld extends BiomeGenBase {
 		this.canSpawnLightningBolt();
 		this.setDisableRain();
 		//this.worldGeneratorTrees = new net.minecraft.world.gen.feature.WorldGenTrees(true);
-		this.topBlock = MythicalBlocks.blockMysticGrass;
-		this.fillerBlock = Blocks.dirt;
+		this.topBlock = MythicalBlocks.underworldGrass;
+		this.fillerBlock = MythicalBlocks.underworldDirt;
 		//this.WorldGenTrees = new WorldGenHugeTrees();
 		this.WorldGenLakes = new WorldGenLiquids(Blocks.water);
 	}
