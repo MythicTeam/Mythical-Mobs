@@ -55,8 +55,7 @@ public class MythologyMod {
 	@EventHandler
 	public void Load(FMLInitializationEvent event) {
 		MinecraftForge.EVENT_BUS.register(new MythEventHandler());
-		MythicalRegistration.load();
-
+		MythicalRegistration.load();		
 	}
 
 	@EventHandler

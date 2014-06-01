@@ -25,22 +25,24 @@ public class BlockMysticGrass extends Block {
 	@SideOnly(Side.CLIENT)
 	protected IIcon iconTop;
 
-	public BlockMysticGrass(String string, CreativeTabs tabMythical, Material grass) {
+	String blockname;
+	
+	public BlockMysticGrass(String name, Material grass) {
 		super(grass);
-		this.setBlockName(string);
-		this.setCreativeTab(tabMythical);
+		this.setBlockName(name);
+		this.setCreativeTab(m.tabMythical);
 		this.setHarvestLevel("shovel", 0);
 		this.setHardness(0.6F);
 		this.setStepSound(soundTypeGrass);
         this.setTickRandomly(true);
-
+        blockname = name;
 	}
 	
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister){
 		
-		this.blockIcon = iconRegister.registerIcon(m.modid + ":" + "MysticGrassBlock_side");
-		this.iconTop = iconRegister.registerIcon(m.modid + ":" + "MysticGrassBlock_top"); 
+		this.blockIcon = iconRegister.registerIcon(m.modid + ":underworld/" + blockname + "_side");
+		this.iconTop = iconRegister.registerIcon(m.modid + ":underworld/" + blockname + "_top"); 
 		
 	}
 
