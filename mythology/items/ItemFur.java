@@ -11,7 +11,7 @@ public class ItemFur extends Item {
 		
 		MythologyMod m = new MythologyMod();
 		this.setUnlocalizedName(string)
-		.setCreativeTab(tabMythical)
+		.setCreativeTab(m.tabMythical)
 		.setTextureName(m.modid + ":" + string);
 		
 	}

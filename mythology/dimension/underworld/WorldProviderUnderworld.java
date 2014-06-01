@@ -2,6 +2,7 @@ package mythology.dimension.underworld;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import mythology.init.MythicalBiomes;
 import mythology.init.MythicalRegistration;
 import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.MathHelper;
@@ -14,9 +15,9 @@ import net.minecraft.world.chunk.IChunkProvider;
 public class WorldProviderUnderworld extends WorldProvider {
 
 	public void registerWorldChunkManager() {
-		this.worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase.plains, 0F);
+		this.worldChunkMgr = new WorldChunkManagerHell(MythicalBiomes.BiomeUnderworld, 0F);
 		this.dimensionId = MythicalRegistration.underworld;
-		this.hasNoSky = true;
+		this.hasNoSky = false;
 		this.isHellWorld = false;
 	}
 	
@@ -34,18 +35,22 @@ public class WorldProviderUnderworld extends WorldProvider {
 		return "Welcome to the Underworld";
 	}
 	
+	public boolean canCoordinateBeSpawn(int par1, int par2) {
+		return false;
+	}
+	
 	@Override
 	public boolean canRespawnHere() {
 		return true;
 	}
 	
 	public boolean renderVoidFog() {
-		return false;
+		return true;
 	}
 	
 	@SideOnly(Side.CLIENT)
 	public boolean isSkyColored() {
-		return true;
+		return false;
 	}
 
 	public boolean isSurfaceWorld() {
@@ -54,37 +59,11 @@ public class WorldProviderUnderworld extends WorldProvider {
 
 	@SideOnly(Side.CLIENT)
 	public float getCloudHeight() {
-		return 128.0F;
+		return -256.0F;
 	}
 
 	public double getVoidFogYFactor() {
 	         return this.terrainType.voidFadeMagnitude();
 	         
 	}
-	
-	@SideOnly(Side.CLIENT)
-	public Vec3 getFogColor(float par1, float par2) {
-		int i = 10890654;
-		float f2 = MathHelper.cos(par1 * 3.141593F * 2.0F) * 2.0F + 0.5F;
-		
-		if (f2 < 0.0F) {
-			f2 = 0.0F;
-		}
-		
-		if (f2 > 1.0F) {
-			f2 = 1.0F;
-		}
-		
-		float f3 = (i >> 16 & 0xFF) / 255.0F;
-		float f4 = (i >> 8 & 0xFF) / 255.0F;
-		float f5 = (i & 0xFF) / 255.0F;
-		
-		f3 *= (f2 * 0.0F + 0.15F);
-		f4 *= (f2 * 0.0F + 0.15F);
-		f5 *= (f2 * 0.0F + 0.15F);
-		
-		return this.worldObj.getWorldVec3Pool().getVecFromPool(f3, f4, f5);
-	}
-
-
 }

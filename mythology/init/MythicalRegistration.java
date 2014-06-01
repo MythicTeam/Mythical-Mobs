@@ -14,7 +14,10 @@ import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
+import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
@@ -33,6 +36,7 @@ public class MythicalRegistration {
 	private static MythicalItems mi = new MythicalItems();
 	private static MythicalTools mt = new MythicalTools();
 	private static MythicalIngot mii = new MythicalIngot();
+	private static MythicalBiomes biome = new MythicalBiomes();
 
 	public static void load() {
 		registerBlock();
@@ -60,6 +64,7 @@ public class MythicalRegistration {
 	}
 	
 	public static void registerBiome() {
+		BiomeDictionary.registerBiomeType(biome.BiomeUnderworld, Type.FOREST);
 		
 	}
 	
@@ -71,9 +76,13 @@ public class MythicalRegistration {
 	}
 	
 	private static void registerBlock() {
+		//Underworld
+		MythologyRegister.registerBlock(mb.blockDeadStone);
+		MythologyRegister.registerBlock(mb.blockBlueFire);
+		
+		//Overworld
 		MythologyRegister.registerBlock(mb.blockMysticGrass);
 		MythologyRegister.registerBlock(mb.blockMysticDirt);
-		MythologyRegister.registerBlock(mb.blockDeadStone);
 		MythologyRegister.registerBlock(mb.blockBronzeBlock);
 		MythologyRegister.registerBlock(mb.blockCelestialBronzeBlock);
 		MythologyRegister.registerBlock(mb.blockImperialGoldBlock);
@@ -89,7 +98,11 @@ public class MythicalRegistration {
 	}
 	
 	private static void registerItem() {
+		//Underworld
+		//Items
+		MythologyRegister.registerItem(mi.underworldFlintAndBronze);
 		
+		//Overworld
 		//Armor
 		MythologyRegister.registerItem(ma.bronzeHelmet);
     	MythologyRegister.registerItem(ma.bronzeChestplate);

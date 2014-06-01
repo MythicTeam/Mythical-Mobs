@@ -7,11 +7,18 @@ entity.mobGnome.name=Gnome
 entity.mobMinotaur.name=Minotaur
 entity.mobFairy.name=Fairy
 
+//Underworld Blocks/Items
+tile.underworldFire.name=Underworld Fire
+tile.underworldPortal.name=Underworld Portal
+
+item.itemFlintAndBronze.name=Flint And Bronze
+
 //Ores
 tile.oreMithril.name=Mithril Ore
 tile.oreZinc.name=Zinc Ore
 tile.oreSilver.name=Silver Ore
 tile.oreCopper.name=Copper Ore
+tile.oreBronze.name=Bronze Ore
 tile.oreTin.name=Tin Ore
 tile.orePlatinum.name=Platinum Ore
 tile.oreRuby.name=Ruby Ore

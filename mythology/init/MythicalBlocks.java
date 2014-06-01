@@ -8,7 +8,6 @@ import mythology.blocks.BlockCelestialBronzeBlock;
 import mythology.blocks.BlockCelestialBronzeOre;
 import mythology.blocks.BlockCopperBlock;
 import mythology.blocks.BlockCopperOre;
-import mythology.blocks.BlockDeadStone;
 import mythology.blocks.BlockImperialGoldBlock;
 import mythology.blocks.BlockImperialGoldOre;
 import mythology.blocks.BlockMithrilOre;
@@ -16,7 +15,6 @@ import mythology.blocks.BlockMysticDirt;
 import mythology.blocks.BlockMysticGrass;
 import mythology.blocks.BlockPlatinumBlock;
 import mythology.blocks.BlockPlatinumOre;
-import mythology.blocks.BlockPortalBlock;
 import mythology.blocks.BlockRubyBlock;
 import mythology.blocks.BlockRubyOre;
 import mythology.blocks.BlockSapphireBlock;
@@ -26,6 +24,9 @@ import mythology.blocks.BlockSilverOre;
 import mythology.blocks.BlockTinBlock;
 import mythology.blocks.BlockTinOre;
 import mythology.blocks.BlockZincOre;
+import mythology.blocks.underworld.BlockBlueFire;
+import mythology.blocks.underworld.BlockDeadStone;
+import mythology.blocks.underworld.BlockPortalBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
@@ -33,7 +34,10 @@ public class MythicalBlocks {
 
 	private static MythologyMod m = new MythologyMod();
 	
-	public static Block blockPortial = new BlockPortalBlock("portalBlock", Material.portal);
+	public static Block blockPortial = new BlockPortalBlock("underworldPortal", Material.portal);
+	public static Block blockBlueFire = new BlockBlueFire("underworldFire", Material.fire) ;
+	
+	public static Block blockDeadStone = new BlockDeadStone("deadStone", m.tabMythical, Material.rock);
 	
 	public static Block blockMithrilOre = new BlockMithrilOre("oreMithril", m.tabMythical, Material.rock);
 	public static Block blockZincOre = new BlockZincOre("oreZinc", m.tabMythical, Material.rock);
@@ -49,7 +53,6 @@ public class MythicalBlocks {
 
 	public static Block blockMysticGrass = new BlockMysticGrass("MysticGrassBlock", m.tabMythical, Material.ground);
 	public static Block blockMysticDirt = new BlockMysticDirt("MysticDirtBlock", m.tabMythical, Material.ground);
-	public static Block blockDeadStone = new BlockDeadStone("deadStone", m.tabMythical, Material.rock);
 	public static Block blockSilverBlock = new BlockSilverBlock("silverBlock", m.tabMythical, Material.iron);
 	public static Block blockBronzeBlock = new BlockBronzeBlock("bronzeBlock", m.tabMythical, Material.iron);
 	public static Block blockCopperBlock = new BlockCopperBlock("copperBlock", m.tabMythical, Material.iron);

@@ -17,4 +17,5 @@ public class MythicalIngot {
 	public static Item itemPlatinumIngot = new Item().setUnlocalizedName("platinumIngot").setCreativeTab(m.tabMythical).setTextureName("mythical" + ":" + "itemPlatinumIngot");
 	public static Item itemRuby = new Item().setUnlocalizedName("ruby").setCreativeTab(m.tabMythical).setTextureName("mythical" + ":" + "ruby");
 	public static Item itemSapphire = new Item().setUnlocalizedName("sapphire").setCreativeTab(m.tabMythical).setTextureName("mythical" + ":" + "sapphire");
+	
 }
