@@ -34,7 +34,7 @@ public class ItemWarhammer extends MythItem
         this.toolmaterial = material;
         this.maxStackSize = 1;
         this.setMaxDamage(material.getMaxUses());
-        this.damage = 2.0F + material.getDamageVsEntity();
+        this.damage = 3.0F + material.getDamageVsEntity();
     }
 
     public float func_150931_i()
@@ -56,7 +56,7 @@ public class ItemWarhammer extends MythItem
     {
         par1ItemStack.damageItem(1, hitter);
         if(hitted instanceof EntitySpider || hitted instanceof EntitySkeleton || hitted instanceof EntityEnderman){
-        	hitted.heal(-4F);
+        	hitted.heal(-2F);
         }
         return true;
     }
