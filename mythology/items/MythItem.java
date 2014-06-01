@@ -16,7 +16,7 @@ public class MythItem extends Item{
 	
 	public MythItem(String name, String lore){
 		setCreativeTab(MythologyMod.tabMythical);
-		setTextureName(name);
+		setTextureName(MythologyMod.modid + ":" + name);
 		setUnlocalizedName(name);
 		GameRegistry.registerItem(this, name);
 		info = lore;
