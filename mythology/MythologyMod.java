@@ -49,13 +49,6 @@ public class MythologyMod {
 		}
 	};
 	
-	public static CreativeTabs tabMythicalEgg = new CreativeTabs("tabMythicalEgg") {
-		
-		public Item getTabIconItem() {
-			return new ItemStack(Items.spawn_egg, 1, 2).getItem();
-		}
-	};
-	
 	@EventHandler
 	public void PreLoad(FMLPreInitializationEvent event) {
 		proxy.RenderEntity();

@@ -29,7 +29,7 @@ public class MythologyRegister {
 	}
 
 	public static void registerItem(Item item) {
-		String name = item.getUnlocalizedName().replace("item.", "");
+		String name = item.getUnlocalizedName().substring(5);
 		GameRegistry.registerItem(item, name);
 	}
 }
