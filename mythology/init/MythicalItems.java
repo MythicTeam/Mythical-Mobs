@@ -5,6 +5,8 @@ import mythology.items.CookBehemothMeat;
 import mythology.items.ItemFur;
 import mythology.items.ItemGnomeBeard;
 import mythology.items.ItemScales;
+import mythology.items.ItemWing;
+import mythology.items.MythItem;
 import mythology.items.RawBehemothMeat;
 import mythology.items.underworld.ItemFlintAndBronze;
 import net.minecraft.item.Item;
@@ -24,4 +26,6 @@ public class MythicalItems {
 	
 	public static Item underworldFlintAndBronze = new ItemFlintAndBronze("itemFlintAndBronze", m.tabMythical);
 	
+	public static Item wing = new ItemWing("wing", "Wings are for flying, right?");
+	public static Item flyToken = new MythItem("flyToken", "Gives the holder the ability to fly!");	
 }
