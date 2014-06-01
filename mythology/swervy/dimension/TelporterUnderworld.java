@@ -58,7 +58,7 @@ public class TelporterUnderworld extends Teleporter {
                         int y2 = entity_y + k;
                         int z2 = entity_z + j * b1 - i * b0;
                         boolean flag = k < 0;
-                        this.worldServerInstance.setBlock(x2, y2, z2, flag ? Resources.blockPortial : Blocks.air);
+                        this.worldServerInstance.setBlock(x2, y2, z2, flag ? Resources.blockPortal : Blocks.air);
                     }
                 }
             }
@@ -97,8 +97,8 @@ public class TelporterUnderworld extends Teleporter {
                     double d5 = (double) l1 + 0.5D - par1Entity.posZ;
 
                     for (int i2 = this.worldServerInstance.getActualHeight() - 1; i2 >= 0; --i2) {
-                        if (this.worldServerInstance.getBlock(l3, i2, l1) == Resources.blockPortial) {
-                            while (this.worldServerInstance.getBlock(l3, i2 - 1, l1) == Resources.blockPortial) {
+                        if (this.worldServerInstance.getBlock(l3, i2, l1) == Resources.blockPortal) {
+                            while (this.worldServerInstance.getBlock(l3, i2 - 1, l1) == Resources.blockPortal) {
                                 --i2;
                             }
 
@@ -128,19 +128,19 @@ public class TelporterUnderworld extends Teleporter {
             d7 = (double) k + 0.5D;
             int i4 = -1;
 
-            if (this.worldServerInstance.getBlock(i - 1, j, k) == Resources.blockPortial) {
+            if (this.worldServerInstance.getBlock(i - 1, j, k) == Resources.blockPortal) {
                 i4 = 2;
             }
 
-            if (this.worldServerInstance.getBlock(i + 1, j, k) == Resources.blockPortial) {
+            if (this.worldServerInstance.getBlock(i + 1, j, k) == Resources.blockPortal) {
                 i4 = 0;
             }
 
-            if (this.worldServerInstance.getBlock(i, j, k - 1) == Resources.blockPortial) {
+            if (this.worldServerInstance.getBlock(i, j, k - 1) == Resources.blockPortal) {
                 i4 = 3;
             }
 
-            if (this.worldServerInstance.getBlock(i, j, k + 1) == Resources.blockPortial) {
+            if (this.worldServerInstance.getBlock(i, j, k + 1) == Resources.blockPortal) {
                 i4 = 1;
             }
 
@@ -388,7 +388,7 @@ public class TelporterUnderworld extends Teleporter {
                     i4 = j2 + k3;
                     j4 = k2 + (j3 - 1) * l2;
                     flag = j3 == 0 || j3 == 3 || k3 == -1 || k3 == 3;
-                    this.worldServerInstance.setBlock(l3, i4, j4, (Block)(flag ? Blocks.soul_sand : Resources.blockPortial), 0, 2);
+                    this.worldServerInstance.setBlock(l3, i4, j4, (Block)(flag ? Blocks.soul_sand : Resources.blockPortal), 0, 2);
                 }
             }
 

@@ -312,7 +312,7 @@ public class BlockPortalBlock extends BlockPortal {
                         break label56;
                     }
 
-                    if (block == Resources.blockPortial) {
+                    if (block == Resources.blockPortal) {
                        this.field_150864_e++;
                     }
 
@@ -354,7 +354,7 @@ public class BlockPortalBlock extends BlockPortal {
         }
 
         protected boolean func_150857_a(Block p_150857_1_) {
-            return p_150857_1_.getMaterial() == Material.air || p_150857_1_ == Resources.blockBlueFire || p_150857_1_ == Resources.blockPortial;
+            return p_150857_1_.getMaterial() == Material.air || p_150857_1_ == Resources.blockBlueFire || p_150857_1_ == Resources.blockPortal;
         }
 
         public boolean func_150860_b() {
@@ -368,7 +368,7 @@ public class BlockPortalBlock extends BlockPortal {
 
                 for (int l = 0; l < this.field_150862_g; ++l) {
                     int i1 = this.field_150861_f.posY + l;
-                    this.field_150867_a.setBlock(j, i1, k, Resources.blockPortial, this.field_150865_b, 2);
+                    this.field_150867_a.setBlock(j, i1, k, Resources.blockPortal, this.field_150865_b, 2);
                 }
             }
         }

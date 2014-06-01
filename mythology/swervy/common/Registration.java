@@ -39,8 +39,8 @@ public class Registration {
 	
 	private static void registerDimension() {
 		//Dimension
-		GameRegistry.registerBlock(r.blockPortial, "underworldPortal");
-		LanguageRegistry.addName(r.blockPortial, "Underworld Portal");
+		GameRegistry.registerBlock(r.blockPortal, "underworldPortal");
+		LanguageRegistry.addName(r.blockPortal, "Underworld Portal");
 		
 		//Dimension
 		DimensionManager.registerProviderType(underworld, WorldProviderUnderworld.class, false);
