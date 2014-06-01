@@ -1,16 +1,19 @@
 package mythology;
 
-import mythology.init.*;
+import mythology.handlers.MythEventHandler;
+import mythology.init.MythicalRegistration;
+import mythology.init.MythicalTools;
 import mythology.proxy.CommonProxy;
-import mythology.world.MythicalWorldGen;
-import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.*;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.*;
-import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = MythologyMod.modid, name = MythologyMod.name, version = MythologyMod.version)
 public class MythologyMod {
@@ -37,16 +40,14 @@ public class MythologyMod {
 	};
 	
 	@EventHandler
-	public void PreLoad(FMLPreInitializationEvent event) {
-		
-		MythicalRegistration.load();
-		
+	public void PreLoad(FMLPreInitializationEvent event) {		
 		proxy.RenderEntity();
 	}
 
 	@EventHandler
-	public void Load(FMLInitializationEvent event) {
-
+	public void Load(FMLInitializationEvent event) {	
+		MinecraftForge.EVENT_BUS.register(new MythEventHandler());
+		MythicalRegistration.load();
 	}
 
 	@EventHandler

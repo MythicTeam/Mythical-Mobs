@@ -5,6 +5,8 @@ import mythology.items.CookBehemothMeat;
 import mythology.items.ItemFur;
 import mythology.items.ItemGnomeBeard;
 import mythology.items.ItemScales;
+import mythology.items.ItemWing;
+import mythology.items.MythItem;
 import mythology.items.RawBehemothMeat;
 import net.minecraft.item.Item;
 
@@ -20,5 +22,7 @@ public class MythicalItems {
 	public static Item rawBehemothMeat = new RawBehemothMeat(4,0.4F,true, "rawBehemothMeat", m.tabMythical);
 	public static Item cookBehemothMeat = new CookBehemothMeat(8, 0.8F, true, "cookBehemothMeat", m.tabMythical);
 	public static Item itemGnomeBeard = new ItemGnomeBeard("itemGnomeBeard", m.tabMythical);
+	public static Item wing = new ItemWing("wing", "Wings are for flying, right?");
+	public static Item flyToken = new MythItem("flyToken", "Gives the holder the ability to fly!");
 	
 }
