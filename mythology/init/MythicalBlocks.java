@@ -11,7 +11,6 @@ import mythology.blocks.BlockCopperOre;
 import mythology.blocks.BlockImperialGoldBlock;
 import mythology.blocks.BlockImperialGoldOre;
 import mythology.blocks.BlockMithrilOre;
-import mythology.blocks.BlockMysticGrass;
 import mythology.blocks.BlockPlatinumBlock;
 import mythology.blocks.BlockPlatinumOre;
 import mythology.blocks.BlockRubyBlock;
@@ -24,6 +23,7 @@ import mythology.blocks.BlockTinBlock;
 import mythology.blocks.BlockTinOre;
 import mythology.blocks.BlockZincOre;
 import mythology.blocks.UnderworldBlock;
+import mythology.blocks.UnderworldGrass;
 import mythology.blocks.underworld.BlockBlueFire;
 import mythology.blocks.underworld.BlockDeadStone;
 import mythology.blocks.underworld.BlockPortalBlock;
@@ -52,8 +52,8 @@ public class MythicalBlocks {
 	public static Block blockImperialGoldOre = new BlockImperialGoldOre("oreImperialGold", m.tabMythical, Material.rock);
 	public static Block blockCelestialBronzeOre = new BlockCelestialBronzeOre("oreCelestialBronze", m.tabMythical, Material.rock);
 
-	public static Block blockMysticGrass = new BlockMysticGrass("MysticGrassBlock", Material.ground);
-	public static Block underworldDirt = new UnderworldBlock("underworldDirt").setHardness(0.6F).setStepSound(Blocks.gravel.stepSound);
+	public static Block underworldGrass = new UnderworldGrass("underworldGrass", Material.grass);
+	public static Block underworldDirt = new UnderworldBlock("underworldDirt", Material.ground).setHardness(0.6F).setStepSound(Blocks.gravel.stepSound);
 	public static Block blockSilverBlock = new BlockSilverBlock("silverBlock", m.tabMythical, Material.iron);
 	public static Block blockBronzeBlock = new BlockBronzeBlock("bronzeBlock", m.tabMythical, Material.iron);
 	public static Block blockCopperBlock = new BlockCopperBlock("copperBlock", m.tabMythical, Material.iron);

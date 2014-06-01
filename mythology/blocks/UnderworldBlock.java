@@ -10,8 +10,8 @@ public class UnderworldBlock extends MythBlock {
 
 	MythologyMod m = new MythologyMod();
 
-	public UnderworldBlock(String name) {
-		super(Material.ground, name);
+	public UnderworldBlock(String name, Material material) {
+		super(material, name);
 		this.setBlockTextureName(m.modid + ":underworld/" + name);
 		this.setCreativeTab(m.tabMythical);
 	}

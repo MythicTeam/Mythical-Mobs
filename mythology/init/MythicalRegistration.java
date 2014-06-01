@@ -81,8 +81,6 @@ public class MythicalRegistration {
 		MythologyRegister.registerBlock(mb.blockBlueFire);
 		
 		//Overworld
-		MythologyRegister.registerBlock(mb.blockMysticGrass);
-		MythologyRegister.registerBlock(mb.blockMysticDirt);
 		MythologyRegister.registerBlock(mb.blockBronzeBlock);
 		MythologyRegister.registerBlock(mb.blockCelestialBronzeBlock);
 		MythologyRegister.registerBlock(mb.blockImperialGoldBlock);
