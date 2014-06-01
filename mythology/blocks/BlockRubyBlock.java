@@ -5,10 +5,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 
-public class BlockRubyBlock extends Block {
+public class BlockRubyBlock extends MythBlock {
 	MythologyMod m = new MythologyMod();
 	public BlockRubyBlock(String string, CreativeTabs tabMythical, Material material) {
-		super(material);
+		super(material, string);
 		this.setBlockName(string);
 		this.setBlockTextureName(m.modid + ":" + string);
 		this.setCreativeTab(tabMythical);

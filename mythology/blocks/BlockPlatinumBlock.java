@@ -5,10 +5,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 
-public class BlockPlatinumBlock extends Block {
+public class BlockPlatinumBlock extends MythBlock {
 	MythologyMod m = new MythologyMod();
 	public BlockPlatinumBlock(String string, CreativeTabs tabMythical, Material material) {
-		super(material);
+		super(material, string);
 		this.setBlockName(string);
 		this.setBlockTextureName(m.modid + ":" + string);
 		this.setCreativeTab(tabMythical);

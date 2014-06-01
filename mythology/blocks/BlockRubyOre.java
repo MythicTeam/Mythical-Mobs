@@ -11,15 +11,15 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 
-public class BlockRubyOre extends Block {
+public class BlockRubyOre extends MythBlock {
 	
 	MythologyMod m = new MythologyMod();
 	MythicalIngot mii = new MythicalIngot();
 
-	public BlockRubyOre(String string, CreativeTabs tabMythical, Material rock) {
-		super(rock);
-		this.setBlockName(string);
-		this.setBlockTextureName(m.modid + ":" + string);
+	public BlockRubyOre(String name, CreativeTabs tabMythical, Material material) {
+		super(material, name);
+		this.setBlockName(name);
+		this.setBlockTextureName(m.modid + ":" + name);
 		this.setCreativeTab(tabMythical);
 		this.setHarvestLevel("pickaxe", 2);
 		this.setHardness(3.0F);

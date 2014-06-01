@@ -1,5 +1,6 @@
 package mythology.armor;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import mythology.MythologyMod;
 import mythology.init.MythicalArmor;
 import mythology.init.MythicalIngot;

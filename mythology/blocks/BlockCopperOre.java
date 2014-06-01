@@ -6,12 +6,12 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 
 
-public class BlockCopperOre extends Block {
+public class BlockCopperOre extends MythBlock {
 	
 	MythologyMod m = new MythologyMod();
 
 	public BlockCopperOre(String string, CreativeTabs tabMythical, Material rock) {
-		super(rock);
+		super(rock, string);
 		this.setBlockName(string);
 		this.setBlockTextureName(m.modid + ":" + string);
 		this.setCreativeTab(tabMythical);

@@ -49,16 +49,13 @@ public class MythologyMod {
 	
 	@EventHandler
 	public void PreLoad(FMLPreInitializationEvent event) {
-
 		proxy.RenderEntity();
 	}
 
 	@EventHandler
 	public void Load(FMLInitializationEvent event) {
 		MythicalRegistration.load();
-		proxy.RenderEntity();
 		MinecraftForge.EVENT_BUS.register(new MythEventHandler());
-		MythicalRegistration.load();		
 	}
 
 	@EventHandler

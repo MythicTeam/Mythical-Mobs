@@ -1,5 +1,6 @@
 package mythology.swervy.blocks;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import mythology.MythologyMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -11,6 +12,7 @@ public class BlockDeadStone extends Block {
 
 	public BlockDeadStone(String string, CreativeTabs tabMythical, Material material) {
 		super(material);
+		GameRegistry.registerBlock(this, string);
 		this.setBlockName(string);
 		this.setBlockTextureName(m.modid + ":" + "underworld/" + string);
 		this.setCreativeTab(m.tabMythicalUnderworld);

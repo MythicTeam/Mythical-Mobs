@@ -2,6 +2,7 @@ package mythology.swervy.blocks;
 
 import java.util.Random;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mythology.MythologyMod;
@@ -41,6 +42,7 @@ public class BlockPortalBlock extends BlockPortal {
     private int field_150868_h;
 	
     public BlockPortalBlock(String string, Material portal) {
+    	GameRegistry.registerBlock(this, string);
         this.setCreativeTab(MythologyMod.tabMythicalUnderworld);
         this.setHardness(-1.0F);
         this.setLightLevel(0.75F);

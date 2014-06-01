@@ -41,9 +41,6 @@ public class MythicalRegistration {
 	public static void load() {
 		Registration.load();
 		
-		registerBlock(); //Registers All blocks
-		registerItem(); //Registers All Items
-		registerOre(); //Registers All Ores
 		registerOreDictionary(); //Registers All Ores To Ore Dictionary
 		registerCraftingRecipes(); //Registers Crafting Recipes
 		registerSmeltingRecipes(); //Registers Smelting Recipes
@@ -62,26 +59,7 @@ public class MythicalRegistration {
 		MythologyRegister.addMob(EntityMinotaur.class, "Minotaur", EnumCreatureType.monster, BiomeGenBase.extremeHillsPlus, 0x835C3B, 0xD1D0CE, 200, 200, 200);
 	}
 	
-	private static void registerBlock() {
-		MythologyRegister.registerBlock(mb.underworldGrass);
-		MythologyRegister.registerBlock(mb.underworldDirt);
-		
-		//Overworld
-		MythologyRegister.registerBlock(mb.blockBronzeBlock);
-		MythologyRegister.registerBlock(mb.blockCelestialBronzeBlock);
-		MythologyRegister.registerBlock(mb.blockImperialGoldBlock);
-		MythologyRegister.registerBlock(mb.blockPlatinumBlock);
-		MythologyRegister.registerBlock(mb.blockSilverBlock);
-		MythologyRegister.registerBlock(mb.blockRubyBlock);
-		MythologyRegister.registerBlock(mb.blockSapphireBlock);
-		MythologyRegister.registerBlock(mb.blockCopperBlock);
-		MythologyRegister.registerBlock(mb.blockTinBlock);
-		
-		GameRegistry.registerBlock(mb.alloyFurnaceIdle,  "alloyFurnaceIdle");
-		GameRegistry.registerBlock(mb.alloyFurnaceActive, "alloyFurnaceActive");
-	}
-	
-	private static void registerItem() {
+	private static void registerArmor() {		
 		//Armor
 		MythologyRegister.registerItem(ma.bronzeHelmet);
     	MythologyRegister.registerItem(ma.bronzeChestplate);
@@ -111,83 +89,6 @@ public class MythicalRegistration {
     	MythologyRegister.registerItem(ma.sapphireChestplate);
     	MythologyRegister.registerItem(ma.sapphireLeggings);
     	MythologyRegister.registerItem(ma.sapphireBoots);
-		
-		//Sword
-		MythologyRegister.registerItem(mt.swordBronze); 
-    	MythologyRegister.registerItem(mt.shovelCelestialBronze); 
-    	MythologyRegister.registerItem(mt.shovelImperialGold); 
-    	MythologyRegister.registerItem(mt.swordSilver); 
-    	MythologyRegister.registerItem(mt.swordRuby);
-    	MythologyRegister.registerItem(mt.swordSapphire);
-    	
-    	//Pickaxe
-    	MythologyRegister.registerItem(mt.pickaxeBronze); 
-    	MythologyRegister.registerItem(mt.pickaxeCelestialBronze); 
-    	MythologyRegister.registerItem(mt.pickaxeImperialGold); 
-    	MythologyRegister.registerItem(mt.pickaxeSilver); 
-    	MythologyRegister.registerItem(mt.pickaxeRuby);
-    	MythologyRegister.registerItem(mt.pickaxeSapphire);
-    	
-    	//Shovel
-    	MythologyRegister.registerItem(mt.shovelBronze); 
-    	MythologyRegister.registerItem(mt.shovelCelestialBronze); 
-    	MythologyRegister.registerItem(mt.shovelImperialGold); 
-    	MythologyRegister.registerItem(mt.shovelSilver); 
-    	MythologyRegister.registerItem(mt.shovelRuby);
-    	MythologyRegister.registerItem(mt.shovelSapphire);
-    	
-    	//Axe
-    	MythologyRegister.registerItem(mt.axeBronze); 
-    	MythologyRegister.registerItem(mt.axeCelestialBronze); 
-    	MythologyRegister.registerItem(mt.axeImperialGold); 
-    	MythologyRegister.registerItem(mt.axeSilver); 
-    	MythologyRegister.registerItem(mt.axeRuby);
-    	MythologyRegister.registerItem(mt.axeSapphire);
-    	
-    	//Hoe
-    	MythologyRegister.registerItem(mt.hoeBronze); 
-    	MythologyRegister.registerItem(mt.hoeCelestialBronze); 
-    	MythologyRegister.registerItem(mt.hoeImperialGold); 
-    	MythologyRegister.registerItem(mt.hoeSilver); 
-    	MythologyRegister.registerItem(mt.hoeRuby);
-    	MythologyRegister.registerItem(mt.hoeSapphire);
-    	
-    	//Ingots
-    	MythologyRegister.registerItem(mii.itemCopperIngot);
-    	MythologyRegister.registerItem(mii.itemTinIngot);
-    	MythologyRegister.registerItem(mii.itemBronzeIngot); 
-    	MythologyRegister.registerItem(mii.itemCelestialBronzeIngot); 
-    	MythologyRegister.registerItem(mii.itemImperialGoldIngot); 
-    	MythologyRegister.registerItem(mii.itemSilverIngot);
-    	MythologyRegister.registerItem(mii.itemMithrilIngot);
-    	MythologyRegister.registerItem(mii.itemPlatinumIngot);
-    	MythologyRegister.registerItem(mii.itemRuby);
-		MythologyRegister.registerItem(mii.itemSapphire);
-    	
-    	//mithril shizzle
-    	MythologyRegister.registerItem(mi.itemGnomeBeard);
-    	MythologyRegister.registerItem(mi.itemFur);
-    	MythologyRegister.registerItem(mi.rawBehemothMeat);
-    	MythologyRegister.registerItem(mi.cookBehemothMeat);
-    	MythologyRegister.registerItem(mi.itemScales);
-		
-		MythologyRegister.registerItem(mi.itemMithrilNugget);
-    	MythologyRegister.registerItem(mi.itemMithrilChain);
-    	MythologyRegister.registerItem(mi.itemMithrilMail);
-	}
-	
-	private static void registerOre() {
-		MythologyRegister.registerBlock(mb.blockZincOre);
-		MythologyRegister.registerBlock(mb.blockMithrilOre);
-		MythologyRegister.registerBlock(mb.blockSilverOre);
-		MythologyRegister.registerBlock(mb.blockCopperOre);
-		MythologyRegister.registerBlock(mb.blockBronzeOre);
-		MythologyRegister.registerBlock(mb.blockTinOre);
-		MythologyRegister.registerBlock(mb.blockPlatinumOre);
-		MythologyRegister.registerBlock(mb.blockRubyOre);
-		MythologyRegister.registerBlock(mb.blockSapphireOre);
-		MythologyRegister.registerBlock(mb.blockImperialGoldOre);
-		MythologyRegister.registerBlock(mb.blockCelestialBronzeOre);
 	}
 	
 	private static void registerOreDictionary() {

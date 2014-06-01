@@ -27,29 +27,9 @@ public class MythologyRegister {
 		EntityRegistry.addSpawn(entityClass, arg1, arg2, arg3, typeMob, biome);
         EntityList.entityEggs.put(Integer.valueOf(entityID), new EntityList.EntityEggInfo(entityID, primColor, secColor));
 	}
-	
+
 	public static void registerItem(Item item) {
 		String name = item.getUnlocalizedName().replace("item.", "");
 		GameRegistry.registerItem(item, name);
 	}
-	
-	public static void registerBlock(Block block)
-    {
-		String name = block.getUnlocalizedName().replace("block.", "");
-    	GameRegistry.registerBlock(block, name);
-    }
-	
-	public static void registerOreBlock(Block block)
-    {
-		String name = block.getUnlocalizedName().replace("block.", "");
-    	GameRegistry.registerBlock(block, name);
-        OreDictionary.registerOre(name, block);
-    }
-	
-	public static void registerOreItem(Item item)
-    {
-		String name = item.getUnlocalizedName().replace("item.", "");
-    	GameRegistry.registerItem(item, name);
-        OreDictionary.registerOre(name, item);
-    }
 }

@@ -2,6 +2,7 @@ package mythology.swervy.items;
 
 import java.util.Random;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import mythology.MythologyMod;
 import mythology.init.MythicalBlocks;
 import mythology.init.MythicalItems;
@@ -19,7 +20,7 @@ public class ItemFlintAndBronze extends Item {
 	Random rand = new Random();
 	
 	public ItemFlintAndBronze(String string) {
-		
+		GameRegistry.registerItem(this, string);
 		MythologyMod m = new MythologyMod();
 		
 		this.maxStackSize = 1;

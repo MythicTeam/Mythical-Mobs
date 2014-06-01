@@ -5,11 +5,13 @@ import mythology.items.CookBehemothMeat;
 import mythology.items.ItemFur;
 import mythology.items.ItemGnomeBeard;
 import mythology.items.ItemScales;
+import mythology.items.ItemWarhammer;
 import mythology.items.ItemWing;
 import mythology.items.MythItem;
 import mythology.items.RawBehemothMeat;
 import mythology.swervy.items.ItemFlintAndBronze;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 
 public class MythicalItems {
 	
@@ -23,8 +25,8 @@ public class MythicalItems {
 	public static Item rawBehemothMeat = new RawBehemothMeat(4,0.4F,true, "rawBehemothMeat", m.tabMythical);
 	public static Item cookBehemothMeat = new CookBehemothMeat(8, 0.8F, true, "cookBehemothMeat", m.tabMythical);
 	public static Item itemGnomeBeard = new ItemGnomeBeard("itemGnomeBeard", m.tabMythical);
-	public static Item underworldFlintAndBronze = new ItemFlintAndBronze("itemFlintAndBronze");
 	
 	public static Item wing = new ItemWing("wing", "Wings are for flying, right?");
 	public static Item flyToken = new MythItem("flyToken", "Gives the holder the ability to fly!");	
+	public static Item ironWarhammer = new ItemWarhammer(ToolMaterial.IRON, "ironWarhammer", "Warhammers are useful for crushing weak bones!");
 }

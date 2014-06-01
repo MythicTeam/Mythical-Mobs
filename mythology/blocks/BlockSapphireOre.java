@@ -10,13 +10,13 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 
-public class BlockSapphireOre extends Block {
+public class BlockSapphireOre extends MythBlock {
 
 	MythologyMod m = new MythologyMod();
 	MythicalIngot mii = new MythicalIngot();
 
 	public BlockSapphireOre(String string, CreativeTabs tabMythical, Material rock) {
-		super(rock);
+		super(rock, string);
 		this.setBlockName(string);
 		this.setBlockTextureName(m.modid + ":" + string);
 		this.setCreativeTab(tabMythical);

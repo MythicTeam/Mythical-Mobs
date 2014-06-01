@@ -13,12 +13,12 @@ import net.minecraft.creativetab.CreativeTabs;
  * @author Paul Onderisin
  *
  */
-public class BlockMithrilOre extends Block {
+public class BlockMithrilOre extends MythBlock {
 	
 	MythologyMod m = new MythologyMod();
 
 	public BlockMithrilOre(String string, CreativeTabs tabMythical, Material rock) {
-		super(rock);
+		super(rock, string);
 		this.setBlockName(string);
 		this.setBlockTextureName(m.modid + ":" + string);
 		this.setCreativeTab(tabMythical);

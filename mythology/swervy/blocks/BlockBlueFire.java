@@ -9,6 +9,7 @@ import static net.minecraftforge.common.util.ForgeDirection.WEST;
 
 import java.util.Random;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mythology.MythologyMod;
@@ -41,8 +42,8 @@ public class BlockBlueFire extends BlockFire {
 
     public BlockBlueFire(String string, Material fire) {
         MythologyMod m = new MythologyMod();
-
         //this.setCreativeTab(m.tabMythicalUnderworld);
+        GameRegistry.registerBlock(this, string);
         this.setLightLevel(1.0F);
         this.setHardness(0.0F);
         this.setBlockTextureName(MythologyMod.modid + ":" + "underworld_fire");

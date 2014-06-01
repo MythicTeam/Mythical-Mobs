@@ -3,6 +3,7 @@ package mythology.blocks;
 import java.util.Random;
 
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mythology.MythologyMod;
@@ -47,6 +48,7 @@ public class BlockAlloyFurnace extends BlockContainer {
 
     public BlockAlloyFurnace(boolean isActive, String string, CreativeTabs tabMythical, Material iron) {
         super(Material.rock);
+        GameRegistry.registerBlock(this, string);
         this.setBlockName("alloyFurnace");
         this.setCreativeTab(tabMythical);
         this.setHarvestLevel("pickaxe", 0);

@@ -22,24 +22,12 @@ public class Registration {
 	private static Resources r = new Resources();
 	
 	public static void load() {
-		registerBlocks();
-		registerItem();
 		registerDimension();
 		registerBiome();
 	}
 	
-	private static void registerBlocks() {
-		MythologyRegister.registerBlock(r.blockDeadStone);
-		MythologyRegister.registerBlock(r.blockBlueFire);
-	}
-	
-	private static void registerItem() {
-		MythologyRegister.registerItem(r.underworldFlintAndBronze);
-	}
-	
 	private static void registerDimension() {
 		//Dimension
-		GameRegistry.registerBlock(r.blockPortal, "underworldPortal");
 		LanguageRegistry.addName(r.blockPortal, "Underworld Portal");
 		
 		//Dimension
