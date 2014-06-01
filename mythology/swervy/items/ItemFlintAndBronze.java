@@ -18,7 +18,7 @@ public class ItemFlintAndBronze extends Item {
 
 	Random rand = new Random();
 	
-	public ItemFlintAndBronze(String string, CreativeTabs tabMythical) {
+	public ItemFlintAndBronze(String string) {
 		
 		MythologyMod m = new MythologyMod();
 		

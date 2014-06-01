@@ -13,7 +13,7 @@ import net.minecraft.util.IIcon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockMysticGrass extends Block {
+public class UnderworldGrass extends UnderworldBlock {
 
 	MythologyMod m = new MythologyMod();
 	MythicalBlocks mb = new MythicalBlocks();
@@ -25,34 +25,33 @@ public class BlockMysticGrass extends Block {
 	@SideOnly(Side.CLIENT)
 	protected IIcon iconTop;
 
-	public BlockMysticGrass(String string, CreativeTabs tabMythical, Material grass) {
-		super(grass);
-		this.setBlockName(string);
-		this.setCreativeTab(tabMythical);
-		this.setHarvestLevel("shovel", 0);
+	String blockname;
+	
+	public UnderworldGrass(String name, Material material) {
+		super(name, material);
 		this.setHardness(0.6F);
 		this.setStepSound(soundTypeGrass);
         this.setTickRandomly(true);
-
+        blockname = name;
 	}
 	
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister){
 		
-		this.blockIcon = iconRegister.registerIcon(m.modid + ":" + "MysticGrassBlock_side");
-		this.iconTop = iconRegister.registerIcon(m.modid + ":" + "MysticGrassBlock_top"); 
+		this.blockIcon = iconRegister.registerIcon(m.modid + ":underworld/" + blockname + "_side");
+		this.iconTop = iconRegister.registerIcon(m.modid + ":underworld/" + blockname + "_top"); 
 		
 	}
 
 	@SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int metadata)
     {
-        return side == 1 ? this.iconTop : (side == 0 ? mb.blockMysticDirt.getBlockTextureFromSide(side) : this.blockIcon);
+        return side == 1 ? this.iconTop : (side == 0 ? mb.underworldDirt.getBlockTextureFromSide(side) : this.blockIcon);
     }
 	
 	 
 	 public Item getItemDropped(int i, Random k, int l)
 	    {
-	        return mb.blockMysticDirt.getItemDropped(0, k, l);
+	        return Item.getItemFromBlock(mb.underworldDirt);
 	    }
 }

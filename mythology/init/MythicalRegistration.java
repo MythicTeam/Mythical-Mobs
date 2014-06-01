@@ -63,8 +63,16 @@ public class MythicalRegistration {
 	}
 	
 	private static void registerBlock() {
+<<<<<<< HEAD
 		MythologyRegister.registerBlock(mb.blockMysticGrass);
 		MythologyRegister.registerBlock(mb.blockMysticDirt);
+=======
+		//Underworld
+		MythologyRegister.registerBlock(mb.blockDeadStone);
+		MythologyRegister.registerBlock(mb.blockBlueFire);
+		
+		//Overworld
+>>>>>>> fc7a2daf61c300457e28b6c0d3772e2f92a791aa
 		MythologyRegister.registerBlock(mb.blockBronzeBlock);
 		MythologyRegister.registerBlock(mb.blockCelestialBronzeBlock);
 		MythologyRegister.registerBlock(mb.blockImperialGoldBlock);
