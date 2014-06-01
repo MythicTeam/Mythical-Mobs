@@ -1,15 +1,10 @@
 package mythology;
 
 import mythology.handlers.MythEventHandler;
-<<<<<<< HEAD
-import mythology.swervy.common.Resources;
-import mythology.init.*;
-=======
-import mythology.init.MythicalItems;
 import mythology.init.MythicalRegistration;
 import mythology.init.MythicalTools;
->>>>>>> fc7a2daf61c300457e28b6c0d3772e2f92a791aa
 import mythology.proxy.CommonProxy;
+import mythology.swervy.common.Resources;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
@@ -54,22 +49,16 @@ public class MythologyMod {
 	
 	@EventHandler
 	public void PreLoad(FMLPreInitializationEvent event) {
-<<<<<<< HEAD
-		
-=======
+
 		proxy.RenderEntity();
->>>>>>> fc7a2daf61c300457e28b6c0d3772e2f92a791aa
 	}
 
 	@EventHandler
 	public void Load(FMLInitializationEvent event) {
-<<<<<<< HEAD
 		MythicalRegistration.load();
 		proxy.RenderEntity();
-=======
 		MinecraftForge.EVENT_BUS.register(new MythEventHandler());
 		MythicalRegistration.load();		
->>>>>>> fc7a2daf61c300457e28b6c0d3772e2f92a791aa
 	}
 
 	@EventHandler

@@ -18,9 +18,9 @@ public class Resources {
 	
 	public static BiomeGenBase BiomeUnderworld = new BiomeUnderworld(154).setBiomeName("Apple Forest");
 	
-	public static Item underworldFlintAndBronze = new ItemFlintAndBronze("itemFlintAndBronze", m.tabMythical);
+	public static Item underworldFlintAndBronze = new ItemFlintAndBronze("itemFlintAndBronze");
 	
-	public static Block blockPortial = new BlockPortalBlock("underworldPortal", Material.portal);
+	public static Block blockPortal = new BlockPortalBlock("underworldPortal", Material.portal);
 	public static Block blockBlueFire = new BlockBlueFire("underworldFire", Material.fire) ;
 	
 	public static Block blockDeadStone = new BlockDeadStone("deadStone", m.tabMythical, Material.rock);

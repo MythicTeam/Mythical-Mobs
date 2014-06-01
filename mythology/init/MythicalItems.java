@@ -23,12 +23,8 @@ public class MythicalItems {
 	public static Item rawBehemothMeat = new RawBehemothMeat(4,0.4F,true, "rawBehemothMeat", m.tabMythical);
 	public static Item cookBehemothMeat = new CookBehemothMeat(8, 0.8F, true, "cookBehemothMeat", m.tabMythical);
 	public static Item itemGnomeBeard = new ItemGnomeBeard("itemGnomeBeard", m.tabMythical);
-<<<<<<< HEAD
-=======
-	
 	public static Item underworldFlintAndBronze = new ItemFlintAndBronze("itemFlintAndBronze");
 	
->>>>>>> fc7a2daf61c300457e28b6c0d3772e2f92a791aa
 	public static Item wing = new ItemWing("wing", "Wings are for flying, right?");
 	public static Item flyToken = new MythItem("flyToken", "Gives the holder the ability to fly!");	
 }

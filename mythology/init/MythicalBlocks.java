@@ -22,17 +22,8 @@ import mythology.blocks.BlockSilverOre;
 import mythology.blocks.BlockTinBlock;
 import mythology.blocks.BlockTinOre;
 import mythology.blocks.BlockZincOre;
-<<<<<<< HEAD
-import mythology.swervy.blocks.BlockBlueFire;
-import mythology.swervy.blocks.BlockDeadStone;
-import mythology.swervy.blocks.BlockPortalBlock;
-=======
 import mythology.blocks.UnderworldBlock;
 import mythology.blocks.UnderworldGrass;
-import mythology.blocks.underworld.BlockBlueFire;
-import mythology.blocks.underworld.BlockDeadStone;
-import mythology.blocks.underworld.BlockPortalBlock;
->>>>>>> fc7a2daf61c300457e28b6c0d3772e2f92a791aa
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;

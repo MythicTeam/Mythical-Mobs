@@ -21,13 +21,10 @@ public class BiomeUnderworld extends BiomeGenBase {
 		this.canSpawnLightningBolt();
 		this.setDisableRain();
 		//this.worldGeneratorTrees = new net.minecraft.world.gen.feature.WorldGenTrees(true);
-<<<<<<< HEAD:mythology/swervy/biomes/BiomeUnderworld.java
 		//this.topBlock = MythicalBlocks.underworldGrass;
 		//this.fillerBlock = MythicalBlocks.underworldDirt;
-=======
 		this.topBlock = MythicalBlocks.underworldGrass;
 		this.fillerBlock = MythicalBlocks.underworldDirt;
->>>>>>> fc7a2daf61c300457e28b6c0d3772e2f92a791aa:mythology/biomes/BiomeUnderworld.java
 		//this.WorldGenTrees = new WorldGenHugeTrees();
 		this.WorldGenLakes = new WorldGenLiquids(Blocks.water);
 	}
