@@ -53,4 +53,5 @@ public class MythicalTools {
 	public static Item hoeRuby = new ItemHoe(toolRuby, "hoeRuby").setUnlocalizedName("hoeRuby").setCreativeTab(m.tabMythical).setTextureName(MythologyMod.modid + ":" + "hoeRuby");
 	public static Item hoeSapphire = new ItemHoe(toolSapphire, "hoeSapphire").setUnlocalizedName("hoeSapphire").setCreativeTab(m.tabMythical).setTextureName(MythologyMod.modid + ":" + "hoeSapphire");
 	
+	public static Item ironWarhammer = new ItemWarhammer(ToolMaterial.IRON, "ironWarhammer", "Warhammers are useful for crushing weak bones!");
 }
