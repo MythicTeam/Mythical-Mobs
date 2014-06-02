@@ -85,6 +85,9 @@ item.wing.name=Wing
 item.blackWing.name=Black Wing
 item.flyToken.name=Flight Token
 item.noclipToken.name=Ghost Token
+item.tier1MineToken.name=Tier 1 Mining Token
+item.tier2MineToken.name=Tier 2 Mining Token
+item.tier3MineToken.name=Tier 3 Mining Token
 
 //Ingots
 item.silverIngot.name=Silver Ingot

@@ -29,5 +29,9 @@ public class MythicalItems {
 	public static Item wing = new ItemWing("wing", "Wings are for flying, right?");
 	public static Item flyToken = new MythItem("flyToken", "Gives the holder the ability to fly!");	
 	public static Item noclipToken = new MythItem("noclipToken", "Gives the holder the ability to pass through blocks!");	
+	public static Item tier1MineToken = new MythItem("tier1MineToken", "Doubles the holders breakspeed!");
+	public static Item tier2MineToken = new MythItem("tier2MineToken", "Quadrouples the holders breakspeed!");
+	public static Item tier3MineToken = new MythItem("tier3MineToken", "Octuples the holders breakspeed!");
+
 	public static Item ironWarhammer = new ItemWarhammer(ToolMaterial.IRON, "ironWarhammer", "Warhammers are useful for crushing weak bones!");
 }
