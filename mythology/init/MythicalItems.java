@@ -28,5 +28,6 @@ public class MythicalItems {
 	
 	public static Item wing = new ItemWing("wing", "Wings are for flying, right?");
 	public static Item flyToken = new MythItem("flyToken", "Gives the holder the ability to fly!");	
+	public static Item noclipToken = new MythItem("noclipToken", "Gives the holder the ability to pass through blocks!");	
 	public static Item ironWarhammer = new ItemWarhammer(ToolMaterial.IRON, "ironWarhammer", "Warhammers are useful for crushing weak bones!");
 }

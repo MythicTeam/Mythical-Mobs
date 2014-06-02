@@ -22,6 +22,11 @@ public class MythEventHandler {
 				player.capabilities.allowFlying = player.capabilities.isCreativeMode ? true
 						: false;
 			}
+			if (heldItem != null && heldItem.getItem() == MythicalItems.noclipToken) {
+				player.noClip = true;
+			} else {
+				player.noClip = false;
+			}
 		}
 	}
 }

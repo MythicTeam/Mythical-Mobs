@@ -81,6 +81,10 @@ item.itemFur.name=Fur
 item.itemGnomeBeard.name=Gnome Beard
 item.rawBehemothMeat.name=Raw Behemoth Meat
 item.cookBehemothMeat.name=Cooked Behemoth Meat
+item.wing.name=Wing
+item.blackWing.name=Black Wing
+item.flyToken.name=Flight Token
+item.noclipToken.name=Ghost Token
 
 //Ingots
 item.silverIngot.name=Silver Ingot
@@ -99,6 +103,8 @@ item.mithrilNugget.name=Mithril Nugget
 item.mithrilChain.name=Mithril Chain Link
 item.mithrilMail.name=Mithril Chain Mail
 
+//Warhammers
+item.ironWarhammer.name=Iron Warhammer
 
 //Hoes
 item.hoeSilver.name=Silver Hoe
