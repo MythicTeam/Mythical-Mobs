@@ -39,25 +39,25 @@ public class MythEventHandler {
 
 		EntityPlayer player = (EntityPlayer) event.entity;
 
-			if (player.inventory.hasItem(MythicalItems.tier1MineToken)) {
+			if (player.inventory.hasItem(MythicalItems.tier1GmBreakToken)) {
 				event.newSpeed = event.originalSpeed * 2;
 			}
-			if (player.inventory.hasItem(MythicalItems.tier2MineToken)) {
+			if (player.inventory.hasItem(MythicalItems.tier2GmBbreakToken)) {
 				event.newSpeed = event.originalSpeed * 4;
 			}
-			if (player.inventory.hasItem(MythicalItems.tier3MineToken)) {
+			if (player.inventory.hasItem(MythicalItems.tier3GmBbreakToken)) {
 				event.newSpeed = event.originalSpeed * 8;
 			}
-			if (player.inventory.hasItem(MythicalItems.tier1MineToken) && player.inventory.hasItem(MythicalItems.tier2MineToken)) {
+			if (player.inventory.hasItem(MythicalItems.tier1GmBreakToken) && player.inventory.hasItem(MythicalItems.tier2GmBbreakToken)) {
 				event.newSpeed = event.originalSpeed * 6;
 			}
-			if (player.inventory.hasItem(MythicalItems.tier2MineToken) && player.inventory.hasItem(MythicalItems.tier3MineToken)) {
+			if (player.inventory.hasItem(MythicalItems.tier2GmBbreakToken) && player.inventory.hasItem(MythicalItems.tier3GmBbreakToken)) {
 				event.newSpeed = event.originalSpeed * 12;
 			}
-			if (player.inventory.hasItem(MythicalItems.tier1MineToken) && player.inventory.hasItem(MythicalItems.tier2MineToken) && player.inventory.hasItem(MythicalItems.tier3MineToken)) {
+			if (player.inventory.hasItem(MythicalItems.tier1GmBreakToken) && player.inventory.hasItem(MythicalItems.tier2GmBbreakToken) && player.inventory.hasItem(MythicalItems.tier3GmBbreakToken)) {
 				event.newSpeed = event.originalSpeed * 14;
 			}
-			if (player.inventory.hasItem(MythicalItems.tier1MineToken) && player.inventory.hasItem(MythicalItems.tier3MineToken)) {
+			if (player.inventory.hasItem(MythicalItems.tier1GmBreakToken) && player.inventory.hasItem(MythicalItems.tier3GmBbreakToken)) {
 				event.newSpeed = event.originalSpeed * 10;
 			}
 		}
