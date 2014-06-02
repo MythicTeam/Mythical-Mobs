@@ -92,6 +92,7 @@ item.mineToken.name=Mining Token
 item.woodcuttingToken.name=Token of Woodcutting
 item.digToken.name=Token of Digs
 item.breakToken.name=Token of Breaking
+item.dmgSwitcher.name=Material Scroller
 
 //Ingots
 item.silverIngot.name=Silver Ingot
