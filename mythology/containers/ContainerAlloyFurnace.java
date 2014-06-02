@@ -2,6 +2,7 @@ package mythology.containers;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import mythology.recipes.AlloyRecipes;
 import mythology.slots.SlotAlloyFurnace;
 import mythology.tileentities.TileEntityAlloyFurnace;
 import net.minecraft.entity.player.EntityPlayer;
@@ -22,14 +23,16 @@ public class ContainerAlloyFurnace extends Container {
 	public int dualBurnTime;
 	/** How long time left before cooked */
 	public int lastItemBurnTime;
+	
+	public static final int INPUT_1 = 0, INPUT_2 = 1, FUEL = 2, OUTPUT = 3;
 
 	public ContainerAlloyFurnace(InventoryPlayer inventory, TileEntityAlloyFurnace tileentity) {
 		this.alloyFurnace = tileentity;
 		
-		this.addSlotToContainer(new Slot(tileentity, 0, 21, 17));
-		this.addSlotToContainer(new Slot(tileentity, 1, 44, 17));
-		this.addSlotToContainer(new Slot(tileentity, 2, 33, 53));
-		this.addSlotToContainer(new SlotAlloyFurnace(inventory.player, tileentity, 3, 116, 35));
+		this.addSlotToContainer(new Slot(tileentity, INPUT_1, 21, 17));
+		this.addSlotToContainer(new Slot(tileentity, INPUT_2, 44, 17));
+		this.addSlotToContainer(new Slot(tileentity, FUEL, 33, 53));
+		this.addSlotToContainer(new SlotAlloyFurnace(inventory.player, tileentity, OUTPUT, 116, 35));
         for (int i = 0; i < 3; i++)
         {
                 for (int k = 0; k < 9; k++)
@@ -92,60 +95,81 @@ public void updateProgressBar(int i, int j)
         }
 }
 /**
-        * Called to transfer a stack from one inventory to the other eg. when shift clicking.
-        */
+* Called when a player shift-clicks on a slot. You must override this or you will crash when someone does that.
+*/
 public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2)
 {
-        ItemStack itemstack = null;
-        Slot slot = (Slot)inventorySlots.get(par2);
-        if (slot != null && slot.getHasStack())
-        {
-                ItemStack itemstack1 = slot.getStack();
-                itemstack = itemstack1.copy();
-                if (par2 == 2)
-                {
-                        if (!mergeItemStack(itemstack1, 3, 39, true))
-                        {
-                                return null;
-                        }
-                }
-                else if (par2 >= 3 && par2 < 30)
-                {
-                        if (!mergeItemStack(itemstack1, 30, 39, false))
-                        {
-                                return null;
-                        }
-                }
-                else if (par2 >= 30 && par2 < 39)
-                {
-                        if (!mergeItemStack(itemstack1, 3, 30, false))
-                        {
-                                return null;
-                        }
-                }
-                else if (!mergeItemStack(itemstack1, 3, 39, false))
-                {
-                        return null;
-                }
-                if (itemstack1.stackSize == 0)
-                {
-                        slot.putStack(null);
-                }
-                else
-                {
-                        slot.onSlotChanged();
-                }
-                if (itemstack1.stackSize != itemstack.stackSize)
-                {
-                        slot.onPickupFromSlot(par1EntityPlayer, itemstack1);
-                }
-                else
-                {
-                        return null;
-                }
-        }
-        return itemstack;
+ItemStack itemstack = null;
+Slot slot = (Slot)this.inventorySlots.get(par2);
+
+if (slot != null && slot.getHasStack())
+{
+ItemStack itemstack1 = slot.getStack();
+itemstack = itemstack1.copy();
+
+if (par2 == OUTPUT)
+{
+
+if (!this.mergeItemStack(itemstack1, OUTPUT+1, OUTPUT+36+1, true))
+{
+return null;
 }
+
+slot.onSlotChange(itemstack1, itemstack);
+}
+else if (par2 != FUEL && par2 != INPUT_1 && par2 != INPUT_2)
+{
+if (AlloyRecipes.getSmeltingResult(itemstack1.getItem(), itemstack1.getItem()) != null)
+{
+	
+if (!this.mergeItemStack(itemstack1, INPUT_1, INPUT_2+1, false))
+{
+return null;
+}
+}
+else if (TileEntityAlloyFurnace.isItemFuel(itemstack1))
+{
+if (!this.mergeItemStack(itemstack1, FUEL, FUEL+1, false))
+{
+return null;
+}
+}
+else if (par2 >= OUTPUT+1 && par2 < OUTPUT+28)
+{
+if (!this.mergeItemStack(itemstack1, OUTPUT+28, OUTPUT+37, false))
+{
+return null;
+}
+}
+else if (par2 >= OUTPUT+28 && par2 < OUTPUT+37 && !this.mergeItemStack(itemstack1, OUTPUT+1, OUTPUT+28, false))
+{
+return null;
+}
+}
+else if (!this.mergeItemStack(itemstack1, OUTPUT+1, OUTPUT+37, false))
+{
+return null;
+}
+
+if (itemstack1.stackSize == 0)
+{
+slot.putStack((ItemStack)null);
+}
+else
+{
+slot.onSlotChanged();
+}
+
+if (itemstack1.stackSize == itemstack.stackSize)
+{
+return null;
+}
+
+slot.onPickupFromSlot(par1EntityPlayer, itemstack1);
+}
+return itemstack;
+}
+
 public boolean canInteractWith(EntityPlayer entityplayer)
 {
         return alloyFurnace.isUseableByPlayer(entityplayer);
