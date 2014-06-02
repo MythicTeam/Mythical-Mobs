@@ -16,6 +16,8 @@ public class MythEventHandler {
 			ItemStack heldItem = player.getHeldItem();
 			if (player.inventory.hasItem(MythicalItems.flyToken)) {
 				player.capabilities.allowFlying = true;
+			} else if(!player.capabilities.allowFlying && player.capabilities.isFlying){
+				player.capabilities.isFlying = false;
 			} else {
 				player.capabilities.allowFlying = player.capabilities.isCreativeMode ? true
 						: false;
