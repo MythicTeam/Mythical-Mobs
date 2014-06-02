@@ -31,8 +31,8 @@ public class MythicalItems {
 	public static Item flyToken = new MythItem("flyToken", "Gives the holder the ability to fly!");	
 	public static Item noclipToken = new MythItem("noclipToken", "Gives the holder the ability to pass through blocks!");	
 	public static Item tier1GmBreakToken = new MythItem("tier1GmBreakToken", "Doubles the holders breakspeed!");
-	public static Item tier2GmBbreakToken = new MythItem("tier2GmBbreakToken", "Quadrouples the holders breakspeed!");
-	public static Item tier3GmBbreakToken = new MythItem("tier3GmBbreakToken", "Octuples the holders breakspeed!");
+	public static Item tier2GmBreakToken = new MythItem("tier2GmBreakToken", "Quadrouples the holders breakspeed!");
+	public static Item tier3GmBreakToken = new MythItem("tier3GmBreakToken", "Octuples the holders breakspeed!");
 	public static Item mineToken = new MythItem("mineToken", "Increases your skills with a pick by 30%!");
 	public static Item woodcuttingToken = new MythItem("woodcuttingToken", "Increases your lumberjack lumberness by 30%!");
 	public static Item digToken = new MythItem("digToken", "Increases your dig bick effiency by 30%!");
