@@ -6,6 +6,7 @@ import mythology.handlers.GuiHandler;
 import mythology.handlers.MythEventHandler;
 import mythology.mobs.hostile.EntityCentaur;
 import mythology.mobs.hostile.EntityMinotaur;
+import mythology.mobs.hostile.EntityUnderworldSheep;
 import mythology.mobs.passive.EntityFairy;
 import mythology.mobs.passive.EntityGnome;
 import mythology.swervy.dimension.WorldProviderUnderworld;
@@ -57,6 +58,7 @@ public class MythicalRegistration {
 		MythologyRegister.addMob(EntityCentaur.class, "Centaur", EnumCreatureType.monster, BiomeGenBase.megaTaiga, 0x1A33D6, 0x1AD63F, 200, 200, 200);
 		MythologyRegister.addMob(EntityFairy.class, "Fairy", EnumCreatureType.creature, BiomeGenBase.forest, 0x07FA10, 0xE9F5E9, 200, 200, 200);
 		MythologyRegister.addMob(EntityMinotaur.class, "Minotaur", EnumCreatureType.monster, BiomeGenBase.extremeHillsPlus, 0x835C3B, 0xD1D0CE, 200, 200, 200);
+		MythologyRegister.addMob(EntityUnderworldSheep.class, "Underworld Sheep", EnumCreatureType.creature, MythicalBiomes.BiomeUnderworld, 0xFFFFFF, 0xFFFFFF, 200, 200, 200);
 	}
 	
 	private static void registerArmor() {		
