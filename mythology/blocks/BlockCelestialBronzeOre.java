@@ -14,7 +14,7 @@ public class BlockCelestialBronzeOre extends MythBlock {
 	public BlockCelestialBronzeOre(String string, CreativeTabs tabMythical, Material rock) {
 		super(rock, string);
 		this.setBlockName(string);
-		this.setBlockTextureName(m.modid + ":" + string);
+		this.setBlockTextureName(m.modid + ":ores/" + string);
 		this.setCreativeTab(tabMythical);
 		this.setHarvestLevel("pickaxe", 2);
 		this.setHardness(3.0F);

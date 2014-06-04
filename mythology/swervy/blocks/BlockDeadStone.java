@@ -20,6 +20,7 @@ public class BlockDeadStone extends Block {
 		this.setStepSound(soundTypePiston);
 		this.setResistance(10.0F);
 		this.setHarvestLevel("pickaxe", 0);
+		this.setLightLevel(0.3F);
 	}
 
 }

@@ -33,8 +33,7 @@ public class GuiPlayerExpanded extends InventoryEffectRenderer {
      */
     private float ySizeFloat;
 
-    public GuiPlayerExpanded(EntityPlayer player)
-    {
+    public GuiPlayerExpanded(EntityPlayer player) {
         super(new ContainerPlayerExpanded(player.inventory, !player.worldObj.isRemote, player));
         this.allowUserInput = true;
     }
@@ -43,16 +42,15 @@ public class GuiPlayerExpanded extends InventoryEffectRenderer {
      * Called from the main game loop to update the screen.
      */
     @Override 
-    public void updateScreen()
-    {
+    public void updateScreen() {
+    	
     }
 
     /**
      * Adds the buttons (and other controls) to the screen in question.
      */
     @Override
-    public void initGui()
-    {
+    public void initGui() {
         this.buttonList.clear();
         super.initGui();
     }
@@ -61,8 +59,7 @@ public class GuiPlayerExpanded extends InventoryEffectRenderer {
      * Draw the foreground layer for the GuiContainer (everything in front of the items)
      */
     @Override
-    protected void drawGuiContainerForegroundLayer(int p_146979_1_, int p_146979_2_)
-    {
+    protected void drawGuiContainerForegroundLayer(int p_146979_1_, int p_146979_2_) {
         this.fontRendererObj.drawString(I18n.format("container.crafting", new Object[0]), 106, 16, 4210752);
     }
 
@@ -70,27 +67,23 @@ public class GuiPlayerExpanded extends InventoryEffectRenderer {
      * Draws the screen and all the components in it.
      */
     @Override
-    public void drawScreen(int par1, int par2, float par3)
-    {
+    public void drawScreen(int par1, int par2, float par3) {
         super.drawScreen(par1, par2, par3);
         this.xSizeFloat = (float)par1;
         this.ySizeFloat = (float)par2;
     }
 
     @Override
-    protected void drawGuiContainerBackgroundLayer(float p_146976_1_, int p_146976_2_, int p_146976_3_)
-    {
+    protected void drawGuiContainerBackgroundLayer(float p_146976_1_, int p_146976_2_, int p_146976_3_) {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.getTextureManager().bindTexture(background);
         int k = this.guiLeft;
         int l = this.guiTop;
         this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
         
-        for (int i1 = 0; i1 < this.inventorySlots.inventorySlots.size(); ++i1)
-        {
+        for (int i1 = 0; i1 < this.inventorySlots.inventorySlots.size(); ++i1) {
             Slot slot = (Slot)this.inventorySlots.inventorySlots.get(i1);
-            if (slot.getHasStack() && slot.getSlotStackLimit()==1)
-            {
+            if (slot.getHasStack() && slot.getSlotStackLimit()==1) {
             	this.drawTexturedModalRect(k+slot.xDisplayPosition, l+slot.yDisplayPosition, 200, 0, 16, 16);
             }
         }
@@ -98,8 +91,7 @@ public class GuiPlayerExpanded extends InventoryEffectRenderer {
         drawPlayerModel(k + 51, l + 75, 30, (float)(k + 51) - this.xSizeFloat, (float)(l + 75 - 50) - this.ySizeFloat, this.mc.thePlayer);
     }
 
-    public static void drawPlayerModel(int x, int y, int scale, float yaw, float pitch, EntityLivingBase playerdrawn)
-    {
+    public static void drawPlayerModel(int x, int y, int scale, float yaw, float pitch, EntityLivingBase playerdrawn) {
         GL11.glEnable(GL11.GL_COLOR_MATERIAL);
         GL11.glPushMatrix();
         GL11.glTranslatef((float)x, (float)y, 50.0F);
@@ -136,28 +128,21 @@ public class GuiPlayerExpanded extends InventoryEffectRenderer {
     }
 
     @Override
-    protected void actionPerformed(GuiButton button)
-    {
-        if (button.id == 0)
-        {
+    protected void actionPerformed(GuiButton button) {
+        if (button.id == 0) {
             this.mc.displayGuiScreen(new GuiAchievements(this, this.mc.thePlayer.getStatFileWriter()));
         }
 
-        if (button.id == 1)
-        {
+        if (button.id == 1) {
             this.mc.displayGuiScreen(new GuiStats(this, this.mc.thePlayer.getStatFileWriter()));
         }
     }
 
 	@Override
 	protected void keyTyped(char par1, int par2) {
-		if (par2 == Baubles.proxy.keyHandler.key.getKeyCode())
-        {
+		if (par2 == Baubles.proxy.keyHandler.key.getKeyCode()) {
             this.mc.thePlayer.closeScreen();
         } else
-		super.keyTyped(par1, par2);
+        	super.keyTyped(par1, par2);
 	}
-    
-    
-    
 }

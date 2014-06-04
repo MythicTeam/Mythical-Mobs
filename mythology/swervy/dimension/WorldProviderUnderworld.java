@@ -18,8 +18,9 @@ public class WorldProviderUnderworld extends WorldProvider {
 	public void registerWorldChunkManager() {
 		this.worldChunkMgr = new WorldChunkManagerHell(MythicalBiomes.BiomeUnderworld, 0F);
 		this.dimensionId = Registration.underworld;
-		this.hasNoSky = false;
+		this.hasNoSky = true;
 		this.isHellWorld = false;
+		this.getFogColor(0, 0);
 	}
 	
 	public IChunkProvider createChunkGenerator() {
@@ -36,8 +37,18 @@ public class WorldProviderUnderworld extends WorldProvider {
 		return "Welcome to the Underworld";
 	}
 	
+	@Override
+	public int getMoonPhase(long par1) {
+        return (int) (par1 * 0L);
+    }
+	
 	public boolean canCoordinateBeSpawn(int par1, int par2) {
 		return false;
+	}
+	
+	@Override
+	public boolean getWorldHasVoidParticles() {
+		 return this.terrainType.hasVoidParticles(this.hasNoSky);
 	}
 	
 	@Override
@@ -55,7 +66,7 @@ public class WorldProviderUnderworld extends WorldProvider {
 	}
 
 	public boolean isSurfaceWorld() {
-		return true;
+		return false;
 	}
 
 	@SideOnly(Side.CLIENT)

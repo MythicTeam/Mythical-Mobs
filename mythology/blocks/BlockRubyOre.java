@@ -19,7 +19,7 @@ public class BlockRubyOre extends MythBlock {
 	public BlockRubyOre(String name, CreativeTabs tabMythical, Material material) {
 		super(material, name);
 		this.setBlockName(name);
-		this.setBlockTextureName(m.modid + ":" + name);
+		this.setBlockTextureName(m.modid + ":ores/" + name);
 		this.setCreativeTab(tabMythical);
 		this.setHarvestLevel("pickaxe", 2);
 		this.setHardness(3.0F);

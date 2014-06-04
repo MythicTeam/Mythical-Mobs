@@ -26,6 +26,7 @@ import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -42,7 +43,6 @@ public class MythicalRegistration {
 	public static void load() {
 		Registration.load();
 		
-		registerOreDictionary(); //Registers All Ores To Ore Dictionary
 		registerCraftingRecipes(); //Registers Crafting Recipes
 		registerSmeltingRecipes(); //Registers Smelting Recipes
 		registerWorldGenerator();  //Registers World Generators
@@ -58,7 +58,7 @@ public class MythicalRegistration {
 		MythologyRegister.addMob(EntityCentaur.class, "Centaur", EnumCreatureType.monster, BiomeGenBase.megaTaiga, 0x1A33D6, 0x1AD63F, 200, 200, 200);
 		MythologyRegister.addMob(EntityFairy.class, "Fairy", EnumCreatureType.creature, BiomeGenBase.forest, 0x07FA10, 0xE9F5E9, 200, 200, 200);
 		MythologyRegister.addMob(EntityMinotaur.class, "Minotaur", EnumCreatureType.monster, BiomeGenBase.extremeHillsPlus, 0x835C3B, 0xD1D0CE, 200, 200, 200);
-		MythologyRegister.addMob(EntityUnderworldSheep.class, "Underworld Sheep", EnumCreatureType.creature, MythicalBiomes.BiomeUnderworld, 0xFFFFFF, 0xFFFFFF, 200, 200, 200);
+		MythologyRegister.addMob(EntityUnderworldSheep.class, "Underworld Sheep", EnumCreatureType.creature, MythicalBiomes.BiomeUnderworld, 0xFFFFFF, 0xFFFFFF, 12, 4, 4);
 	}
 	
 	private static void registerArmor() {		
@@ -93,42 +93,8 @@ public class MythicalRegistration {
     	MythologyRegister.registerItem(ma.sapphireBoots);
 	}
 	
-	private static void registerOreDictionary() {
-		
-		//Blocks
-	     OreDictionary.registerOre("oreZinc", mb.blockZincOre);
-	     OreDictionary.registerOre("oreMythril", mb.blockMithrilOre);
-	     OreDictionary.registerOre("oreMithril", mb.blockMithrilOre);
-	     OreDictionary.registerOre("oreCopper", mb.blockCopperOre);
-	     OreDictionary.registerOre("oreTin", mb.blockTinOre);
-	     OreDictionary.registerOre("oreSilver", mb.blockSilverOre);
-	     OreDictionary.registerOre("orePlatinum", mb.blockPlatinumOre);
-	     OreDictionary.registerOre("oreRuby", mb.blockRubyOre);
-	     OreDictionary.registerOre("oreSapphire", mb.blockSapphireOre);
-	     OreDictionary.registerOre("oreCelestialBronze", mb.blockCelestialBronzeOre);
-	     OreDictionary.registerOre("oreImperialGold", mb.blockImperialGoldOre);
-
-	     //Items
-	     OreDictionary.registerOre("ingotCopper", mii.itemCopperIngot);
-	     OreDictionary.registerOre("ingotTin", mii.itemTinIngot);
-	     OreDictionary.registerOre("ingotBronze", mii.itemBronzeIngot);
-	     OreDictionary.registerOre("ingotCelestialBronze", mii.itemCelestialBronzeIngot);
-	     OreDictionary.registerOre("ingotImperialGold", mii.itemImperialGoldIngot);
-	     OreDictionary.registerOre("ingotPlatinum", mii.itemPlatinumIngot);
-	     OreDictionary.registerOre("ingotMithril", mii.itemMithrilIngot);
-	     OreDictionary.registerOre("ingotMythril", mii.itemMithrilIngot);
-	     OreDictionary.registerOre("itemRuby", mii.itemRuby);
-	     OreDictionary.registerOre("gemSapphire", mii.itemSapphire);
-	     OreDictionary.registerOre("nuggetMythril", mi.itemMythrilNugget);
-	     OreDictionary.registerOre("nuggetMithril", mi.itemMythrilNugget);
-	     OreDictionary.registerOre("materialMithrilChain", mi.itemMythrilChain);
-	     OreDictionary.registerOre("materialMythrilChain", mi.itemMythrilChain);
-	     OreDictionary.registerOre("materialMythrilMail", mi.itemMythrilMail);
-	     OreDictionary.registerOre("materialMithrilMail", mi.itemMythrilMail);
-	}
-	
 	private static void registerWorldGenerator() {
-		GameRegistry.registerWorldGenerator(new MythicalWorldGen(), 0);
+		GameRegistry.registerWorldGenerator( new MythicalWorldGen(), 0);
 	}
 	
 	private static void registerTileEntity() {
@@ -174,26 +140,11 @@ public class MythicalRegistration {
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mt.axeSilver, 1), new Object[] { "II", "IS", " S", 'I', "ingotSilver", 'S', Items.stick }));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mt.hoeSilver, 1), new Object[] { "II", " S", " S", 'I', "ingotSilver", 'S', Items.stick }));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mt.shovelSilver, 1), new Object[] { "I", "S", "S", 'I', "ingotSilver", 'S', Items.stick}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.bronzeHelmet, 1), new Object[] { "III", "I I", 'I', "ingotBronze"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.bronzeChestplate, 1), new Object[] { "I I", "III", "III", 'I', "ingotBronze"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.bronzeLeggings, 1), new Object[] { "III", "I I", "I I", 'I', "ingotBronze"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.bronzeBoots, 1), new Object[] { "I I", "I I", 'I', "ingotBronze"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.celestialBronzeHelmet, 1), new Object[] { "III", "I I", 'I', "ingotCelestialBronze"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.celestialBronzeChestplate, 1), new Object[] { "I I", "III", "III", 'I', "ingotCelestialBronze"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.celestialBronzeLeggings, 1), new Object[] { "III", "I I", "I I", 'I', "ingotCelestialBronze"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.celestialBronzeBoots, 1), new Object[] { "I I", "I I", 'I', "ingotCelestialBronze"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.imperialGoldHelmet, 1), new Object[] { "III", "I I", 'I', "ingotImperialGold"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.imperialGoldChestplate, 1), new Object[] { "I I", "III", "III", 'I', "ingotImperialGold"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.imperialGoldLeggings, 1), new Object[] { "III", "I I", "I I", 'I', "ingotImperialGold"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.imperialGoldBoots, 1), new Object[] { "I I", "I I", 'I', "ingotImperialGold"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.silverHelmet, 1), new Object[] { "III", "I I", 'I', "ingotSilver"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.silverChestplate, 1), new Object[] { "I I", "III", "III", 'I', "ingotSilver"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.silverLeggings, 1), new Object[] { "III", "I I", "I I", 'I', "ingotSilver"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.silverBoots, 1), new Object[] { "I I", "I I", 'I', "ingotSilver"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.mithrilHelmet, 1), new Object[] { "III", "I I", 'I', "materialMythrilMail"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.mithrilChestplate, 1), new Object[] { "I I", "III", "III", 'I', "materialMythrilMail"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.mithrilLeggings, 1), new Object[] { "III", "I I", "I I", 'I', "materialMythrilMail"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.mithrilBoots, 1), new Object[] { "I I", "I I", 'I', "materialMythrilMail"}));
+		
+		
+		
+		
+		
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(mi.itemMythrilNugget, 9), new Object[]{"ingotMythril"}));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mi.itemMythrilChain, 3), new Object[] { " I ", "I I", " I ", 'I', "nuggetMythril"}));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mi.itemMythrilMail, 1), new Object[] { "III", "III", "III", 'I', "materialrthrilChain"}));

@@ -6,7 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 
-public class BlockDeadRack  extends Block {
+public class BlockDeadRack extends Block {
 
 	MythologyMod m = new MythologyMod();
 	

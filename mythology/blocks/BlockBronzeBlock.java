@@ -10,7 +10,6 @@ public class BlockBronzeBlock extends MythBlock {
 	public BlockBronzeBlock(String string, CreativeTabs tabMythical, Material material) {
 		super(material, string);
 		this.setBlockName(string);
-		this.setBlockTextureName(m.modid + ":" + string);
 		this.setCreativeTab(tabMythical);
 		this.setHardness(5.0F);
 		this.setStepSound(soundTypeMetal);

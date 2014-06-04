@@ -25,7 +25,7 @@ public class MythologyMod {
 	
 	//Mod Info
 	public static final String modid = "mythical";
-	public static final String version = "1.0.0";
+	public static final String version = "1.0 indev";
 	public static final String name = "Mythical Creatures";
 	
 	@Instance("mythical")
@@ -43,7 +43,7 @@ public class MythologyMod {
 	};
 	
 	public static CreativeTabs tabMythicalUnderworld = new CreativeTabs("tabMythicalUnderworld") {
-		
+		@Override
 		public Item getTabIconItem() {
 			return Resources.underworldFlintAndBronze;
 		}

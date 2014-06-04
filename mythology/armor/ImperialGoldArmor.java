@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraftforge.common.ISpecialArmor;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class ImperialGoldArmor extends ItemArmor implements ISpecialArmor{
 	
@@ -22,6 +23,11 @@ public class ImperialGoldArmor extends ItemArmor implements ISpecialArmor{
 	public ImperialGoldArmor(ArmorMaterial armormaterial, int armorid, int armorslot) {
 		super(armormaterial, armorid, armorslot);
 		this.setCreativeTab(m.tabMythical);
+		
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.imperialGoldHelmet, 1), new Object[] { "III", "I I", 'I', "ingotImperialGold"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.imperialGoldChestplate, 1), new Object[] { "I I", "III", "III", 'I', "ingotImperialGold"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.imperialGoldLeggings, 1), new Object[] { "III", "I I", "I I", 'I', "ingotImperialGold"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.imperialGoldBoots, 1), new Object[] { "I I", "I I", 'I', "ingotImperialGold"}));
 	}
 	@Override
 	public ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage, int slot) {

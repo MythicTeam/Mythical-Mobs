@@ -13,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraftforge.common.ISpecialArmor;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -25,6 +26,11 @@ public class CelestialBronzeArmor extends ItemArmor implements ISpecialArmor {
 	public CelestialBronzeArmor(ArmorMaterial material, int id, int armorslot) {
 		super(material, id, armorslot);
 		this.setCreativeTab(m.tabMythical);
+		
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.celestialBronzeHelmet, 1), new Object[] { "III", "I I", 'I', "ingotCelestialBronze"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.celestialBronzeChestplate, 1), new Object[] { "I I", "III", "III", 'I', "ingotCelestialBronze"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.celestialBronzeLeggings, 1), new Object[] { "III", "I I", "I I", 'I', "ingotCelestialBronze"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ma.celestialBronzeBoots, 1), new Object[] { "I I", "I I", 'I', "ingotCelestialBronze"}));
 	}
 
 	@Override

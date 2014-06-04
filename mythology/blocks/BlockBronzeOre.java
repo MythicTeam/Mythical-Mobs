@@ -12,7 +12,7 @@ public class BlockBronzeOre extends MythBlock {
 	public BlockBronzeOre(String string, CreativeTabs tabMythical, Material material) {
 		super(material, string);
 		this.setBlockName(string);
-		this.setBlockTextureName(m.modid + ":" + string);
+		this.setBlockTextureName(m.modid + ":ores/" + string);
 		this.setCreativeTab(tabMythical);
 		this.setHardness(5.0F);
 		this.setStepSound(soundTypeMetal);

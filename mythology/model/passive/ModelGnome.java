@@ -14,7 +14,6 @@ package mythology.model.passive;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.MathHelper;
 
 public class ModelGnome extends ModelBase
 {
@@ -46,7 +45,6 @@ public class ModelGnome extends ModelBase
   
   public ModelGnome()
   {
-
     textureWidth = 128;
     textureHeight = 64;
     
@@ -195,12 +193,6 @@ public class ModelGnome extends ModelBase
       Cheek_1.setTextureSize(128, 64);
       Cheek_1.mirror = true;
       setRotation(Cheek_1, 0F, 0F, -0.1047198F);
-      
-	  /*adds childs so parts stick together
-	  Right_leg_1.addChild(Right_foot_1);
-	  Left_leg_1.addChild(Left_foot_1);
-	  Right_arm_1.addChild(Right_hand_1);
-	  Left_arm_1.addChild(Left_hand_1);*/
   }
   
   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
@@ -243,16 +235,6 @@ public class ModelGnome extends ModelBase
   public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
   {
     super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-    
-    this.Right_leg_1.rotateAngleX = MathHelper.cos(f * 1.2F) * 1.2F * f1;
-    this.Left_leg_1.rotateAngleX = MathHelper.cos(f * 1.2F + (float)Math.PI) * 1.2F * f1;
-    this.Right_arm_1.rotateAngleX = MathHelper.cos(f * 1.2F) * 1.2F * f1;
-    this.Left_arm_1.rotateAngleX= MathHelper.cos(f * 1.2F + (float)Math.PI) * 1.2F * f1;
-  
-    this.Right_foot_1.rotateAngleX = MathHelper.cos(f * 1.2F) * 1.2F * f1;
-    this.Left_foot_1.rotateAngleX = MathHelper.cos(f * 1.2F + (float)Math.PI) * 1.2F * f1;
-    this.Right_hand_1.rotateAngleX = MathHelper.cos(f * 1.2F) * 1.2F * f1;
-    this.Left_hand_1.rotateAngleX= MathHelper.cos(f * 1.2F + (float)Math.PI) * 1.2F * f1;
   }
 
 }

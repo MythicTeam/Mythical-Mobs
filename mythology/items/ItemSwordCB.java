@@ -1,6 +1,10 @@
 package mythology.items;
 
+import java.util.List;
+
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import mythology.MythologyMod;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -8,6 +12,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 
 public class ItemSwordCB extends ItemSword{
@@ -70,6 +75,11 @@ public class ItemSwordCB extends ItemSword{
 	            par1ItemStack.damageItem(1, par2EntityPlayer);
 	            return true;
 	        }
-	    }	
+	    }
 		
+		@SuppressWarnings({ "unchecked", "rawtypes" })
+		@SideOnly(Side.CLIENT)
+	    public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean bool) {
+			list.add(EnumChatFormatting.DARK_RED + "HP: " + EnumChatFormatting.WHITE + (itemStack.getMaxDamage() - itemStack.getItemDamage()));
+		}
 }

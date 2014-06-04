@@ -6,6 +6,7 @@ import mythology.MythologyMod;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -19,6 +20,7 @@ public class MythItem extends Item{
 		setTextureName(MythologyMod.modid + ":" + name);
 		setUnlocalizedName(name);
 		GameRegistry.registerItem(this, name);
+		OreDictionary.registerOre(name, this);
 		info = lore;
 	}
 	

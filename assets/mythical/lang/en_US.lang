@@ -43,7 +43,7 @@ tile.imperialGoldBlock.name=Imperial Gold Block
 tile.celestialBronzeBlock.name=Celestial Bronze Block
 tile.rubyBlock.name=Ruby Block
 tile.sapphireBlock.name=Sapphire Block
-tile.alloyFurnace.name=§6Alloy Furnace
+tile.alloyFurnace.name=Alloy Furnace
 
 //Armor
 item.bronzeHelmet.name=Bronze Helmet
@@ -93,6 +93,10 @@ item.woodcuttingToken.name=Token of Woodcutting
 item.digToken.name=Token of Digs
 item.breakToken.name=Token of Breaking
 item.dmgSwitcher.name=Material Scroller
+item.itemMythriIngot.name=Mythril Ingot
+item.itemMythrilNugget.name=Mythril Nugget
+item.itemMythrilChain.name=Mythril Chain Link
+item.itemMythrilMail.name=Mythril Chain Mail
 
 //Ingots
 item.silverIngot.name=Silver Ingot
@@ -153,6 +157,14 @@ item.swordCelestialBronze.name=Celestial Bronze Sword
 item.swordBronze.name=Bronze Sword
 item.swordRuby.name=Ruby Sword
 item.swordSapphire.name=Sapphire Sword
+
+//Paxels
+item.paxelSilver.name=Silver Paxel
+item.paxelImperialGold.name=Imperial Gold Paxel
+item.paxelCelestialBronze.name=Celestial Bronze Paxel
+item.paxelBronze.name=Bronze Paxel
+item.paxelRuby.name=Ruby Paxel
+item.paxelSapphire.name=Sapphire Paxel
 
 //Creative Tabs
 itemGroup.tabMythical=Mythical Creatures

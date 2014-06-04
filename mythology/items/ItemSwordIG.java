@@ -1,6 +1,10 @@
 package mythology.items;
 
+import java.util.List;
+
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import mythology.MythologyMod;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
@@ -14,6 +18,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.MovingObjectPosition;
 
 public class ItemSwordIG extends ItemSword{
@@ -90,5 +95,11 @@ public class ItemSwordIG extends ItemSword{
         }
     }
         
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean bool) {
+		list.add(EnumChatFormatting.DARK_RED + "HP: " + EnumChatFormatting.WHITE + (itemStack.getMaxDamage() - itemStack.getItemDamage()));
+	}
 }
 

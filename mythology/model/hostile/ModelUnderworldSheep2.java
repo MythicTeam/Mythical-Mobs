@@ -9,13 +9,11 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class ModelUnderworldSheep2 extends ModelQuadruped
-{
+public class ModelUnderworldSheep2 extends ModelQuadruped {
     private float field_78153_i;
     private static final String __OBFID = "CL_00000853";
 
-    public ModelUnderworldSheep2()
-    {
+    public ModelUnderworldSheep2() {
         super(12, 0.0F);
         this.head = new ModelRenderer(this, 0, 0);
         this.head.addBox(-3.0F, -4.0F, -6.0F, 6, 6, 8, 0.0F);
@@ -29,8 +27,7 @@ public class ModelUnderworldSheep2 extends ModelQuadruped
      * Used for easily adding entity-dependent animations. The second and third float params here are the same second
      * and third as in the setRotationAngles method.
      */
-    public void setLivingAnimations(EntityLivingBase par1EntityLivingBase, float par2, float par3, float par4)
-    {
+    public void setLivingAnimations(EntityLivingBase par1EntityLivingBase, float par2, float par3, float par4) {
         super.setLivingAnimations(par1EntityLivingBase, par2, par3, par4);
         this.head.rotationPointY = 6.0F + ((EntityUnderworldSheep)par1EntityLivingBase).func_70894_j(par4) * 9.0F;
         this.field_78153_i = ((EntityUnderworldSheep)par1EntityLivingBase).func_70890_k(par4);
@@ -41,8 +38,7 @@ public class ModelUnderworldSheep2 extends ModelQuadruped
      * and legs, where par1 represents the time(so that arms and legs swing back and forth) and par2 represents how
      * "far" arms and legs can swing at most.
      */
-    public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity par7Entity)
-    {
+    public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity par7Entity) {
         super.setRotationAngles(par1, par2, par3, par4, par5, par6, par7Entity);
         this.head.rotateAngleX = this.field_78153_i;
     }

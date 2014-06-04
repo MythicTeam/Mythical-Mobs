@@ -15,5 +15,6 @@ public class UnderworldBlock extends MythBlock {
 		super(material, name);
 		this.setBlockTextureName(m.modid + ":underworld/" + name);
 		this.setCreativeTab(m.tabMythicalUnderworld);
+		this.setLightLevel(0.3F);
 	}
 }
