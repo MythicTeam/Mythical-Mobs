@@ -87,24 +87,6 @@ public class ItemSpecialSword extends MythItem {
 	 */
 	public boolean hitEntity(ItemStack itemstack, EntityLivingBase hitted, EntityLivingBase hitter) {
 		itemstack.damageItem(1, hitter);
-		((EntityPlayer)hitter).addChatComponentMessage(new ChatComponentText("Your displayname is " + ((EntityPlayer)hitter).getDisplayName()));
-//        if (itemstack.stackTagCompound == null)
-//        {
-//        	itemstack.stackTagCompound = new NBTTagCompound();
-//        }
-//		if (itemstack.getTagCompound().getBoolean("IsOwnerSet") == true){
-//			return true;
-//		}
-//		if(hitter instanceof EntityPlayer){
-//			EntityPlayer player = ((EntityPlayer) hitter);
-//			if(player.getDisplayName().endsWith("s")){
-//				itemstack.setStackDisplayName(player.getDisplayName() + "' " + itemstack.getDisplayName());
-//			}
-//			else{
-//				itemstack.setStackDisplayName(player.getDisplayName() + "'s " + itemstack.getDisplayName());
-//			}
-//			itemstack.getTagCompound().setBoolean("IsOwnerSet", true);			
-//		}
 		return true;
 	}
 
