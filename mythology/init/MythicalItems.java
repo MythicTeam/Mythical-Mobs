@@ -38,7 +38,4 @@ public class MythicalItems {
 	public static Item woodcuttingToken = new MythItem("woodcuttingToken", "Increases your lumberjack lumberness by 30%!");
 	public static Item digToken = new MythItem("digToken", "Increases your dig bick effiency by 30%!");
 	public static Item breakToken = new MythItem("breakToken", "Increases your breakspeed by 20%!");
-	
-	//Admin - Builder stuff
-	public static Item dmgSwitcher = new AdmintoolDamageChanger("dmgSwitcher", "Try rightclicking some wool.");
 }

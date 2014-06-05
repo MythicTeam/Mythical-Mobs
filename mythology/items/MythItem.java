@@ -27,8 +27,6 @@ public class MythItem extends Item{
     /**
      * allows items to add custom lines of information to the mouseover description
      */
-    @SuppressWarnings({ "unchecked", "rawtypes" })
-	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean par4) {
     	list.add(info);
     }

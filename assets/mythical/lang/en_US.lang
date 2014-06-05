@@ -167,6 +167,9 @@ item.paxelBronze.name=Bronze Paxel
 item.paxelRuby.name=Ruby Paxel
 item.paxelSapphire.name=Sapphire Paxel
 
+//Functional Items
+item.calendar.name=Calendar
+
 //Creative Tabs
 itemGroup.tabMythical=Mythical Creatures
 itemGroup.tabMythicalUnderworld=Mythical Underworld

@@ -55,4 +55,10 @@ public class MythicalTools {
 	public static Item hoeSapphire = new ItemHoe(toolSapphire, "hoeSapphire").setUnlocalizedName("hoeSapphire").setCreativeTab(m.tabMythical).setTextureName(MythologyMod.modid + ":" + "hoeSapphire");
 	
 	public static Item ironWarhammer = new ItemWarhammer(ToolMaterial.IRON, "ironWarhammer", "Warhammers are useful for crushing weak bones!");
+	
+	//Admin - Builder stuff
+	public static Item dmgSwitcher = new AdmintoolDamageChanger("dmgSwitcher", "Try rightclicking some wool.");
+	
+	//Other
+	public static Item calendar = new DayCounter("calendar");
 }
