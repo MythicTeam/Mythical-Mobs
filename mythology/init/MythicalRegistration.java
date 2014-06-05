@@ -14,6 +14,7 @@ import mythology.tileentities.TileEntityAlloyFurnace;
 import mythology.world.MythicalWorldGen;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
@@ -141,7 +142,8 @@ public class MythicalRegistration {
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mt.hoeSilver, 1), new Object[] { "II", " S", " S", 'I', "ingotSilver", 'S', Items.stick }));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mt.shovelSilver, 1), new Object[] { "I", "S", "S", 'I', "ingotSilver", 'S', Items.stick}));
 		
-		
+		GameRegistry.addRecipe(new ItemStack(MythicalTools.specialSword, 1), new Object[] { "I", "I", "S", 'I', Blocks.dirt, 'S', Items.stick});
+
 		
 		
 		

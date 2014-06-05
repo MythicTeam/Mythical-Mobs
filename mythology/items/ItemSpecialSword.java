@@ -1,5 +1,7 @@
 package mythology.items;
 
+import java.util.List;
+
 import mythology.MythologyMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -14,20 +16,21 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
 import com.google.common.collect.Multimap;
 
+import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemSpecialSword extends MythItem {
 	private float damage;
 	private final Item.ToolMaterial toolmaterial;
-    private static final String[] SWORD_OVERLAY_NAMES = new String[] {"sword_blood_overlay", "sword_glowing_overlay", "sword_wet_overlay"};
-    @SideOnly(Side.CLIENT)
-    private IIcon overlayIcon;
+
 
 	public ItemSpecialSword(String name, String info, ToolMaterial material)
     {
@@ -36,36 +39,31 @@ public class ItemSpecialSword extends MythItem {
         this.maxStackSize = 1;
         this.setMaxDamage(material.getMaxUses());
         this.damage = 4.0F + material.getDamageVsEntity();
-        this.setTextureName("item_sword");
-    }
-	
-    /**
-     * Gets an icon index based on an item's damage value and the given render pass
-     */
-    @SideOnly(Side.CLIENT)
-    public IIcon getIconFromDamageForRenderPass(int par1, int par2)
-    {
-        return par2 == 1 ? this.overlayIcon : super.getIconFromDamageForRenderPass(par1, par2);
-    }
-    
-   // @SideOnly(Side.CLIENT)
-   // public void registerIcons(IIconRegister par1IconRegister)
-   // {
-   // 	super(par1IconRegister);
-   //     this.overlayIcon = par1IconRegister.registerIcon(MythologyMod.modid + ":" + SWORD_OVERLAY_NAMES[1]);
-   // }
-	
-    @SideOnly(Side.CLIENT)
-    public boolean requiresMultipleRenderPasses()
-    {
-        return true;
+        this.setTextureName("iron_sword");
     }
 
 	public void onCreated(ItemStack itemstack, World world, EntityPlayer player) {
-		itemstack.stackTagCompound = new NBTTagCompound();
+		String playername = player.getDisplayName();
+		itemstack.setStackDisplayName("Special Sword");
+		if (itemstack.stackTagCompound != null) {
+			itemstack.stackTagCompound = new NBTTagCompound();
+		}
 		itemstack.stackTagCompound.setString("MadeBy", player.getDisplayName());
+		if(player.getDisplayName().endsWith("s")){
+			itemstack.setStackDisplayName(player.getDisplayName() + "' " + itemstack.getDisplayName());
+		}
+		else{
+			itemstack.setStackDisplayName(player.getDisplayName() + "'s " + itemstack.getDisplayName());
+		}
 	}
-
+	
+	@SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean par4) {
+    	list.add(info);
+    	if (itemstack.stackTagCompound != null) {
+    		list.add(EnumChatFormatting.GOLD + "Made by " + itemstack.stackTagCompound.getString("MadeBy"));
+    	}
+    }
 
 	public float func_150931_i() {
 		return this.toolmaterial.getDamageVsEntity();
@@ -87,10 +85,26 @@ public class ItemSpecialSword extends MythItem {
 	 * Current implementations of this method in child classes do not use the
 	 * entry argument beside ev. They just raise the damage on the stack.
 	 */
-	public boolean hitEntity(ItemStack par1ItemStack,
-			EntityLivingBase par2EntityLivingBase,
-			EntityLivingBase par3EntityLivingBase) {
-		par1ItemStack.damageItem(1, par3EntityLivingBase);
+	public boolean hitEntity(ItemStack itemstack, EntityLivingBase hitted, EntityLivingBase hitter) {
+		itemstack.damageItem(1, hitter);
+		((EntityPlayer)hitter).addChatComponentMessage(new ChatComponentText("Your displayname is " + ((EntityPlayer)hitter).getDisplayName()));
+//        if (itemstack.stackTagCompound == null)
+//        {
+//        	itemstack.stackTagCompound = new NBTTagCompound();
+//        }
+//		if (itemstack.getTagCompound().getBoolean("IsOwnerSet") == true){
+//			return true;
+//		}
+//		if(hitter instanceof EntityPlayer){
+//			EntityPlayer player = ((EntityPlayer) hitter);
+//			if(player.getDisplayName().endsWith("s")){
+//				itemstack.setStackDisplayName(player.getDisplayName() + "' " + itemstack.getDisplayName());
+//			}
+//			else{
+//				itemstack.setStackDisplayName(player.getDisplayName() + "'s " + itemstack.getDisplayName());
+//			}
+//			itemstack.getTagCompound().setBoolean("IsOwnerSet", true);			
+//		}
 		return true;
 	}
 

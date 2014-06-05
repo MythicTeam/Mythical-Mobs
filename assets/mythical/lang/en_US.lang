@@ -157,6 +157,7 @@ item.swordCelestialBronze.name=Celestial Bronze Sword
 item.swordBronze.name=Bronze Sword
 item.swordRuby.name=Ruby Sword
 item.swordSapphire.name=Sapphire Sword
+item.specialSword.name=Special Sword
 
 //Paxels
 item.paxelSilver.name=Silver Paxel
