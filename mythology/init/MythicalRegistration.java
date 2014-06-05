@@ -55,11 +55,11 @@ public class MythicalRegistration {
 	
 	
 	private static void registerMob() {
-		MythologyRegister.addMob(EntityGnome.class, "Gnome", EnumCreatureType.creature, BiomeGenBase.roofedForest, 0xFC0A16, 0xFCFCFC, 200, 200, 200);
-		MythologyRegister.addMob(EntityCentaur.class, "Centaur", EnumCreatureType.monster, BiomeGenBase.megaTaiga, 0x1A33D6, 0x1AD63F, 200, 200, 200);
-		MythologyRegister.addMob(EntityFairy.class, "Fairy", EnumCreatureType.creature, BiomeGenBase.forest, 0x07FA10, 0xE9F5E9, 200, 200, 200);
-		MythologyRegister.addMob(EntityMinotaur.class, "Minotaur", EnumCreatureType.monster, BiomeGenBase.extremeHillsPlus, 0x835C3B, 0xD1D0CE, 200, 200, 200);
-		MythologyRegister.addMob(EntityUnderworldSheep.class, "Underworld Sheep", EnumCreatureType.creature, MythicalBiomes.BiomeUnderworld, 0xFFFFFF, 0xFFFFFF, 12, 4, 4);
+		MythologyRegister.addMob(EntityGnome.class, "Gnome", EnumCreatureType.creature, BiomeGenBase.roofedForest, 0xFC0A16, 0xFCFCFC, 20, 20, 20);
+		MythologyRegister.addMob(EntityCentaur.class, "Centaur", EnumCreatureType.monster, BiomeGenBase.megaTaiga, 0x1A33D6, 0x1AD63F, 20, 20, 20);
+		MythologyRegister.addMob(EntityFairy.class, "Fairy", EnumCreatureType.creature, BiomeGenBase.forest, 0x07FA10, 0xE9F5E9, 20, 20, 20);
+		MythologyRegister.addMob(EntityMinotaur.class, "Minotaur", EnumCreatureType.monster, BiomeGenBase.extremeHillsPlus, 0x835C3B, 0xD1D0CE, 20, 20, 20);
+		MythologyRegister.addMob(EntityUnderworldSheep.class, "Underworld Sheep", EnumCreatureType.creature, MythicalBiomes.BiomeUnderworld, 0xFFFFFF, 0xFFFFFF, 20, 2, 6);
 	}
 	
 	private static void registerArmor() {		
