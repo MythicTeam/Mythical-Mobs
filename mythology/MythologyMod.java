@@ -1,5 +1,6 @@
 package mythology;
 
+import mythology.commands.HealCommand;
 import mythology.handlers.MythEventHandler;
 import mythology.init.MythicalRegistration;
 import mythology.init.MythicalTools;
@@ -22,6 +23,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
 @Mod(modid = MythologyMod.modid, name = MythologyMod.name, version = MythologyMod.version)
 public class MythologyMod {
@@ -33,19 +35,25 @@ public class MythologyMod {
 	public static final String version = "1.0 indev";
 	public static final String name = "Mythical Creatures";
 	
-	@Instance("mythical")
+	@Instance(modid)
 	public static MythologyMod instance;
 	
 	@SidedProxy(clientSide = "mythology.proxy.ClientProxy", serverSide = "mythology.proxy.CommonProxy")
 	public static CommonProxy proxy;
-	// Creative Tabs
 	
+	// Creative Tabs	
 	public static CreativeTabs tabMythical = new CreativeTabs("tabMythical") {
 		@Override
 		public Item getTabIconItem() {
 			return MythicalTools.swordImperialGold;
 		}
 	};
+	
+	@EventHandler
+	public void serverLoad(FMLServerStartingEvent event)
+	{
+		event.registerServerCommand(new HealCommand());
+	}
 	
 	public static CreativeTabs tabMythicalUnderworld = new CreativeTabs("tabMythicalUnderworld") {
 		@Override

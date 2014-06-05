@@ -20,7 +20,7 @@ public class DayCounter extends MythItem{
      */
 	@Override
     public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean par4) {
-		int day = (int)player.worldObj.getTotalWorldTime() / 24000;
+		int day = (int)player.worldObj.getTotalWorldTime() / 24000 + 1;
 		list.add("Counts in-game minecraft days.");
 		list.add("Does not count skipped time (bed/command)!");
     	list.add(EnumChatFormatting.WHITE + "Day " + day);
