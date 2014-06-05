@@ -9,6 +9,7 @@ import mythology.items.ItemScales;
 import mythology.items.ItemWarhammer;
 import mythology.items.ItemWing;
 import mythology.items.MythItem;
+import mythology.items.MythUnobtainableItem;
 import mythology.items.RawBehemothMeat;
 import mythology.swervy.items.ItemFlintAndBronze;
 import net.minecraft.item.Item;
@@ -27,6 +28,7 @@ public class MythicalItems {
 	public static Item cookBehemothMeat = new CookBehemothMeat(8, 0.8F, true, "cookBehemothMeat", m.tabMythical);
 	public static Item itemGnomeBeard = new ItemGnomeBeard("itemGnomeBeard", m.tabMythical);	
 	public static Item wing = new ItemWing("wing", "Wings are for flying, right?");
+	public static Item heart = new MythUnobtainableItem("heart");	
 	
 	//Tokens
 	public static Item flyToken = new MythItem("flyToken", "Gives the holder the ability to fly!");	

@@ -1,5 +1,6 @@
 package mythology.init;
 
+import mythology.projectiles.EntityHealingBall;
 import mythology.swervy.common.Registration;
 import mythology.MythologyMod;
 import mythology.handlers.GuiHandler;
@@ -29,6 +30,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -60,6 +62,7 @@ public class MythicalRegistration {
 		MythologyRegister.addMob(EntityFairy.class, "Fairy", EnumCreatureType.creature, BiomeGenBase.forest, 0x07FA10, 0xE9F5E9, 20, 20, 20);
 		MythologyRegister.addMob(EntityMinotaur.class, "Minotaur", EnumCreatureType.monster, BiomeGenBase.extremeHillsPlus, 0x835C3B, 0xD1D0CE, 20, 20, 20);
 		MythologyRegister.addMob(EntityUnderworldSheep.class, "Underworld Sheep", EnumCreatureType.creature, MythicalBiomes.BiomeUnderworld, 0xFFFFFF, 0xFFFFFF, 20, 2, 6);
+		MythologyRegister.addProjectileEntity(EntityHealingBall.class, "Healing ball");
 	}
 	
 	private static void registerArmor() {		

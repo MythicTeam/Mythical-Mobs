@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.projectile.EntityEgg;
+import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.item.Item;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.WorldType;
@@ -26,6 +27,11 @@ public class MythologyRegister {
 		EntityRegistry.registerModEntity(entityClass, entityName, entityID, MythologyMod.instance, 64, 1, true);
 		EntityRegistry.addSpawn(entityClass, weightedProb, min, max, typeMob, biome);
 		EntityList.entityEggs.put(Integer.valueOf(entityID), new EntityList.EntityEggInfo(entityID, primColor, secColor));
+	}
+	
+	public static void addProjectileEntity(Class<? extends EntityThrowable> entityClass, String entityName){
+		int entityID = EntityRegistry.findGlobalUniqueEntityId();
+		EntityRegistry.registerModEntity(entityClass, entityName, entityID, MythologyMod.instance, 64, 1, true);
 	}
 
 	public static void registerItem(Item item) {

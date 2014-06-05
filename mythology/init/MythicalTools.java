@@ -56,6 +56,8 @@ public class MythicalTools {
 	
 	public static Item ironWarhammer = new ItemWarhammer(ToolMaterial.IRON, "ironWarhammer", "Warhammers are useful for crushing weak bones!");
 	
+	public static Item healingStaff = new StaffHealing("healingStaff", "Useful for healing friends! Enemies too...");
+	
 	//Admin - Builder stuff
 	public static Item dmgSwitcher = new AdmintoolDamageChanger("dmgSwitcher", "Try rightclicking some wool.");
 	
