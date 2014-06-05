@@ -5,6 +5,7 @@ import java.util.Random;
 import mythology.MythologyMod;
 import mythology.init.MythicalBlocks;
 import mythology.swervy.common.Registration;
+import mythology.swervy.world.WorldGenDeadTrees;
 import mythology.swervy.world.WorldGenTrees;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -105,12 +106,12 @@ public class MythicalWorldGen implements IWorldGenerator{
 		BiomeGenBase biome = world.getBiomeGenForCoords(i, j);
 			
 		//Tree Spawn
-		for(int t = 0; t < 20; t++){
+		for(int t = 0; t < 50; t++){
 			int Xcoord1 = i + random.nextInt(16);
 			int Ycoord1 = random.nextInt(90);
 			int Zcoord1 = j + random.nextInt(16);
 			
-			(new WorldGenTrees(false, 6, 0, 0, false)).generate(world, random, Xcoord1, Ycoord1, Zcoord1);
+			(new WorldGenDeadTrees(false, 5, 0, 0, true)).generate(world, random, Xcoord1, Ycoord1, Zcoord1);
 		}
 		
 		//Ore Spawn

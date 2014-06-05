@@ -5,13 +5,17 @@ import mythology.init.MythicalTools;
 import mythology.swervy.biomes.BiomeUnderworld;
 import mythology.swervy.blocks.BlockBlueFire;
 import mythology.swervy.blocks.BlockDeadGrass;
+import mythology.swervy.blocks.BlockDeadLeaf;
+import mythology.swervy.blocks.BlockDeadLog;
 import mythology.swervy.blocks.BlockDeadRack;
+import mythology.swervy.blocks.BlockDeadSapling;
 import mythology.swervy.blocks.BlockDeadStone;
 import mythology.swervy.blocks.BlockPortalBlock;
 import mythology.swervy.blocks.UnderworldBlock;
 import mythology.swervy.items.ItemFlintAndBronze;
 import mythology.swervy.items.ItemPaxel;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLog;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -41,5 +45,7 @@ public class Resources {
 	public static ItemPaxel paxelSilver = new ItemPaxel("paxelSilver", MythicalTools.toolSilver);
 	public static ItemPaxel paxelRuby = new ItemPaxel("paxelRuby", MythicalTools.toolRuby);
 	public static ItemPaxel paxelSapphire = new ItemPaxel("paxelSapphire", MythicalTools.toolSapphire);
+	
+
 	
 }

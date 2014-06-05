@@ -4,7 +4,12 @@ import mythology.handlers.MythEventHandler;
 import mythology.init.MythicalRegistration;
 import mythology.init.MythicalTools;
 import mythology.proxy.CommonProxy;
+import mythology.swervy.blocks.BlockDeadLeaf;
+import mythology.swervy.blocks.BlockDeadLog;
+import mythology.swervy.blocks.BlockDeadSapling;
 import mythology.swervy.common.Resources;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -49,8 +54,14 @@ public class MythologyMod {
 		}
 	};
 	
+	public static Block deadLog = new BlockDeadLog().setCreativeTab(tabMythicalUnderworld).setBlockName("deadLog").setBlockTextureName(modid + "deadLog");
+	public static Block deadLeaf = new BlockDeadLeaf("deadLeaf", Material.leaves, tabMythicalUnderworld);
+	public static Block deadSapling = new BlockDeadSapling("deadSapling", Material.leaves, tabMythicalUnderworld);
+	
 	@EventHandler
 	public void PreLoad(FMLPreInitializationEvent event) {
+		
+		
 		proxy.RenderEntity();
 	}
 
