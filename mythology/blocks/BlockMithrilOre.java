@@ -20,7 +20,7 @@ public class BlockMithrilOre extends MythBlock {
 	public BlockMithrilOre(String string, CreativeTabs tabMythical, Material rock) {
 		super(rock, string);
 		this.setBlockName(string);
-		this.setBlockTextureName(m.modid + ":oresblocks//" + string);
+		this.setBlockTextureName(m.modid + ":ores/" + string);
 		this.setCreativeTab(tabMythical);
 		this.setHarvestLevel("pickaxe", 2);
 		this.setHardness(3.0F);

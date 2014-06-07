@@ -6,15 +6,15 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 
-public class BlockDeadStone extends Block {
+public class DeadStoneBlock extends Block {
 
 	MythologyMod m = new MythologyMod();
 
-	public BlockDeadStone(String string, Material material) {
+	public DeadStoneBlock(String string, Material material) {
 		super(material);
 		GameRegistry.registerBlock(this, string);
 		this.setBlockName(string);
-		this.setBlockTextureName(m.modid + ":" + "underworld/" + string);
+		this.setBlockTextureName(m.modid + ":" + "blocks/underworld/" + string);
 		this.setCreativeTab(m.tabMythicalUnderworld);
 		this.setHardness(5.0F);
 		this.setStepSound(soundTypePiston);

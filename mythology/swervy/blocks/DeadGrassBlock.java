@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDeadGrass extends UnderworldBlock implements IGrowable {
+public class DeadGrassBlock extends DeadDirtBlock implements IGrowable {
 
 	MythologyMod m = new MythologyMod();
 	MythicalBlocks mb = new MythicalBlocks();
@@ -30,7 +30,7 @@ public class BlockDeadGrass extends UnderworldBlock implements IGrowable {
 
 	String blockname;
 	
-	public BlockDeadGrass(String name, Material material) {
+	public DeadGrassBlock(String name, Material material) {
 		super(name, material);
 		this.setHardness(0.6F);
 		this.setStepSound(soundTypeGrass);
@@ -42,8 +42,8 @@ public class BlockDeadGrass extends UnderworldBlock implements IGrowable {
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister){
 		
-		this.blockIcon = iconRegister.registerIcon(m.modid + ":underworld/" + "deadGrass" + "_side");
-		this.iconTop = iconRegister.registerIcon(m.modid + ":underworld/" + "deadGrass" + "_top"); 
+		this.blockIcon = iconRegister.registerIcon(m.modid + ":blocks/underworld/" + "deadGrass" + "_side");
+		this.iconTop = iconRegister.registerIcon(m.modid + ":blocks/underworld/" + "deadGrass" + "_top"); 
 		
 	}
 

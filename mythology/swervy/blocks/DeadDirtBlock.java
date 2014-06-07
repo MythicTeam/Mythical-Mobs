@@ -7,13 +7,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 
-public class UnderworldBlock extends MythBlock {
+public class DeadDirtBlock extends MythBlock {
 
 	MythologyMod m = new MythologyMod();
 
-	public UnderworldBlock(String name, Material material) {
+	public DeadDirtBlock(String name, Material material) {
 		super(material, name);
-		this.setBlockTextureName(m.modid + ":underworld/" + name);
+		this.setBlockTextureName(m.modid + ":blocks/underworld/" + name);
 		this.setCreativeTab(m.tabMythicalUnderworld);
 		this.setLightLevel(0.3F);
 	}

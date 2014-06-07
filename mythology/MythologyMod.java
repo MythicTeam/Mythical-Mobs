@@ -5,12 +5,7 @@ import mythology.handlers.MythEventHandler;
 import mythology.init.MythicalRegistration;
 import mythology.init.MythicalTools;
 import mythology.proxy.CommonProxy;
-import mythology.swervy.blocks.BlockDeadLeaf;
-import mythology.swervy.blocks.BlockDeadLog;
-import mythology.swervy.blocks.BlockDeadSapling;
 import mythology.swervy.common.Resources;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -29,10 +24,13 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 public class MythologyMod {
 	
 	public static final int guiAlloyFurnace = 0;
+	public static final int guiHelp = 2;
+	public static final int guiMagicTable = 3;
 	
 	//Mod Info
 	public static final String modid = "mythical";
-	public static final String version = "1.0 indev";
+	public static final String version = "1.0";
+	public static final String versiobState = "indev";
 	public static final String name = "Mythical Creatures";
 	
 	@Instance(modid)
@@ -41,19 +39,13 @@ public class MythologyMod {
 	@SidedProxy(clientSide = "mythology.proxy.ClientProxy", serverSide = "mythology.proxy.CommonProxy")
 	public static CommonProxy proxy;
 	
-	// Creative Tabs	
+	// Creative Tabs
 	public static CreativeTabs tabMythical = new CreativeTabs("tabMythical") {
 		@Override
 		public Item getTabIconItem() {
 			return MythicalTools.swordImperialGold;
 		}
 	};
-	
-	@EventHandler
-	public void serverLoad(FMLServerStartingEvent event)
-	{
-		event.registerServerCommand(new HealCommand());
-	}
 	
 	public static CreativeTabs tabMythicalUnderworld = new CreativeTabs("tabMythicalUnderworld") {
 		@Override
@@ -62,14 +54,13 @@ public class MythologyMod {
 		}
 	};
 	
-	public static Block deadLog = new BlockDeadLog().setCreativeTab(tabMythicalUnderworld).setBlockName("deadLog").setBlockTextureName(modid + "deadLog");
-	public static Block deadLeaf = new BlockDeadLeaf("deadLeaf", Material.leaves, tabMythicalUnderworld);
-	public static Block deadSapling = new BlockDeadSapling("deadSapling", Material.leaves, tabMythicalUnderworld);
+	@EventHandler
+	public void serverLoad(FMLServerStartingEvent event) {
+		event.registerServerCommand(new HealCommand());
+	}
 	
 	@EventHandler
 	public void PreLoad(FMLPreInitializationEvent event) {
-		
-		
 		proxy.RenderEntity();
 	}
 

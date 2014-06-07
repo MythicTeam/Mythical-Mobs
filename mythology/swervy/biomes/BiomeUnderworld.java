@@ -7,6 +7,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import mythology.init.MythicalBlocks;
 import mythology.mobs.hostile.EntityUnderworldSheep;
 import mythology.swervy.common.Resources;
+import mythology.swervy.world.WorldGenDeadTrees;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.material.Material;
@@ -39,10 +40,9 @@ public class BiomeUnderworld extends BiomeGenBase {
         super(id);
         this.canSpawnLightningBolt();
         this.setDisableRain();
-        this.WorldGenTrees = new mythology.swervy.world.WorldGenTrees(true);
+        this.WorldGenTrees = new WorldGenDeadTrees(true);
         this.topBlock = Resources.blockDeadGrass;
         this.fillerBlock = Resources.blockDeadDirt;
-        this.worldGeneratorTrees = new net.minecraft.world.gen.feature.WorldGenTrees(true);
         //this.WorldGenTrees = new WorldGenHugeTrees();
         this.WorldGenLakes = new WorldGenLiquids(Blocks.water);
         

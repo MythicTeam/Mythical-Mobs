@@ -6,7 +6,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import mythology.MythologyMod;
 import mythology.init.MythicalBlocks;
 import mythology.init.MythicalItems;
-import mythology.swervy.blocks.BlockPortalBlock;
 import mythology.swervy.common.Resources;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;

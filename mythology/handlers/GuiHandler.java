@@ -4,7 +4,9 @@ import mythology.MythologyMod;
 import mythology.containers.ContainerAlloyFurnace;
 import mythology.gui.GuiAlloyFurnace;
 import mythology.swervy.common.Resources;
+import mythology.swervy.containers.ContainerMagicTable;
 import mythology.swervy.gui.guiHelp;
+import mythology.swervy.gui.guiMagicTable;
 import mythology.tileentities.TileEntityAlloyFurnace;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
@@ -21,6 +23,8 @@ public class GuiHandler implements IGuiHandler {
 			switch(ID){
 				case MythologyMod.guiAlloyFurnace:
 						return new ContainerAlloyFurnace(player.inventory, (TileEntityAlloyFurnace) entity);
+				case MythologyMod.guiMagicTable:
+					return new ContainerMagicTable(player.inventory, world, x, y, z) ;
 			}
 		}
 		return null;
@@ -33,8 +37,10 @@ public class GuiHandler implements IGuiHandler {
 		switch(ID){
 		case MythologyMod.guiAlloyFurnace:
 				return new GuiAlloyFurnace(player.inventory, (TileEntityAlloyFurnace) entity);
-		case 3:
+		case MythologyMod.guiHelp:
 			return new guiHelp(player);
+		case MythologyMod.guiMagicTable:
+			return new guiMagicTable(player.inventory, world, x, y, z);
 	}
 		return null;
 	}

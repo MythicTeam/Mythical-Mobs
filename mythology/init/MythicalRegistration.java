@@ -1,38 +1,25 @@
 package mythology.init;
 
-import mythology.projectiles.EntityHealingBall;
 import mythology.swervy.common.Registration;
 import mythology.MythologyMod;
-import mythology.handlers.GuiHandler;
-import mythology.handlers.MythEventHandler;
-import mythology.mobs.hostile.EntityCentaur;
-import mythology.mobs.hostile.EntityMinotaur;
-import mythology.mobs.hostile.EntityUnderworldSheep;
-import mythology.mobs.passive.EntityFairy;
-import mythology.mobs.passive.EntityGnome;
+import mythology.handlers.*;
+import mythology.mobs.hostile.*;
+import mythology.mobs.passive.*;
 import mythology.swervy.dimension.WorldProviderUnderworld;
 import mythology.tileentities.TileEntityAlloyFurnace;
 import mythology.world.MythicalWorldGen;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.BiomeDictionary.Type;
-import net.minecraftforge.common.DimensionManager;
-import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
-import cpw.mods.fml.common.IWorldGenerator;
+import net.minecraftforge.common.*;
+import net.minecraftforge.oredict.*;
+import cpw.mods.fml.common.*;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.common.registry.*;
 
 public class MythicalRegistration {
 	
@@ -57,12 +44,11 @@ public class MythicalRegistration {
 	
 	
 	private static void registerMob() {
-		MythologyRegister.addMob(EntityGnome.class, "Gnome", EnumCreatureType.creature, BiomeGenBase.roofedForest, 0xFC0A16, 0xFCFCFC, 20, 20, 20);
-		MythologyRegister.addMob(EntityCentaur.class, "Centaur", EnumCreatureType.monster, BiomeGenBase.megaTaiga, 0x1A33D6, 0x1AD63F, 20, 20, 20);
-		MythologyRegister.addMob(EntityFairy.class, "Fairy", EnumCreatureType.creature, BiomeGenBase.forest, 0x07FA10, 0xE9F5E9, 20, 20, 20);
-		MythologyRegister.addMob(EntityMinotaur.class, "Minotaur", EnumCreatureType.monster, BiomeGenBase.extremeHillsPlus, 0x835C3B, 0xD1D0CE, 20, 20, 20);
-		MythologyRegister.addMob(EntityUnderworldSheep.class, "Underworld Sheep", EnumCreatureType.creature, MythicalBiomes.BiomeUnderworld, 0xFFFFFF, 0xFFFFFF, 20, 2, 6);
-		MythologyRegister.addProjectileEntity(EntityHealingBall.class, "Healing ball");
+		MythologyRegister.addMob(EntityGnome.class, "Gnome", EnumCreatureType.creature, BiomeGenBase.roofedForest, 0xFC0A16, 0xFCFCFC, 200, 200, 200);
+		MythologyRegister.addMob(EntityCentaur.class, "Centaur", EnumCreatureType.monster, BiomeGenBase.megaTaiga, 0x1A33D6, 0x1AD63F, 200, 200, 200);
+		MythologyRegister.addMob(EntityFairy.class, "Fairy", EnumCreatureType.creature, BiomeGenBase.forest, 0x07FA10, 0xE9F5E9, 200, 200, 200);
+		MythologyRegister.addMob(EntityMinotaur.class, "Minotaur", EnumCreatureType.monster, BiomeGenBase.extremeHillsPlus, 0x835C3B, 0xD1D0CE, 200, 200, 200);
+		MythologyRegister.addMob(EntityUnderworldSheep.class, "Underworld Sheep", EnumCreatureType.creature, MythicalBiomes.BiomeUnderworld, 0xFFFFFF, 0xFFFFFF, 12, 4, 4);
 	}
 	
 	private static void registerArmor() {		
@@ -145,8 +131,7 @@ public class MythicalRegistration {
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mt.hoeSilver, 1), new Object[] { "II", " S", " S", 'I', "ingotSilver", 'S', Items.stick }));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mt.shovelSilver, 1), new Object[] { "I", "S", "S", 'I', "ingotSilver", 'S', Items.stick}));
 		
-		GameRegistry.addRecipe(new ItemStack(MythicalTools.specialSword, 1), new Object[] { "I", "I", "S", 'I', Blocks.dirt, 'S', Items.stick});
-
+		
 		
 		
 		

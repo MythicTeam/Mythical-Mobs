@@ -29,7 +29,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class BlockBlueFire extends BlockFire {
+public class BlueFireBlock extends BlockFire {
 
     @Deprecated
     private int[] field_149849_a = new int[4096];
@@ -40,7 +40,7 @@ public class BlockBlueFire extends BlockFire {
     @SideOnly(Side.CLIENT)
     private IIcon[] field_149850_M;
 
-    public BlockBlueFire(String string, Material fire) {
+    public BlueFireBlock(String string, Material fire) {
         MythologyMod m = new MythologyMod();
         //this.setCreativeTab(m.tabMythicalUnderworld);
         GameRegistry.registerBlock(this, string);
@@ -310,12 +310,12 @@ public class BlockBlueFire extends BlockFire {
      * Called whenever the block is added into the world. Args: world, x, y, z
      */
     public void onBlockAdded(World world, int x, int y, int z) {
-        if (world.provider.dimensionId ==  0 || world.provider.dimensionId == Registration.underworld || !BlockPortalBlock.tryToCreatePortal(world, x, y, z)) {
+        if (world.provider.dimensionId ==  0 || world.provider.dimensionId == Registration.underworld || !PortalBlock.tryToCreatePortal(world, x, y, z)) {
             if (!World.doesBlockHaveSolidTopSurface(world, x, y - 1, z) && !this.canNeighborBurn(world, x, y, z)) {
                 world.setBlockToAir(x, y, z);
             } else {
                 world.scheduleBlockUpdate(x, y, z, Resources.blockBlueFire, this.tickRate(world) + world.rand.nextInt(10));
-                BlockPortalBlock.tryToCreatePortal(world, x, y, z);
+                PortalBlock.tryToCreatePortal(world, x, y, z);
             }
         }
     }

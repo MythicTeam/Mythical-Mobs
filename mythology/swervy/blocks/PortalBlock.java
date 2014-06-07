@@ -29,7 +29,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 
-public class BlockPortalBlock extends BlockPortal {
+public class PortalBlock extends BlockPortal {
 	
 	public static final int[][] field_150001_a = new int[][] {new int[0], {3, 1}, {2, 0}};
 	private static final String __OBFID = "CL_00000284";
@@ -41,7 +41,7 @@ public class BlockPortalBlock extends BlockPortal {
 	private int field_150862_g;
     private int field_150868_h;
 	
-    public BlockPortalBlock(String string, Material portal) {
+    public PortalBlock(String string, Material portal) {
     	GameRegistry.registerBlock(this, string);
         this.setCreativeTab(MythologyMod.tabMythicalUnderworld);
         this.setHardness(-1.0F);
@@ -106,8 +106,8 @@ public class BlockPortalBlock extends BlockPortal {
     }
 
     public static boolean tryToCreatePortal(World world, int x, int y, int z) {
-    	BlockPortalBlock.Size size = new BlockPortalBlock.Size(world, x, y, z, 1);
-    	BlockPortalBlock.Size size1 = new BlockPortalBlock.Size(world, x, y, z, 2);
+    	PortalBlock.Size size = new PortalBlock.Size(world, x, y, z, 1);
+    	PortalBlock.Size size1 = new PortalBlock.Size(world, x, y, z, 2);
 
         if (size.func_150860_b() && field_150864_e == 0) {
             size.func_150859_c();
@@ -122,8 +122,8 @@ public class BlockPortalBlock extends BlockPortal {
 
     public void onNeighborBlockChange(World world, int x, int y, int z, Block block) {
         int l = func_149999_b(world.getBlockMetadata(x, y, z));
-        BlockPortalBlock.Size size = new BlockPortalBlock.Size(world, x, y, z, 1);
-        BlockPortalBlock.Size size1 = new BlockPortalBlock.Size(world, x, y, z, 2);
+        PortalBlock.Size size = new PortalBlock.Size(world, x, y, z, 1);
+        PortalBlock.Size size1 = new PortalBlock.Size(world, x, y, z, 2);
 
         if (l == 1 && (!size.func_150860_b() || this.field_150864_e < this.field_150868_h * this.field_150862_g)) {
         	world.setBlock(x, y, z, Blocks.air);
@@ -335,9 +335,9 @@ public class BlockPortalBlock extends BlockPortal {
             }
 
             for (i = 0; i < this.field_150868_h; ++i) {
-                j = this.field_150861_f.posX + i * Direction.offsetX[BlockPortalBlock.field_150001_a[this.field_150865_b][1]];
+                j = this.field_150861_f.posX + i * Direction.offsetX[PortalBlock.field_150001_a[this.field_150865_b][1]];
                 k = this.field_150861_f.posY + this.field_150862_g;
-                l = this.field_150861_f.posZ + i * Direction.offsetZ[BlockPortalBlock.field_150001_a[this.field_150865_b][1]];
+                l = this.field_150861_f.posZ + i * Direction.offsetZ[PortalBlock.field_150001_a[this.field_150865_b][1]];
 
                 if (this.field_150867_a.getBlock(j, k, l) != Blocks.soul_sand) {
                     this.field_150862_g = 0;

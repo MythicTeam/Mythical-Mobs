@@ -6,7 +6,6 @@ import mythology.MythologyMod;
 import mythology.init.MythicalBlocks;
 import mythology.swervy.common.Registration;
 import mythology.swervy.world.WorldGenDeadTrees;
-import mythology.swervy.world.WorldGenTrees;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
@@ -136,8 +135,8 @@ public class MythicalWorldGen implements IWorldGenerator{
 
 			new WorldGenMinable(block,(minVeinSize + random.nextInt(maxVeinSize - minVeinSize)), blockSpawn).generate(world, random, xPos, yPos, zPos);
 		}
-	
 	}
+	
 	private void addOceanOre(Block block, Block blockSpawn, Random random,
 			World world, int posX, int posZ, int minY, int maxY,
 			int minVeinSize, int maxVeinSize, int spawnChance) {
@@ -152,8 +151,6 @@ public class MythicalWorldGen implements IWorldGenerator{
 				new WorldGenMinable(block,(minVeinSize + random.nextInt(maxVeinSize - minVeinSize)), blockSpawn).generate(world, random, xPos, yPos, zPos);
 			}
 		}
-		
-		
 	
 	}
 	private void addDesertOre(Block block, Block blockSpawn, Random random,
@@ -170,8 +167,5 @@ public class MythicalWorldGen implements IWorldGenerator{
 				new WorldGenMinable(block,(minVeinSize + random.nextInt(maxVeinSize - minVeinSize)), blockSpawn).generate(world, random, xPos, yPos, zPos);
 			}
 		}
-		
-		
-	
 	}
 }

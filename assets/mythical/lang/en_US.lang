@@ -15,8 +15,11 @@ tile.deadDirt.name=Dead Dirt
 tile.deadGrass.name=Dead Grass
 tile.deadStone.name=Dead Stone
 tile.deadRack.name=Dead Rack
+tile.deadLog.name=Dead Log
+tile.deadLeaf.name=Dead Leaf
+tile.deadSapling.name=Dead Sapling
 
-item.itemFlintAndBronze.name=Flint And Bronze
+item.itemFlintAndBronze.name=Flint and Bronze
 
 //Ores
 tile.oreMithril.name=Mithril Ore

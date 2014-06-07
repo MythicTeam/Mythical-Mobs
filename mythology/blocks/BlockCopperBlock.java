@@ -26,7 +26,7 @@ public class BlockCopperBlock extends MythBlock{
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int i, float f, float g, float t) {
         TileEntity tile_entity = world.getTileEntity(x, y, z);
         
-        player.openGui(MythologyMod.instance, 3, world, x, y, z);
+        player.openGui(MythologyMod.instance, MythologyMod.guiHelp, world, x, y, z);
         return true;
     }
 }
