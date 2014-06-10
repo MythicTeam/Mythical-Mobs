@@ -5,6 +5,7 @@ import java.util.List;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.command.WrongUsageException;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
@@ -37,6 +38,7 @@ public class HealCommand extends CommandBase
         {
             EntityPlayerMP healedplayer = par2ArrayOfStr.length > 2 ? getPlayer(par1ICommandSender, par2ArrayOfStr[1]) : getCommandSenderAsPlayer(par1ICommandSender);
             healedplayer.heal(healedplayer.getMaxHealth()-healedplayer.getHealth());;
+            healedplayer.getFoodStats().setFoodLevel(20);
             healedplayer.fallDistance = 0.0F;
             healedplayer.extinguish();
             EntityPlayerMP healer = getCommandSenderAsPlayer(par1ICommandSender);
