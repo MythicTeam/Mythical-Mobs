@@ -58,6 +58,9 @@ public class MythicalTools {
 	
 	public static Item healingStaff = new StaffHealing("healingStaff", "Useful for healing friends! Enemies too...");
 	
+	//Actual Mythical Items
+	public static Item mjolnir = new Mjolnir();
+	
 	//Admin - Builder stuff
 	public static Item dmgSwitcher = new AdmintoolDamageChanger("dmgSwitcher", "Try rightclicking some wool.");
 	
