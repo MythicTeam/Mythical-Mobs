@@ -13,7 +13,7 @@ public class Mjolnir extends ItemWarhammer {
 	}
 
 	public boolean onBlockStartBreak(ItemStack itemstack, int x, int y, int z, EntityPlayer player) {
-		if (player.worldObj.getBlock(x, y, z) == Blocks.stone) {
+		if (player.worldObj.getBlock(x, y, z) == Blocks.stone && player.capabilities.allowEdit) {
 			player.worldObj.setBlock(x, y, z, Blocks.cobblestone);
 			return true;
 		}
