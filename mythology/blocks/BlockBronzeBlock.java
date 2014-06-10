@@ -8,7 +8,7 @@ import net.minecraft.creativetab.CreativeTabs;
 public class BlockBronzeBlock extends MythBlock {
 	MythologyMod m = new MythologyMod();
 	public BlockBronzeBlock(String string, CreativeTabs tabMythical, Material material) {
-		super(material, string);
+		super(string, material);
 		this.setBlockName(string);
 		this.setCreativeTab(tabMythical);
 		this.setHardness(5.0F);

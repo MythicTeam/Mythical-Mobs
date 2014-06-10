@@ -12,7 +12,7 @@ public class DeadDirtBlock extends MythBlock {
 	MythologyMod m = new MythologyMod();
 
 	public DeadDirtBlock(String name, Material material) {
-		super(material, name);
+		super(name, material);
 		this.setBlockTextureName(m.modid + ":blocks/underworld/" + name);
 		this.setCreativeTab(m.tabMythicalUnderworld);
 		this.setLightLevel(0.3F);

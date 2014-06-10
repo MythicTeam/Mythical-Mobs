@@ -27,6 +27,8 @@ public class MythItem extends Item{
      * allows items to add custom lines of information to the mouseover description
      */
     public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean par4) {
-    	list.add(info);
+    	if (info != null){
+        	list.add(info);
+    	}    
     }
 }

@@ -17,7 +17,7 @@ public class BlockRubyOre extends MythBlock {
 	MythicalIngot mii = new MythicalIngot();
 
 	public BlockRubyOre(String name, CreativeTabs tabMythical, Material material) {
-		super(material, name);
+		super(name, material);
 		this.setBlockName(name);
 		this.setBlockTextureName(m.modid + ":ores/" + name);
 		this.setCreativeTab(tabMythical);

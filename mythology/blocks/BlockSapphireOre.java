@@ -15,8 +15,8 @@ public class BlockSapphireOre extends MythBlock {
 	MythologyMod m = new MythologyMod();
 	MythicalIngot mii = new MythicalIngot();
 
-	public BlockSapphireOre(String string, CreativeTabs tabMythical, Material rock) {
-		super(rock, string);
+	public BlockSapphireOre(String string, CreativeTabs tabMythical, Material material) {
+		super(string, material);
 		this.setBlockName(string);
 		this.setBlockTextureName(m.modid + ":ores/" + string);
 		this.setCreativeTab(tabMythical);

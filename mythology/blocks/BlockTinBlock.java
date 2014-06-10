@@ -9,8 +9,8 @@ public class BlockTinBlock extends MythBlock{
 
 	private MythologyMod m = new MythologyMod();
 
-	public BlockTinBlock(String string, CreativeTabs tabMythical, Material rock) {
-		super(rock, string);
+	public BlockTinBlock(String string, CreativeTabs tabMythical, Material material) {
+		super(string, material);
 		this.setBlockName(string);
 		this.setBlockTextureName(m.modid + ":blocks/" + string);
 		this.setCreativeTab(tabMythical);

@@ -8,7 +8,7 @@ import net.minecraft.creativetab.CreativeTabs;
 public class BlockRubyBlock extends MythBlock {
 	MythologyMod m = new MythologyMod();
 	public BlockRubyBlock(String string, CreativeTabs tabMythical, Material material) {
-		super(material, string);
+		super(string, material);
 		this.setBlockName(string);
 		this.setBlockTextureName(m.modid + ":blocks/" + string);
 		this.setCreativeTab(tabMythical);

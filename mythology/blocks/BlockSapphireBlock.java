@@ -8,7 +8,7 @@ import net.minecraft.creativetab.CreativeTabs;
 public class BlockSapphireBlock extends MythBlock {
 	MythologyMod m = new MythologyMod();
 	public BlockSapphireBlock(String string, CreativeTabs tabMythical, Material material) {
-		super(material, string);
+		super(string, material);
 		this.setBlockName(string);
 		this.setBlockTextureName(m.modid + ":blocks/" + string);
 		this.setCreativeTab(tabMythical);

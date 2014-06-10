@@ -17,8 +17,8 @@ public class BlockMithrilOre extends MythBlock {
 	
 	MythologyMod m = new MythologyMod();
 
-	public BlockMithrilOre(String string, CreativeTabs tabMythical, Material rock) {
-		super(rock, string);
+	public BlockMithrilOre(String string, CreativeTabs tabMythical, Material material) {
+		super(string, material);
 		this.setBlockName(string);
 		this.setBlockTextureName(m.modid + ":ores/" + string);
 		this.setCreativeTab(tabMythical);

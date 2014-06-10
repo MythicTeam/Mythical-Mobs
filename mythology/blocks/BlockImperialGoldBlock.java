@@ -8,7 +8,7 @@ import net.minecraft.creativetab.CreativeTabs;
 public class BlockImperialGoldBlock extends MythBlock {
 	MythologyMod m = new MythologyMod();
 	public BlockImperialGoldBlock(String string, CreativeTabs tabMythical, Material material) {
-		super(material, string);
+		super(string, material);
 		this.setBlockName(string);
 		this.setBlockTextureName(m.modid + ":" + string);
 		this.setCreativeTab(tabMythical);
