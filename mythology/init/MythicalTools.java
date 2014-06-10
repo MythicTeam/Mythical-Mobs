@@ -64,6 +64,5 @@ public class MythicalTools {
 	public static Item calendar = new DayCounter("calendar");
 	
 	//Actual Mythical Items
-	public static Item heart = new MythUnobtainableItem("heart");
-
+	public static Item mjolnir = new Mjolnir();
 }

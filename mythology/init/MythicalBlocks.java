@@ -8,6 +8,7 @@ import mythology.blocks.BlockCelestialBronzeBlock;
 import mythology.blocks.BlockCelestialBronzeOre;
 import mythology.blocks.BlockCopperBlock;
 import mythology.blocks.BlockCopperOre;
+import mythology.blocks.BlockCrackedStone;
 import mythology.blocks.BlockImperialGoldBlock;
 import mythology.blocks.BlockImperialGoldOre;
 import mythology.blocks.BlockMithrilOre;
@@ -65,7 +66,7 @@ public class MythicalBlocks {
 	public static Block alloyFurnaceActive = new BlockAlloyFurnace(true, "alloyFurnaceActive", m.tabMythical, Material.iron).setLightLevel(0.9F).setHardness(3.5F);
 	public static Block alloyFurnaceIdle = new BlockAlloyFurnace(false, "alloyFurnaceIdle", m.tabMythical, Material.iron).setHardness(3.5F);
 	
-	public static Block crackedStone = new MythBlock("crackedStone", Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston);
+	public static Block crackedStone = new BlockCrackedStone();
 
 	public static Block blockDeadGrass = new DeadGrassBlock("deadGrass", Material.grass);
 	public static Block blockDeadDirt = new DeadDirtBlock("deadDirt", Material.ground).setHardness(0.6F).setStepSound(Blocks.gravel.stepSound);

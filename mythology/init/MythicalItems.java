@@ -44,12 +44,12 @@ public class MythicalItems {
 	public static Item breakToken = new MythItem("breakToken", "Increases your breakspeed by 20%!");
 	
 	
-	public static ItemPaxel paxelBronze = new ItemPaxel("paxelBronze", MythicalTools.toolBronze);
-	public static ItemPaxel paxelCelestialBronze = new ItemPaxel("paxelCelestialBronze", MythicalTools.toolCelestialBronze);
-	public static ItemPaxel paxelImperialGold = new ItemPaxel("paxelImperialGold", MythicalTools.toolImperialGold);
-	public static ItemPaxel paxelSilver = new ItemPaxel("paxelSilver", MythicalTools.toolSilver);
-	public static ItemPaxel paxelRuby = new ItemPaxel("paxelRuby", MythicalTools.toolRuby);
-	public static ItemPaxel paxelSapphire = new ItemPaxel("paxelSapphire", MythicalTools.toolSapphire);
+	public static Item paxelBronze = new ItemPaxel("paxelBronze", MythicalTools.toolBronze);
+	public static Item paxelCelestialBronze = new ItemPaxel("paxelCelestialBronze", MythicalTools.toolCelestialBronze);
+	public static Item paxelImperialGold = new ItemPaxel("paxelImperialGold", MythicalTools.toolImperialGold);
+	public static Item paxelSilver = new ItemPaxel("paxelSilver", MythicalTools.toolSilver);
+	public static Item paxelRuby = new ItemPaxel("paxelRuby", MythicalTools.toolRuby);
+	public static Item paxelSapphire = new ItemPaxel("paxelSapphire", MythicalTools.toolSapphire);
 	
 	public static Item underworldFlintAndBronze = new ItemFlintAndBronze("itemFlintAndBronze");
 	public static Item ItemMagicBackpack = new ItemMagicBackpack();
