@@ -1,5 +1,6 @@
 package mythology.proxy;
 
+import mythology.init.MythicalItems;
 import mythology.mobs.hostile.EntityCentaur;
 import mythology.mobs.hostile.EntityMinotaur;
 import mythology.mobs.hostile.EntityUnderworldSheep;
@@ -12,12 +13,15 @@ import mythology.model.hostile.ModelUnderworldSheep1;
 import mythology.model.hostile.ModelUnderworldSheep2;
 import mythology.model.passive.ModelFairy;
 import mythology.model.passive.ModelGnome;
+import mythology.projectiles.EntityHealingBall;
+import mythology.projectiles.RenderHealingBall;
 import mythology.rendering.hostile.CentaurRender;
 import mythology.rendering.hostile.MinotaurRender;
 import mythology.rendering.hostile.UnderworldSheepRender;
 import mythology.rendering.passive.FairyRender;
 import mythology.rendering.passive.GnomeRender;
 import net.minecraft.client.model.ModelBiped;
+import net.minecraft.init.Items;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy extends CommonProxy {
@@ -29,7 +33,7 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityMinotaur.class,new MinotaurRender(new ModelMinotaur(), 0.5F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityFairy.class,new FairyRender(new ModelFairy(), 0.2F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityUnderworldSheep.class, new UnderworldSheepRender(new ModelUnderworldSheep1(), new ModelUnderworldSheep2(), 0.4F));
-
+		RenderingRegistry.registerEntityRenderingHandler(EntityHealingBall.class, new RenderHealingBall(MythicalItems.heart));
 	}
 
 	public static ModelBiped getArmorModel(int i) {

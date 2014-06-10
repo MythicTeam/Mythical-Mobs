@@ -20,7 +20,6 @@ public class MythItem extends Item{
 		setTextureName(MythologyMod.modid + ":" + name);
 		setUnlocalizedName(name);
 		GameRegistry.registerItem(this, name);
-		OreDictionary.registerOre(name, this);
 		info = lore;
 	}
 	
