@@ -4,8 +4,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mythology.MythologyMod;
-import mythology.swervy.common.Resources;
-import mythology.swervy.tileentities.TileEntityMagicTable;
+import mythology.tileentities.TileEntityMagicTable;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -28,6 +27,7 @@ public class MagicWorkbenchBlock extends BlockContainer {
 		this.setHardness(2.5F);
 		this.setStepSound(soundTypeWood);
 		this.setCreativeTab(MythologyMod.tabMythical);
+		this.setBlockName("MagicTable");
 		GameRegistry.registerBlock(this, name);
 	}
 
@@ -41,7 +41,7 @@ public class MagicWorkbenchBlock extends BlockContainer {
 
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister icon) {
-        this.blockIcon = icon.registerIcon(MythologyMod.modid + ":" + "MagicTable");
+        this.blockIcon = icon.registerIcon(MythologyMod.modid + ":" + "blocks/underworld/" + "deadRack");
     }
     
 	public boolean onBlockActivated (World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {

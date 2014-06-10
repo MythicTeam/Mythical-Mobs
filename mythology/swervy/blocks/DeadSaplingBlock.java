@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Random;
 
 import mythology.MythologyMod;
-import mythology.swervy.common.Resources;
-import mythology.swervy.world.WorldGenDeadTrees;
+import mythology.init.MythicalBlocks;
+import mythology.world.WorldGenDeadTrees;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -64,7 +64,7 @@ public class DeadSaplingBlock extends BlockBush implements IGrowable {
     
     @Override
     public boolean canPlaceBlockOn(Block block){
-        return block == Resources.blockDeadGrass || block == Resources.blockDeadDirt;
+        return block == MythicalBlocks.blockDeadGrass || block == MythicalBlocks.blockDeadDirt;
     }
 
     public void func_149879_c(World world, int x, int y, int z, Random rand) {

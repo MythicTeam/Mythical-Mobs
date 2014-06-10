@@ -24,7 +24,7 @@ public class MythicalTools {
 	public static Item swordSilver = new ItemSword(toolSilver).setUnlocalizedName("swordSilver").setCreativeTab(m.tabMythical).setTextureName(MythologyMod.modid + ":" + "swordSilver");
 	public static Item swordRuby = new ItemSword(toolRuby).setUnlocalizedName("swordRuby").setCreativeTab(m.tabMythical).setTextureName(MythologyMod.modid + ":" + "swordRuby");
 	public static Item swordSapphire = new ItemSword(toolSapphire).setUnlocalizedName("swordSapphire").setCreativeTab(m.tabMythical).setTextureName(MythologyMod.modid + ":" + "swordSapphire");
-	//public static Item specialSword = new ItemSpecialSword("specialSword", "A sword that can change texture. WIP.", ToolMaterial.IRON);
+	public static Item specialSword = new ItemSpecialSword("specialSword", "A sword that can change texture. WIP.", ToolMaterial.IRON);
 	
 	public static Item pickaxeBronze = new ItemPickaxe(toolBronze, "pickaxeBronze").setUnlocalizedName("pickaxeBronze").setCreativeTab(m.tabMythical).setTextureName(MythologyMod.modid + ":" + "pickaxeBronze");
 	public static Item pickaxeCelestialBronze = new ItemPickaxe(toolCelestialBronze, "pickaxeCelestialBronze").setUnlocalizedName("pickaxeCelestialBronze").setCreativeTab(m.tabMythical).setTextureName(MythologyMod.modid + ":" + "pickaxeCelestialBronze");
@@ -54,10 +54,12 @@ public class MythicalTools {
 	public static Item hoeRuby = new ItemHoe(toolRuby, "hoeRuby").setUnlocalizedName("hoeRuby").setCreativeTab(m.tabMythical).setTextureName(MythologyMod.modid + ":" + "hoeRuby");
 	public static Item hoeSapphire = new ItemHoe(toolSapphire, "hoeSapphire").setUnlocalizedName("hoeSapphire").setCreativeTab(m.tabMythical).setTextureName(MythologyMod.modid + ":" + "hoeSapphire");
 	
+	public static Item healingStaff = new StaffHealing("healingStaff", "Useful for healing friends! Enemies too...");
+	
 	public static Item ironWarhammer = new ItemWarhammer(ToolMaterial.IRON, "ironWarhammer", "Warhammers are useful for crushing weak bones!");
 
 	//Admin - Builder stuff
-	public static Item dmgSwitcher = new AdmintoolDamageChanger("dmgSwitcher", "Try rightclicking some wool.");
+	public static Item dmgSwitcher = new AdmintoolDamageChanger("dmgSwitcher", "Try rightclicking some wool/wood");
 	
 	//Other
 	public static Item calendar = new DayCounter("calendar");

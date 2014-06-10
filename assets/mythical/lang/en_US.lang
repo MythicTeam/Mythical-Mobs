@@ -47,6 +47,7 @@ tile.celestialBronzeBlock.name=Celestial Bronze Block
 tile.rubyBlock.name=Ruby Block
 tile.sapphireBlock.name=Sapphire Block
 tile.alloyFurnace.name=Alloy Furnace
+tile.MagicTable.name=Magic Workbench
 
 //Armor
 item.bronzeHelmet.name=Bronze Helmet

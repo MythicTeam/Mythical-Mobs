@@ -2,12 +2,14 @@ package mythology.init;
 
 import mythology.swervy.common.Registration;
 import mythology.MythologyMod;
+import mythology.dimension.WorldProviderUnderworld;
 import mythology.handlers.*;
 import mythology.mobs.hostile.*;
 import mythology.mobs.passive.*;
-import mythology.swervy.dimension.WorldProviderUnderworld;
 import mythology.tileentities.TileEntityAlloyFurnace;
 import mythology.world.MythicalWorldGen;
+import net.java.games.input.Keyboard;
+import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Items;
@@ -17,6 +19,7 @@ import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.*;
 import net.minecraftforge.oredict.*;
+import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.*;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.*;
@@ -39,9 +42,14 @@ public class MythicalRegistration {
 		registerTileEntity(); //Registers Tite Entities
 		registerHandlers(); //Registers Hanlders
 		registerMob(); //Registers Mobs
+		keyRegisty(); //Register Key Binds
 	}
 	
 	
+	
+	private static void keyRegisty() {
+		ClientRegistry.registerKeyBinding(KeyHandler.keyMagicHelp);
+	}
 	
 	private static void registerMob() {
 		MythologyRegister.addMob(EntityGnome.class, "Gnome", EnumCreatureType.creature, BiomeGenBase.roofedForest, 0xFC0A16, 0xFCFCFC, 200, 200, 200);
@@ -92,8 +100,10 @@ public class MythicalRegistration {
 	}
 	
 	private static void registerHandlers() {
+		FMLCommonHandler.instance().bus().register(new KeyInputHandler());
 		NetworkRegistry.INSTANCE.registerGuiHandler(MythologyMod.instance, new GuiHandler());
 		MinecraftForge.EVENT_BUS.register(new MythEventHandler());
+		//FMLCommonHandler.instance().bus().register(new CraftingHandler());
 	}
 	
 	private static void registerSmeltingRecipes() {
@@ -130,11 +140,6 @@ public class MythicalRegistration {
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mt.axeSilver, 1), new Object[] { "II", "IS", " S", 'I', "ingotSilver", 'S', Items.stick }));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mt.hoeSilver, 1), new Object[] { "II", " S", " S", 'I', "ingotSilver", 'S', Items.stick }));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mt.shovelSilver, 1), new Object[] { "I", "S", "S", 'I', "ingotSilver", 'S', Items.stick}));
-		
-		
-		
-		
-		
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(mi.itemMythrilNugget, 9), new Object[]{"ingotMythril"}));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mi.itemMythrilChain, 3), new Object[] { " I ", "I I", " I ", 'I', "nuggetMythril"}));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mi.itemMythrilMail, 1), new Object[] { "III", "III", "III", 'I', "materialrthrilChain"}));

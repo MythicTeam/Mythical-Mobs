@@ -3,14 +3,16 @@ package mythology.init;
 import mythology.MythologyMod;
 import mythology.items.AdmintoolDamageChanger;
 import mythology.items.CookBehemothMeat;
+import mythology.items.ItemFlintAndBronze;
 import mythology.items.ItemFur;
 import mythology.items.ItemGnomeBeard;
+import mythology.items.ItemMagicBackpack;
+import mythology.items.ItemPaxel;
 import mythology.items.ItemScales;
 import mythology.items.ItemWarhammer;
 import mythology.items.ItemWing;
 import mythology.items.MythItem;
 import mythology.items.RawBehemothMeat;
-import mythology.swervy.items.ItemFlintAndBronze;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 
@@ -18,9 +20,9 @@ public class MythicalItems {
 	
 	private static MythologyMod m = new MythologyMod();
 	
-	public static Item itemMythrilNugget = new MythItem("itemMythrilNugget", "A nugget made of Mythril.");
-	public static Item itemMythrilChain = new MythItem("itemMythrilChain", "Probably used for crafting.");
-	public static Item itemMythrilMail = new MythItem("itemMythrilMail", "Not sure what this does...");
+	public static Item itemMythrilNugget = new MythItem("itemMythrilNugget", "");
+	public static Item itemMythrilChain = new MythItem("itemMythrilChain", "");
+	public static Item itemMythrilMail = new MythItem("itemMythrilMail","");
 	public static Item itemFur = new ItemFur("itemFur", m.tabMythical);
 	public static Item itemScales = new ItemScales("itemScales", m.tabMythical);
 	public static Item rawBehemothMeat = new RawBehemothMeat(4,0.4F,true, "rawBehemothMeat", m.tabMythical);
@@ -39,4 +41,14 @@ public class MythicalItems {
 	public static Item digToken = new MythItem("digToken", "Increases your dig bick effiency by 30%!");
 	public static Item breakToken = new MythItem("breakToken", "Increases your breakspeed by 20%!");
 	
+	
+	public static ItemPaxel paxelBronze = new ItemPaxel("paxelBronze", MythicalTools.toolBronze);
+	public static ItemPaxel paxelCelestialBronze = new ItemPaxel("paxelCelestialBronze", MythicalTools.toolCelestialBronze);
+	public static ItemPaxel paxelImperialGold = new ItemPaxel("paxelImperialGold", MythicalTools.toolImperialGold);
+	public static ItemPaxel paxelSilver = new ItemPaxel("paxelSilver", MythicalTools.toolSilver);
+	public static ItemPaxel paxelRuby = new ItemPaxel("paxelRuby", MythicalTools.toolRuby);
+	public static ItemPaxel paxelSapphire = new ItemPaxel("paxelSapphire", MythicalTools.toolSapphire);
+	
+	public static Item underworldFlintAndBronze = new ItemFlintAndBronze("itemFlintAndBronze");
+	public static Item ItemMagicBackpack = new ItemMagicBackpack();
 }

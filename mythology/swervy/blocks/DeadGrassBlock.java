@@ -4,7 +4,6 @@ import java.util.Random;
 
 import mythology.MythologyMod;
 import mythology.init.MythicalBlocks;
-import mythology.swervy.common.Resources;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
@@ -49,12 +48,12 @@ public class DeadGrassBlock extends DeadDirtBlock implements IGrowable {
 
 	@SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int metadata) {
-        return side == 1 ? this.iconTop : (side == 0 ? Resources.blockDeadDirt.getBlockTextureFromSide(side) : this.blockIcon);
+        return side == 1 ? this.iconTop : (side == 0 ? MythicalBlocks.blockDeadDirt.getBlockTextureFromSide(side) : this.blockIcon);
     }
 	
 	 
 	 public Item getItemDropped(int i, Random k, int l) {
-	        return Item.getItemFromBlock(Resources.blockDeadDirt);
+	        return Item.getItemFromBlock(MythicalBlocks.blockDeadDirt);
 	    }
 	 
 	    /**
@@ -63,7 +62,7 @@ public class DeadGrassBlock extends DeadDirtBlock implements IGrowable {
 	 public void updateTick(World world, int x, int y, int z, Random rand)  {
 		 if (!world.isRemote) {
 			 if (world.getBlockLightValue(x, y + 1, z) < 4 && world.getBlockLightOpacity(x, y + 1, z) > 2) {
-				 world.setBlock(x, y, z, Resources.blockDeadDirt);
+				 world.setBlock(x, y, z, MythicalBlocks.blockDeadDirt);
 			 }	
 			 else if (world.getBlockLightValue(x, y + 1, z) >= 9) {
 				 for (int l = 0; l < 4; ++l) {
@@ -72,8 +71,8 @@ public class DeadGrassBlock extends DeadDirtBlock implements IGrowable {
 					 int k1 = z + rand.nextInt(3) - 1;
 					 Block block = world.getBlock(i1, j1 + 1, k1);
 
-					 if ((world.getBlock(i1, j1, k1) == Resources.blockDeadDirt || world.getBlock(i1, j1, k1) == Resources.blockDeadDirt || world.getBlock(i1, j1, k1) == Resources.blockDeadGrass) && world.getBlockMetadata(i1, j1, k1) == 0 && world.getBlockLightValue(i1, j1 + 1, k1) >= 4 && world.getBlockLightOpacity(i1, j1 + 1, k1) <= 2){
-						 world.setBlock(i1, j1, k1, Resources.blockDeadGrass);
+					 if ((world.getBlock(i1, j1, k1) == MythicalBlocks.blockDeadDirt || world.getBlock(i1, j1, k1) == MythicalBlocks.blockDeadDirt || world.getBlock(i1, j1, k1) == MythicalBlocks.blockDeadGrass) && world.getBlockMetadata(i1, j1, k1) == 0 && world.getBlockLightValue(i1, j1 + 1, k1) >= 4 && world.getBlockLightOpacity(i1, j1 + 1, k1) <= 2){
+						 world.setBlock(i1, j1, k1, MythicalBlocks.blockDeadGrass);
 					 }
 				 }
 			 }

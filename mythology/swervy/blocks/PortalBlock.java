@@ -6,11 +6,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mythology.MythologyMod;
+import mythology.dimension.TelporterUnderworld;
 import mythology.init.MythicalBlocks;
 import mythology.init.MythicalRegistration;
 import mythology.swervy.common.Registration;
-import mythology.swervy.common.Resources;
-import mythology.swervy.dimension.TelporterUnderworld;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPortal;
 import net.minecraft.block.material.Material;
@@ -314,7 +313,7 @@ public class PortalBlock extends BlockPortal {
                         break label56;
                     }
 
-                    if (block == Resources.blockPortal) {
+                    if (block == MythicalBlocks.blockPortal) {
                        this.field_150864_e++;
                     }
 
@@ -356,7 +355,7 @@ public class PortalBlock extends BlockPortal {
         }
 
         protected boolean func_150857_a(Block p_150857_1_) {
-            return p_150857_1_.getMaterial() == Material.air || p_150857_1_ == Resources.blockBlueFire || p_150857_1_ == Resources.blockPortal;
+            return p_150857_1_.getMaterial() == Material.air || p_150857_1_ == MythicalBlocks.blockBlueFire || p_150857_1_ == MythicalBlocks.blockPortal;
         }
 
         public boolean func_150860_b() {
@@ -370,7 +369,7 @@ public class PortalBlock extends BlockPortal {
 
                 for (int l = 0; l < this.field_150862_g; ++l) {
                     int i1 = this.field_150861_f.posY + l;
-                    this.field_150867_a.setBlock(j, i1, k, Resources.blockPortal, this.field_150865_b, 2);
+                    this.field_150867_a.setBlock(j, i1, k, MythicalBlocks.blockPortal, this.field_150865_b, 2);
                 }
             }
         }

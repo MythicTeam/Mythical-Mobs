@@ -2,10 +2,10 @@ package mythology;
 
 import mythology.commands.HealCommand;
 import mythology.handlers.MythEventHandler;
+import mythology.init.MythicalItems;
 import mythology.init.MythicalRegistration;
 import mythology.init.MythicalTools;
 import mythology.proxy.CommonProxy;
-import mythology.swervy.common.Resources;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -23,15 +23,18 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 @Mod(modid = MythologyMod.modid, name = MythologyMod.name, version = MythologyMod.version)
 public class MythologyMod {
 	
-	public static final int guiAlloyFurnace = 0;
-	public static final int guiHelp = 2;
-	public static final int guiMagicTable = 3;
+	private static int GuiInt = 1000;
+	public static final int guiAlloyFurnace = 1001;
+	public static final int guiHelp = 1002;
+	public static final int guiMagicTable = 1003;
+	public static final int guiMagicBackpack = 1004;
 	
 	//Mod Info
 	public static final String modid = "mythical";
 	public static final String version = "1.0";
 	public static final String versiobState = "indev";
 	public static final String name = "Mythical Creatures";
+	public static final String MineraftForgeVersion = MinecraftForge.getBrandingVersion().replace("Minecraft Forge", "");
 	
 	@Instance(modid)
 	public static MythologyMod instance;
@@ -50,7 +53,7 @@ public class MythologyMod {
 	public static CreativeTabs tabMythicalUnderworld = new CreativeTabs("tabMythicalUnderworld") {
 		@Override
 		public Item getTabIconItem() {
-			return Resources.underworldFlintAndBronze;
+			return MythicalItems.underworldFlintAndBronze;
 		}
 	};
 	

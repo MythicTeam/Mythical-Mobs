@@ -16,7 +16,6 @@ import mythology.MythologyMod;
 import mythology.init.MythicalBlocks;
 import mythology.init.MythicalRegistration;
 import mythology.swervy.common.Registration;
-import mythology.swervy.common.Resources;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFire;
 import net.minecraft.block.material.MapColor;
@@ -314,7 +313,7 @@ public class BlueFireBlock extends BlockFire {
             if (!World.doesBlockHaveSolidTopSurface(world, x, y - 1, z) && !this.canNeighborBurn(world, x, y, z)) {
                 world.setBlockToAir(x, y, z);
             } else {
-                world.scheduleBlockUpdate(x, y, z, Resources.blockBlueFire, this.tickRate(world) + world.rand.nextInt(10));
+                world.scheduleBlockUpdate(x, y, z, MythicalBlocks.blockBlueFire, this.tickRate(world) + world.rand.nextInt(10));
                 PortalBlock.tryToCreatePortal(world, x, y, z);
             }
         }

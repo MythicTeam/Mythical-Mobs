@@ -22,6 +22,16 @@ import mythology.blocks.BlockSilverOre;
 import mythology.blocks.BlockTinBlock;
 import mythology.blocks.BlockTinOre;
 import mythology.blocks.BlockZincOre;
+import mythology.swervy.blocks.BlueFireBlock;
+import mythology.swervy.blocks.DeadDirtBlock;
+import mythology.swervy.blocks.DeadGrassBlock;
+import mythology.swervy.blocks.DeadLeafBlock;
+import mythology.swervy.blocks.DeadLogBlock;
+import mythology.swervy.blocks.DeadRackBlock;
+import mythology.swervy.blocks.DeadSaplingBlock;
+import mythology.swervy.blocks.DeadStoneBlock;
+import mythology.swervy.blocks.MagicWorkbenchBlock;
+import mythology.swervy.blocks.PortalBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -53,4 +63,15 @@ public class MythicalBlocks {
 	public static Block blockSapphireBlock = new BlockSapphireBlock("sapphireBlock", m.tabMythical, Material.iron);
 	public static Block alloyFurnaceActive = new BlockAlloyFurnace(true, "alloyFurnaceActive", m.tabMythical, Material.iron).setLightLevel(0.9F).setHardness(3.5F);
 	public static Block alloyFurnaceIdle = new BlockAlloyFurnace(false, "alloyFurnaceIdle", m.tabMythical, Material.iron).setHardness(3.5F);
+	
+	public static Block blockDeadGrass = new DeadGrassBlock("deadGrass", Material.grass);
+	public static Block blockDeadDirt = new DeadDirtBlock("deadDirt", Material.ground).setHardness(0.6F).setStepSound(Blocks.gravel.stepSound);
+	public static Block blockDeadStone = new DeadStoneBlock("deadStone", Material.rock);
+	public static Block blockDeadRack = new DeadRackBlock("deadRack", Material.rock);
+	public static Block blockDeadLog = new DeadLogBlock();
+	public static Block blockDeadLeaf = new DeadLeafBlock();
+	public static Block blockDeadSapling = new DeadSaplingBlock("deadSapling", Material.leaves);
+	public static Block blockPortal = new PortalBlock("underworldPortal", Material.portal);
+	public static Block blockBlueFire = new BlueFireBlock("underworldFire", Material.fire) ;
+	public static Block blockMagicWorkbench = new MagicWorkbenchBlock("Magic Table") ;
 }
