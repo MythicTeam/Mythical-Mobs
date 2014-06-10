@@ -1,25 +1,26 @@
 package mythology.init;
 
-import mythology.swervy.common.Registration;
 import mythology.MythologyMod;
-import mythology.handlers.*;
-import mythology.mobs.hostile.*;
-import mythology.mobs.passive.*;
-import mythology.swervy.dimension.WorldProviderUnderworld;
+import mythology.handlers.GuiHandler;
+import mythology.handlers.MythEventHandler;
+import mythology.mobs.hostile.EntityCentaur;
+import mythology.mobs.hostile.EntityMinotaur;
+import mythology.mobs.hostile.EntityUnderworldSheep;
+import mythology.mobs.passive.EntityFairy;
+import mythology.mobs.passive.EntityGnome;
+import mythology.projectiles.EntityHealingBall;
+import mythology.swervy.common.Registration;
 import mythology.tileentities.TileEntityAlloyFurnace;
 import mythology.world.MythicalWorldGen;
-import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
-import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraftforge.common.*;
-import net.minecraftforge.oredict.*;
-import cpw.mods.fml.common.*;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.common.registry.*;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class MythicalRegistration {
 	
@@ -49,6 +50,8 @@ public class MythicalRegistration {
 		MythologyRegister.addMob(EntityFairy.class, "Fairy", EnumCreatureType.creature, BiomeGenBase.forest, 0x07FA10, 0xE9F5E9, 200, 200, 200);
 		MythologyRegister.addMob(EntityMinotaur.class, "Minotaur", EnumCreatureType.monster, BiomeGenBase.extremeHillsPlus, 0x835C3B, 0xD1D0CE, 200, 200, 200);
 		MythologyRegister.addMob(EntityUnderworldSheep.class, "Underworld Sheep", EnumCreatureType.creature, MythicalBiomes.BiomeUnderworld, 0xFFFFFF, 0xFFFFFF, 12, 4, 4);
+		
+		MythologyRegister.addProjectileEntity(EntityHealingBall.class, "Healing ball");
 	}
 	
 	private static void registerArmor() {		
