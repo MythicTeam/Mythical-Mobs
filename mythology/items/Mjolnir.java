@@ -10,6 +10,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class Mjolnir extends ItemWarhammer {
+	
 	public Mjolnir() {
 		super(ToolMaterial.EMERALD, "mjolnir", "A legendary hammer. Controls thunder.");
 	}

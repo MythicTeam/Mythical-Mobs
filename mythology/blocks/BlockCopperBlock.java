@@ -21,12 +21,4 @@ public class BlockCopperBlock extends MythBlock{
 		this.setHardness(3.0F);
 		this.setStepSound(soundTypeStone);
 	}
-	
-	@Override
-    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int i, float f, float g, float t) {
-        TileEntity tile_entity = world.getTileEntity(x, y, z);
-        
-        player.openGui(MythologyMod.instance, MythologyMod.guiHelp, world, x, y, z);
-        return true;
-    }
 }
