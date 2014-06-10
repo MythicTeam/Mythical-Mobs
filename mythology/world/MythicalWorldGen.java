@@ -4,7 +4,6 @@ import java.util.Random;
 
 import mythology.MythologyMod;
 import mythology.init.MythicalBlocks;
-import mythology.swervy.common.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;

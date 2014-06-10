@@ -4,7 +4,6 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mythology.init.MythicalBiomes;
 import mythology.init.MythicalRegistration;
-import mythology.swervy.common.Registration;
 import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
@@ -17,7 +16,7 @@ public class WorldProviderUnderworld extends WorldProvider {
 
 	public void registerWorldChunkManager() {
 		this.worldChunkMgr = new WorldChunkManagerHell(MythicalBiomes.BiomeUnderworld, 0F);
-		this.dimensionId = Registration.underworld;
+		this.dimensionId = MythicalRegistration.underworld;
 		this.hasNoSky = true;
 		this.isHellWorld = false;
 		this.getFogColor(0, 0);

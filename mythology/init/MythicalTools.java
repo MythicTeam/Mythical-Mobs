@@ -61,7 +61,9 @@ public class MythicalTools {
 	//Admin - Builder stuff
 	public static Item dmgSwitcher = new AdmintoolDamageChanger("dmgSwitcher", "Try rightclicking some wool/wood");
 	
-	//Other
 	public static Item calendar = new DayCounter("calendar");
+	
+	//Actual Mythical Items
+	public static Item heart = new MythUnobtainableItem("heart");
 
 }

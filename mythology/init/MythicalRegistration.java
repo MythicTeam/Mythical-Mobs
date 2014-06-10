@@ -1,30 +1,42 @@
 package mythology.init;
 
-import mythology.swervy.common.Registration;
 import mythology.MythologyMod;
+import mythology.crafting.MagicTableCraftingManager;
 import mythology.dimension.WorldProviderUnderworld;
-import mythology.handlers.*;
-import mythology.mobs.hostile.*;
-import mythology.mobs.passive.*;
+import mythology.handlers.GuiHandler;
+import mythology.handlers.KeyHandler;
+import mythology.handlers.KeyInputHandler;
+import mythology.handlers.MythEventHandler;
+import mythology.mobs.hostile.EntityCentaur;
+import mythology.mobs.hostile.EntityMinotaur;
+import mythology.mobs.hostile.EntityUnderworldSheep;
+import mythology.mobs.passive.EntityFairy;
+import mythology.mobs.passive.EntityGnome;
+import mythology.projectiles.EntityHealingBall;
+import mythology.rendering.blocks.RenderMagicWorkbench;
 import mythology.tileentities.TileEntityAlloyFurnace;
+import mythology.tileentities.TileEntityMagicTable;
 import mythology.world.MythicalWorldGen;
-import net.java.games.input.Keyboard;
-import net.minecraft.client.settings.KeyBinding;
-import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
-import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraftforge.common.*;
-import net.minecraftforge.oredict.*;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.BiomeDictionary.Type;
+import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 import cpw.mods.fml.client.registry.ClientRegistry;
-import cpw.mods.fml.common.*;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.common.registry.*;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class MythicalRegistration {
+	
+	public static final int underworld = -30;
 	
 	private static MythologyMod m = new MythologyMod();
 	private static MythicalArmor ma = new MythicalArmor();
@@ -34,8 +46,6 @@ public class MythicalRegistration {
 	private static MythicalIngot mii = new MythicalIngot();
 
 	public static void load() {
-		Registration.load();
-		
 		registerCraftingRecipes(); //Registers Crafting Recipes
 		registerSmeltingRecipes(); //Registers Smelting Recipes
 		registerWorldGenerator();  //Registers World Generators
@@ -43,9 +53,19 @@ public class MythicalRegistration {
 		registerHandlers(); //Registers Hanlders
 		registerMob(); //Registers Mobs
 		keyRegisty(); //Register Key Binds
+		registerDimension(); //Register Dimension(s)
+		registerBiome(); //Register Biome(s)
 	}
 	
+	private static void registerDimension() {
+		LanguageRegistry.addName(MythicalBlocks.blockPortal, "Underworld Portal");
+		DimensionManager.registerProviderType(underworld, WorldProviderUnderworld.class, false);
+		DimensionManager.registerDimension(underworld, underworld);
+	}
 	
+	public static void registerBiome() {
+		BiomeDictionary.registerBiomeType(MythicalBiomes.BiomeUnderworld, Type.FOREST);
+	}
 	
 	private static void keyRegisty() {
 		ClientRegistry.registerKeyBinding(KeyHandler.keyMagicHelp);
@@ -57,6 +77,8 @@ public class MythicalRegistration {
 		MythologyRegister.addMob(EntityFairy.class, "Fairy", EnumCreatureType.creature, BiomeGenBase.forest, 0x07FA10, 0xE9F5E9, 200, 200, 200);
 		MythologyRegister.addMob(EntityMinotaur.class, "Minotaur", EnumCreatureType.monster, BiomeGenBase.extremeHillsPlus, 0x835C3B, 0xD1D0CE, 200, 200, 200);
 		MythologyRegister.addMob(EntityUnderworldSheep.class, "Underworld Sheep", EnumCreatureType.creature, MythicalBiomes.BiomeUnderworld, 0xFFFFFF, 0xFFFFFF, 12, 4, 4);
+	
+		MythologyRegister.addProjectileEntity(EntityHealingBall.class, "Healing ball");
 	}
 	
 	private static void registerArmor() {		
@@ -97,6 +119,8 @@ public class MythicalRegistration {
 	
 	private static void registerTileEntity() {
 		GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "Alloy Furnace");
+		GameRegistry.registerTileEntity(TileEntityMagicTable.class, "MagicWorkbench");
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMagicTable.class, new RenderMagicWorkbench());
 	}
 	
 	private static void registerHandlers() {
@@ -160,5 +184,8 @@ public class MythicalRegistration {
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mt.axeSapphire, 1), new Object[] { "II", "IS", " S", 'I', "gemSapphire", 'S', Items.stick }));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mt.hoeSapphire, 1), new Object[] { "II", " S", " S", 'I', "gemSapphire", 'S', Items.stick }));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(mt.shovelSapphire, 1), new Object[] { "I", "S", "S", 'I', "gemSapphire", 'S', Items.stick}));
+	
+		MagicTableCraftingManager.getInstance().addRecipe(new ItemStack(MythicalBlocks.blockDeadGrass, 1), new Object[] { "x", 'x', Items.stick});
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(MythicalBlocks.blockDeadRack, 7), new Object[] { "xxx", "xsx", "xxx", 'x', Blocks.obsidian, 's', Blocks.stone}));
 	}
 }
