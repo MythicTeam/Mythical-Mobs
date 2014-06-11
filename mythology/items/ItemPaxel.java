@@ -108,8 +108,6 @@ public class ItemPaxel extends ItemTool {
         }
     }
     
-    @SuppressWarnings({ "unchecked", "rawtypes" })
-	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean bool) {
 		list.add(EnumChatFormatting.DARK_RED + "HP: " + EnumChatFormatting.WHITE + (itemStack.getMaxDamage() - itemStack.getItemDamage()));
 	}

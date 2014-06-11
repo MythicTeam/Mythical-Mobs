@@ -41,8 +41,7 @@ public class MythicalItems {
 	public static Item mineToken = new MythItem("mineToken", "Increases your skills with a pick by 30%!");
 	public static Item woodcuttingToken = new MythItem("woodcuttingToken", "Increases your lumberjack lumberness by 30%!");
 	public static Item digToken = new MythItem("digToken", "Increases your dig bick effiency by 30%!");
-	public static Item breakToken = new MythItem("breakToken", "Increases your breakspeed by 20%!");
-	
+	public static Item breakToken = new MythItem("breakToken", "Increases your breakspeed by 20%!");	
 	
 	public static Item paxelBronze = new ItemPaxel("paxelBronze", MythicalTools.toolBronze);
 	public static Item paxelCelestialBronze = new ItemPaxel("paxelCelestialBronze", MythicalTools.toolCelestialBronze);
@@ -53,4 +52,9 @@ public class MythicalItems {
 	
 	public static Item underworldFlintAndBronze = new ItemFlintAndBronze("itemFlintAndBronze");
 	public static Item ItemMagicBackpack = new ItemMagicBackpack();
+	
+	//Mythical Stuff
+		//Thor
+	public static Item megingjorth = new MythItem("megingjorth", "Godly belt that increases manpower.");
+	public static Item jarngreipr = new MythItem("jarngreipr", "Required to wield the legendary hammer of thundering.");
 }

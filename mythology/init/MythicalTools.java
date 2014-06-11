@@ -65,4 +65,5 @@ public class MythicalTools {
 	
 	//Actual Mythical Items
 	public static Item mjolnir = new Mjolnir();
+	public static Item mjolnirUseless = new MjolnirUseless();
 }
