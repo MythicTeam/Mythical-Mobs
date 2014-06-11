@@ -11,6 +11,8 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class MythEventHandler {
 
+	
+	//TODO Move those events to item classes (See Mjolnir)
 	@SubscribeEvent
 	public void onLivingUpdateEvent(LivingUpdateEvent event) {
 		if (event.entity instanceof EntityPlayer) {
