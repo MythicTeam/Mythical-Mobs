@@ -3,6 +3,7 @@ package mythology.items;
 import java.util.List;
 
 import mythology.MythologyMod;
+import mythology.util.Methods;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -49,12 +50,7 @@ public class ItemSpecialSword extends MythItem {
 			itemstack.stackTagCompound = new NBTTagCompound();
 		}
 		itemstack.stackTagCompound.setString("MadeBy", player.getDisplayName());
-		if(player.getDisplayName().endsWith("s")){
-			itemstack.setStackDisplayName(player.getDisplayName() + "' " + itemstack.getDisplayName());
-		}
-		else{
-			itemstack.setStackDisplayName(player.getDisplayName() + "'s " + itemstack.getDisplayName());
-		}
+		itemstack.setStackDisplayName(Methods.getUsernameWithS(player) + " " + itemstack.getDisplayName());
 	}
 	
 	@SideOnly(Side.CLIENT)
