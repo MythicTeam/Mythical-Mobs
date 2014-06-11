@@ -1,5 +1,6 @@
 package mythology;
 
+import mythology.commands.EnderChestCommand;
 import mythology.commands.HealCommand;
 import mythology.handlers.MythEventHandler;
 import mythology.init.MythicalItems;
@@ -60,6 +61,7 @@ public class MythologyMod {
 	@EventHandler
 	public void serverLoad(FMLServerStartingEvent event) {
 		event.registerServerCommand(new HealCommand());
+		event.registerServerCommand(new EnderChestCommand());
 	}
 	
 	@EventHandler
