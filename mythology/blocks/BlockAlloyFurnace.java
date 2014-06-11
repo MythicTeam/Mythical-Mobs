@@ -46,11 +46,11 @@ public class BlockAlloyFurnace extends BlockContainer {
     @SideOnly(Side.CLIENT)
     protected IIcon blockIcon;
 
-    public BlockAlloyFurnace(boolean isActive, String string, CreativeTabs tabMythical, Material iron) {
+    public BlockAlloyFurnace(boolean isActive, String string, Material iron) {
         super(Material.rock);
         GameRegistry.registerBlock(this, string);
         this.setBlockName("alloyFurnace");
-        this.setCreativeTab(tabMythical);
+        this.setCreativeTab(MythologyMod.tabMythical);
         this.setHarvestLevel("pickaxe", 0);
         this.setHardness(1F);
         this.isActive = isActive;
