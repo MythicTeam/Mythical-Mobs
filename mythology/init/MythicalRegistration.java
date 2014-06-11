@@ -46,6 +46,7 @@ public class MythicalRegistration {
 	private static MythicalIngot mii = new MythicalIngot();
 
 	public static void load() {
+		registerArmor();
 		registerCraftingRecipes(); //Registers Crafting Recipes
 		registerSmeltingRecipes(); //Registers Smelting Recipes
 		registerWorldGenerator();  //Registers World Generators

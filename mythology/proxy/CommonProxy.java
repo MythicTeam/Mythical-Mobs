@@ -11,7 +11,7 @@ public class CommonProxy {
 		
 	}
 
-	public static ModelBiped getArmorModel(int i) {
+	public static ModelBiped getArmorModel(int id) {
 		return null;
 	}
 }

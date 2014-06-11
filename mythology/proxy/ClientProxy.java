@@ -48,12 +48,12 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityHealingBall.class, new RenderHealingBall(MythicalItems.heart));
 	}
 
-	public static ModelBiped getArmorModel(int i) {
+	public static ModelBiped getArmorModel(int id) {
 
 		final ModelCelestialBronzeArmor tutChest = new ModelCelestialBronzeArmor(1.0f);
 		final ModelCelestialBronzeArmor tutLegs = new ModelCelestialBronzeArmor(0.5f);
 
-		switch (i) {
+		switch (id) {
 		case 0:
 			return tutChest;
 		case 1:
@@ -64,4 +64,5 @@ public class ClientProxy extends CommonProxy {
 		return tutChest; // default, if whenever you should have passed on a
 							// wrong id
 	}
+
 }
