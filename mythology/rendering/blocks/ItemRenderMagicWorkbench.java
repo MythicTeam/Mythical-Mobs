@@ -1,5 +1,6 @@
 package mythology.rendering.blocks;
 
+import cpw.mods.fml.relauncher.Side;
 import mythology.model.blocks.MagicWorkbench;
 import mythology.tileentities.TileEntityMagicTable;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;

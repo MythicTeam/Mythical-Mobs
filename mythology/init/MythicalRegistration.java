@@ -33,6 +33,8 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class MythicalRegistration {
 	
@@ -51,9 +53,7 @@ public class MythicalRegistration {
 		registerSmeltingRecipes(); //Registers Smelting Recipes
 		registerWorldGenerator();  //Registers World Generators
 		registerTileEntity(); //Registers Tite Entities
-		registerHandlers(); //Registers Hanlders
 		registerMob(); //Registers Mobs
-		keyRegisty(); //Register Key Binds
 		registerDimension(); //Register Dimension(s)
 		registerBiome(); //Register Biome(s)
 	}
@@ -66,10 +66,6 @@ public class MythicalRegistration {
 	
 	public static void registerBiome() {
 		BiomeDictionary.registerBiomeType(MythicalBiomes.BiomeUnderworld, Type.FOREST);
-	}
-	
-	private static void keyRegisty() {
-		ClientRegistry.registerKeyBinding(KeyHandler.keyMagicHelp);
 	}
 	
 	private static void registerMob() {
@@ -121,14 +117,6 @@ public class MythicalRegistration {
 	private static void registerTileEntity() {
 		GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "Alloy Furnace");
 		GameRegistry.registerTileEntity(TileEntityMagicTable.class, "MagicWorkbench");
-		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMagicTable.class, new RenderMagicWorkbench());
-	}
-	
-	private static void registerHandlers() {
-		FMLCommonHandler.instance().bus().register(new KeyInputHandler());
-		NetworkRegistry.INSTANCE.registerGuiHandler(MythologyMod.instance, new GuiHandler());
-		MinecraftForge.EVENT_BUS.register(new MythEventHandler());
-		//FMLCommonHandler.instance().bus().register(new CraftingHandler());
 	}
 	
 	private static void registerSmeltingRecipes() {
