@@ -32,29 +32,40 @@ public class EnderChestCommand extends CommandBase {
     
 	@Override
 	public List getCommandAliases() {
-		List l = new ArrayList<String>();
-		l.add("ec");
-		return l;
+		List list = new ArrayList<String>();
+		list.add("ec");
+		list.add("endchest");
+		return list;
 	}
 
-    public void processCommand(ICommandSender par1ICommandSender, String[] par2ArrayOfStr) {
-        if (par2ArrayOfStr.length < 2) {
-            EntityPlayerMP targetplayer = par2ArrayOfStr.length > 2 ? getPlayer(par1ICommandSender, par2ArrayOfStr[1]) : getCommandSenderAsPlayer(par1ICommandSender);
-            EntityPlayerMP executer = getCommandSenderAsPlayer(par1ICommandSender);
-            
-            executer.displayGUIChest(targetplayer.getInventoryEnderChest());
-            
-            if(executer == targetplayer){
-            	executer.addChatComponentMessage(new ChatComponentText("Looking in your enderchest."));
-            } else {
-            	executer.addChatComponentMessage(new ChatComponentText("Looking in " + Methods.getUsernameWithS(targetplayer) + " enderchest."));
-            }
-        } else {
-            throw new WrongUsageException("commands.enderchest.usage", new Object[0]);
+    public void processCommand(ICommandSender par1ICommandSender, String[] stringArray) {
+        EntityPlayerMP sender = getCommandSenderAsPlayer(par1ICommandSender);
+        if (stringArray.length == 0)
+        {
+        	openEnderchest(sender, sender);
         }
+        else if (stringArray.length <= 1)
+        {
+        	if (stringArray[0].toLowerCase().equals("me")){
+        		openEnderchest(sender, sender);
+            } else {
+            	EntityPlayerMP target = getPlayer(par1ICommandSender, stringArray[0]);
+            	openEnderchest(sender, target);
+            }
+        }
+        else throw new WrongUsageException("commands.heal.usage", new Object[0]);
     }
 
-    /**
+    private void openEnderchest(EntityPlayerMP sender, EntityPlayerMP target) {
+    	if (sender == target){
+    		sender.addChatComponentMessage(new ChatComponentText("Opening your chest."));
+    	} else {
+    		sender.addChatComponentMessage(new ChatComponentText("Opening " + Methods.getUsernameWithS(target) + " chest."));
+    	}
+    	sender.displayGUIChest(target.getInventoryEnderChest());;
+	}
+
+	/**
      * Adds the strings available in this command to the given list of tab completion options.
      */
     public List addTabCompletionOptions(ICommandSender par1ICommandSender, String[] par2ArrayOfStr) {

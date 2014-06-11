@@ -1,5 +1,6 @@
 package mythology.commands;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.command.CommandBase;
@@ -23,6 +24,13 @@ public class HealCommand extends CommandBase
     {
         return 2;
     }
+    
+	@Override
+	public List getCommandAliases() {
+		List list = new ArrayList<String>();
+		list.add("h");
+		return list;
+	}
 
     public String getCommandUsage(ICommandSender par1ICommandSender)
     {
@@ -45,6 +53,7 @@ public class HealCommand extends CommandBase
             	healPlayer(sender, target);
             }
         }
+        else throw new WrongUsageException("commands.heal.usage", new Object[0]);
     }
     
     private void healPlayer(EntityPlayerMP healer, EntityPlayerMP healed){
