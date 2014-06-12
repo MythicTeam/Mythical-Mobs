@@ -1,15 +1,31 @@
 package mythology.handlers;
 
+import mythology.init.MythicalArmor;
 import mythology.init.MythicalItems;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatComponentText;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class MythEventHandler {
+	
+	@SubscribeEvent
+	public void onLivingDeathEvent(LivingDeathEvent event){
+		Entity entity = event.entity;
+		if(!entity.worldObj.isRemote && event.source.getEntity() instanceof EntityPlayer){
+			EntityPlayer player = ((EntityPlayer)event.source.getEntity());
+			if (player.inventory.armorItemInSlot(1) != null && player.inventory.armorItemInSlot(1).isItemEqual(new ItemStack(MythicalArmor.bronzeLeggings))){
+				player.addChatComponentMessage(new ChatComponentText("Item in slot 1: " + player.inventory.armorItemInSlot(1).getDisplayName()));
+				entity.dropItem(Items.diamond, 1);
+			}
+		}
+	}
 
 	
 	//TODO Move those events to item classes (See Mjolnir)
