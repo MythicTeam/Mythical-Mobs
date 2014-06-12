@@ -16,7 +16,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 public class MythEventHandler {
 	
 	@SubscribeEvent
-	public void onLivingDeathEvent(LivingDeathEvent event){
+	public void LivingDropsEvent(LivingDeathEvent event){
 		Entity entity = event.entity;
 		if(!entity.worldObj.isRemote && event.source.getEntity() instanceof EntityPlayer){
 			EntityPlayer player = ((EntityPlayer)event.source.getEntity());
