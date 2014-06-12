@@ -1,5 +1,6 @@
 package mythology;
 
+import mythology.commands.CraftCommand;
 import mythology.commands.EnderChestCommand;
 import mythology.commands.HealCommand;
 import mythology.handlers.MythEventHandler;
@@ -60,8 +61,9 @@ public class MythologyMod {
 	
 	@EventHandler
 	public void serverLoad(FMLServerStartingEvent event) {
-		event.registerServerCommand(new HealCommand());
+		event.registerServerCommand(new CraftCommand());
 		event.registerServerCommand(new EnderChestCommand());
+		event.registerServerCommand(new HealCommand());
 	}
 	
 	@EventHandler
