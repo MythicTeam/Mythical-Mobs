@@ -7,6 +7,7 @@ import com.google.common.collect.Multimap;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mythology.projectiles.EntityHealingBall;
+import mythology.util.Methods;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -46,12 +47,7 @@ public class StaffHealing extends MythItem{
 			itemstack.stackTagCompound = new NBTTagCompound();
 		}
 		itemstack.stackTagCompound.setString("MadeBy", player.getDisplayName());
-		if(player.getDisplayName().endsWith("s")){
-			itemstack.setStackDisplayName(player.getDisplayName() + "' " + itemstack.getDisplayName());
-		}
-		else{
-			itemstack.setStackDisplayName(player.getDisplayName() + "'s " + itemstack.getDisplayName());
-		}
+		itemstack.setStackDisplayName(Methods.getUsernameWithS(player) + itemstack.getDisplayName());
 	}
 	
 	@SideOnly(Side.CLIENT)

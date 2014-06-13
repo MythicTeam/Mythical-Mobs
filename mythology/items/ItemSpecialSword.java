@@ -57,7 +57,11 @@ public class ItemSpecialSword extends MythItem {
     public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean par4) {
     	list.add(info);
     	if (itemstack.stackTagCompound != null) {
-    		list.add(EnumChatFormatting.GOLD + "Forged by " + itemstack.stackTagCompound.getString("MadeBy"));
+    		if(this.toolmaterial != ToolMaterial.WOOD){
+        		list.add(EnumChatFormatting.GOLD + "Forged by " + itemstack.stackTagCompound.getString("MadeBy"));
+    		}else{
+        		list.add(EnumChatFormatting.GOLD + "Crafted by " + itemstack.stackTagCompound.getString("MadeBy"));
+    		}
     	}
     }
 
