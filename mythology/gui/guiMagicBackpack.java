@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 
 public class guiMagicBackpack extends GuiScreen {
 	
-	public static ResourceLocation texture = new ResourceLocation( MythologyMod.modid + ":textures/gui/MagicBackpack.png");
+	public static ResourceLocation texture = new ResourceLocation(MythologyMod.modid + ":textures/gui/MagicBackpack.png");
 	
 	private final int xSizeOfTexture = 256;
 	private final int ySizeOfTexture = 256;
