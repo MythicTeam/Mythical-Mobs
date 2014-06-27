@@ -8,6 +8,7 @@ import mythology.armor.MithrilArmor;
 import mythology.armor.RubyArmor;
 import mythology.armor.SapphireArmor;
 import mythology.armor.SilverArmor;
+import mythology.armor.StrawHat;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
@@ -51,4 +52,5 @@ public class MythicalArmor {
 	public static Item sapphireLeggings = new SapphireArmor(armorSapphire, 4, 2).setUnlocalizedName("sapphireLeggings").setTextureName(MythologyMod.modid + ":" + "sapphireLeggings");
 	public static Item sapphireBoots = new SapphireArmor(armorSapphire, 4, 3).setUnlocalizedName("sapphireBoots").setTextureName(MythologyMod.modid + ":" + "sapphireBoots");
 	
+	public static Item strawhat = new StrawHat("strawHat", ArmorMaterial.IRON, 4, 0);
 }

@@ -1,6 +1,7 @@
 package mythology.proxy;
 
 import mythology.MythologyMod;
+import mythology.armor.StrawHat;
 import mythology.handlers.GuiHandler;
 import mythology.handlers.KeyHandler;
 import mythology.handlers.KeyInputHandler;
@@ -12,6 +13,7 @@ import mythology.mobs.hostile.EntityUnderworldSheep;
 import mythology.mobs.passive.EntityFairy;
 import mythology.mobs.passive.EntityGnome;
 import mythology.model.armor.ModelCelestialBronzeArmor;
+import mythology.model.armor.ModelStrawHat;
 import mythology.model.hostile.ModelCentaur;
 import mythology.model.hostile.ModelMinotaur;
 import mythology.model.hostile.ModelUnderworldSheep1;
@@ -62,19 +64,20 @@ public class ClientProxy extends CommonProxy {
 
 	public static ModelBiped getArmorModel(int id) {
 
-		final ModelCelestialBronzeArmor tutChest = new ModelCelestialBronzeArmor(1.0f);
-		final ModelCelestialBronzeArmor tutLegs = new ModelCelestialBronzeArmor(0.5f);
+		final ModelCelestialBronzeArmor chestSize = new ModelCelestialBronzeArmor(1.0f);
+		final ModelCelestialBronzeArmor legSize = new ModelCelestialBronzeArmor(0.5f);
+		final ModelStrawHat strawHat = new ModelStrawHat(0f);
 
-		switch (id) {
+		switch (3) {
 		case 0:
-			return tutChest;
+			return chestSize;
 		case 1:
-			return tutLegs;
+			return legSize;
+		case 2:
+			return strawHat;
 		default:
 			break;
 		}
-		return tutChest; // default, if whenever you should have passed on a
-							// wrong id
+		return chestSize;
 	}
-
 }
