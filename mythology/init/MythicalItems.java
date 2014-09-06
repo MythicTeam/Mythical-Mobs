@@ -14,6 +14,7 @@ import mythology.items.ItemWing;
 import mythology.items.MythItem;
 import mythology.items.MythUnobtainableItem;
 import mythology.items.RawBehemothMeat;
+import mythology.items.TempItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 
@@ -52,6 +53,9 @@ public class MythicalItems {
 	
 	public static Item underworldFlintAndBronze = new ItemFlintAndBronze("itemFlintAndBronze");
 	public static Item ItemMagicBackpack = new ItemMagicBackpack();
+	
+	//Cyclops Filler Item
+	public static Item CyclopsHeart = new TempItem("CyclopsHeart", "A Magical Heart"); 
 	
 	//Mythical Stuff
 		//Thor
